@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <time.h>      
 #include <string.h>
+#include <stdbool.h>
 
 int getUserChoice() {
     /* TODO: Prompt the user "Player 1: How many sticks do you take (1-3)?" and return
@@ -24,7 +25,7 @@ int getUserChoice() {
 			printf("entry was not 1, 2, or 3. please try again.");
 			
 
-	} (while check == false);
+	} while (check == false);
 
 	return a;
 }
@@ -55,7 +56,7 @@ int main(int argc, char** argv)
 
     /* TODO: check that num_sticks is between 10 and 100 (inclusive) and print 
                     an error and exit, if it is not. */
-	if (number_sticks >= 10 && number_sticks <= 100) {
+	if (number_sticks < 10 && number_sticks > 100) {
 		printf("number of sticks error");
 		exit(0);
 	}
@@ -72,8 +73,8 @@ int main(int argc, char** argv)
       e.g., "Computer wins." or "Computer loses."
      */
 	do {
-		getUserChoice();
-		getComputerChoice();
+		getUserChoice(number_sticks);
+		getComputerChoice(number_sticks);
 
 	} while(number_sticks != 0);
     return 0;
