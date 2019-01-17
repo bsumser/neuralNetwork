@@ -73,8 +73,20 @@ int main(int argc, char** argv)
       e.g., "Computer wins." or "Computer loses."
      */
 	do {
-		getUserChoice(number_sticks);
-		getComputerChoice(number_sticks);
+		printf("There are %d sticks on the board\n", number_sticks);
+		user = getUserChoice(number_sticks);
+		computer = getComputerChoice(number_sticks);
+		printf("computer selects %d\n", computer);
+		number_sticks -= user;
+		if (number_sticks == 0 || number_sticks < 0) {
+			printf("you picked up the last stick, you lose!");
+			exit(0);
+		}
+		number_sticks -= computer;
+		if (number_sticks == 0 || number_sticks < 0) {
+			printf("computer picked up the last stick, it loses!");
+			exit(0);
+		}
 
 	} while(number_sticks != 0);
     return 0;
