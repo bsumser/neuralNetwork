@@ -12,18 +12,21 @@ int getUserChoice() {
      */
 	
 	bool check = false;
-	int a = 0;
+	int a;
 
 	do {
-		printf("Player 1: How many sticks do you take (1-3)?");
-		scanf("%d", &a);
+		printf("Player 1: How many sticks do you take (1-3)?\n");
+		a = getchar() - '0';
 		if (a == 1 || a == 2 || a == 3) {
 			printf("You entered: %d\n", a);
 			check = true;
+			break;
 		}
-		else
-			printf("entry was not 1, 2, or 3. please try again.");
-			
+		else {
+			printf("entry was not 1, 2, or 3. please try again.\n");
+			check = false;
+			a = 0;
+		}
 
 	} while (check == false);
 
@@ -51,7 +54,7 @@ int main(int argc, char** argv)
     srand (time(NULL)); /* for reproducible results, you can call srand(1); */
 
     printf("Welcome to the game of sticks!\n");
-    printf("How many sticks are there on the table initially (10-100)? ");
+    printf("How many sticks are there on the table initially (10-100)? \n");
     scanf("%d", &number_sticks);
 
     /* TODO: check that num_sticks is between 10 and 100 (inclusive) and print 
@@ -79,12 +82,12 @@ int main(int argc, char** argv)
 		printf("computer selects %d\n", computer);
 		number_sticks -= user;
 		if (number_sticks == 0 || number_sticks < 0) {
-			printf("you picked up the last stick, you lose!");
+			printf("you picked up the last stick, you lose!\n");
 			exit(0);
 		}
 		number_sticks -= computer;
 		if (number_sticks == 0 || number_sticks < 0) {
-			printf("computer picked up the last stick, it loses!");
+			printf("computer picked up the last stick, it loses!\n");
 			exit(0);
 		}
 
