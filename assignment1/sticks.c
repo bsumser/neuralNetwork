@@ -54,7 +54,12 @@ int main(int argc, char** argv)
     scanf("%d", &number_sticks);
 
     /* TODO: check that num_sticks is between 10 and 100 (inclusive) and print 
-                    an error and exit, if it is not.
+                    an error and exit, if it is not. */
+	if (number_sticks >= 10 && number_sticks <= 100) {
+		printf("number of sticks error");
+		exit(0);
+	}
+		
 
     /* TODO: Main game loop:
       While some sticks remain:
