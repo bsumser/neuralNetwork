@@ -71,6 +71,10 @@ int main(int argc, char** argv)
       After all the sticks are gone, output the result of the game, 
       e.g., "Computer wins." or "Computer loses."
      */
+	do {
+		getUserChoice();
+		getComputerChoice();
 
+	} while(number_sticks != 0);
     return 0;
 }
