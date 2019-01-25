@@ -4,10 +4,14 @@
 #include <stdio.h>
 #include <stdbool.h>
 
+#define BUF_LEN 256
+
 int main() {
-	time_t ltime;
+	char buf[BUF_LEN] = {0};
+	time_t rawtime = time(NULL);
 
-	time(&ltime);
+	struct tm *ptm = localtime(&rawtime);
 
-	printf("the time is %s", ctime(&ltime));
+	strftime(buf, BUF_LEN, "%R", ptm);
+	puts(buf);
 }
