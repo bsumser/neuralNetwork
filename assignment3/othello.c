@@ -1,12 +1,22 @@
 #include <stdio.h>
 #include <stdbool.h>
+#include <stdlib.h>
 
-typedef enum state {White, Black, Full} State; //define enum datatype for each square on the board
+typedef enum {White, Black, Empty} State; //define enum datatype for each square on the board
 
-typedef struct board { //struct contain the board, dynamically allocated array of State
-	int boardSize = 12; //base board size for game
-	State* boardArray = (State*)malloc(boardSize * boardSize * sizeof(State));
+typedef struct gameBoard{ //struct contain the board, dynamically allocated array of State
+	int boardSize; //base board size for game
+	State **boardArray;
 }gameBoard;
+
+gameBoard initGameBoard(gameBoard othelloBoard, int s) {
+	int boardSize = s;
+	State **boardArray = malloc(s * sizeof *boardArray + (s * (s * sizeof **boardArray)));
+
+	for (int i = 0; i <= s; i++)
+		for (int j = 0; j <= s; j++)
+				boardArray[i][j] = Empty;
+}
 
 int main() {
 	int board = 0;	
