@@ -6,22 +6,47 @@ typedef enum {White, Black, Empty} State; //define enum datatype for each square
 
 typedef struct gameBoard{ //struct contain the board, dynamically allocated array of State
 	int boardSize; //base board size for game
-	State **boardArray;
+	State** boardArray;
 }gameBoard;
 
 gameBoard initGameBoard(gameBoard othelloBoard, int s) {
-	int boardSize = s;
-	State **boardArray = malloc(s * sizeof *boardArray + (s * (s * sizeof **boardArray)));
+	othelloBoard.boardSize = s;
+	othelloBoard.boardArray = (State**) calloc(othelloBoard.boardSize, sizeof(State*));
 
-	for (int i = 0; i <= s; i++)
-		for (int j = 0; j <= s; j++)
-				boardArray[i][j] = Empty;
+	for (int i = 0; i < othelloBoard.boardSize; i++ )
+	{
+			    othelloBoard.boardArray[i] = (State*) calloc(othelloBoard.boardSize, sizeof(State));
+	}
+
+	for (int i = 0; i < othelloBoard.boardSize; i++)
+		for (int j = 0; j < othelloBoard.boardSize; j++){
+				othelloBoard.boardArray[i][j] = Empty;
+		}
+
+}
+
+void printBoard(gameBoard othelloBoard) {
+	printf("printing out the board\n");
+	for (int i = 0; i < othelloBoard.boardSize; i++)
+		for (int j = 0; j < othelloBoard.boardSize; j++) {
+				if (othelloBoard.boardArray[i][j] == White)
+						printf("W");
+				if (othelloBoard.boardArray[i][j] == Black)
+						printf("B");
+				if (othelloBoard.boardArray[i][j] == Empty)
+						printf(".");
+		}
 }
 
 int main() {
-	int board = 0;	
+	gameBoard othello;
+	int board;	
 	printf("welcome to othello, please enter the size of the board\n");
 	scanf("%d", &board);
+
+	initGameBoard(othello, board);
+
+	printBoard(othello);
 	
 	return 0;
 }
