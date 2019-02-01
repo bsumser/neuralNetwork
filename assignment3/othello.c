@@ -9,44 +9,47 @@ typedef struct gameBoard{ //struct contain the board, dynamically allocated arra
 	State** boardArray;
 }gameBoard;
 
-gameBoard initGameBoard(gameBoard othelloBoard, int s) {
-	othelloBoard.boardSize = s;
-	othelloBoard.boardArray = (State**) calloc(othelloBoard.boardSize, sizeof(State*));
+void initGameBoard(gameBoard *othelloBoard, int s) {
+	othelloBoard->boardSize = s;
+	othelloBoard->boardArray = (State**) calloc(othelloBoard->boardSize, sizeof(State*));
 
-	for (int i = 0; i < othelloBoard.boardSize; i++ )
+	for (int i = 0; i < othelloBoard->boardSize; i++ )
 	{
-			    othelloBoard.boardArray[i] = (State*) calloc(othelloBoard.boardSize, sizeof(State));
+			    othelloBoard->boardArray[i] = (State*) calloc(othelloBoard->boardSize, sizeof(State));
 	}
 
-	for (int i = 0; i < othelloBoard.boardSize; i++)
-		for (int j = 0; j < othelloBoard.boardSize; j++){
-				othelloBoard.boardArray[i][j] = Empty;
+	for (int i = 0; i < othelloBoard->boardSize; i++)
+		for (int j = 0; j < othelloBoard->boardSize; j++){
+				othelloBoard->boardArray[i][j] = Empty;
 		}
 
 }
 
-void printBoard(gameBoard othelloBoard) {
+void printBoard (gameBoard *othelloBoard) {
 	printf("printing out the board\n");
-	for (int i = 0; i < othelloBoard.boardSize; i++)
-		for (int j = 0; j < othelloBoard.boardSize; j++) {
-				if (othelloBoard.boardArray[i][j] == White)
+	for (int i = 0; i < othelloBoard->boardSize; i++)
+		for (int j = 0; j < othelloBoard->boardSize; j++) {
+				if (othelloBoard->boardArray[i][j] == White)
 						printf("W");
-				if (othelloBoard.boardArray[i][j] == Black)
+				if (othelloBoard->boardArray[i][j] == Black)
 						printf("B");
-				if (othelloBoard.boardArray[i][j] == Empty)
+				if (othelloBoard->boardArray[i][j] == Empty)
 						printf(".");
 		}
 }
 
 int main() {
-	gameBoard othello;
+	gameBoard *othelloBoard = malloc(sizeof(gameBoard));
+
 	int board;	
 	printf("welcome to othello, please enter the size of the board\n");
 	scanf("%d", &board);
 
-	initGameBoard(othello, board);
+	initGameBoard(&othelloBoard, board);
 
-	printBoard(othello);
+	printBoard(othelloBoard);
+
+	free(othelloBoard);
 	
 	return 0;
 }
