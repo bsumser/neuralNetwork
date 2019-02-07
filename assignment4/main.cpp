@@ -1,5 +1,6 @@
 #include <iostream>
 #include <stdlib.h>
+#include <math.h>
 
 class Board
 {
@@ -37,17 +38,17 @@ Board::Board(int s)
 }
 
 int startBoard(); //gets the size for class instantiation
-void clearBoard(Board &othelloBoard); //sets all the spaces to blank
+void setBoard(Board &othelloBoard); //sets all the spaces to blank
 void displayBoard(Board &othelloBoard); //displays current state of board
-void getMove(); //receives move from player
-bool checkWin(); //checks if board is in win state
+void getMove(Board &othelloBoard); //receives move from player
+bool checkWin(Board &othelloBoard); //checks if board is in win state
 bool checkLegal(); //checks if move is legal
 
 
 int main()
 {
 	Board othelloBoard(startBoard());
-	clearBoard(othelloBoard);
+	setBoard(othelloBoard);
 
 	//basic game loop
 	do {
@@ -56,13 +57,13 @@ int main()
 			displayBoard(othelloBoard);
 			
 			//get a move
-			getMove();
+			getMove(othelloBoard);
 
 			//check if legal
 			checkLegal();
 
 			//checking for a win
-			checkWin();
+			checkWin(othelloBoard);
 	}while(true);
 		
 	return 0;
@@ -78,11 +79,23 @@ int startBoard()
 	return size;
 }
 
-void clearBoard(Board &othelloBoard)
+void setBoard(Board &othelloBoard)
 {
+	int firstPos = ((othelloBoard.getSize() / 2) - 1); //position for starting pieces 
+	int secondPos = ((othelloBoard.getSize()) / 2); //position for starting pieces 
+		
 	for(int i = 0; i < othelloBoard.getSize(); i++) {
 	   for(int j = 0; j < othelloBoard.getSize(); j++) {
-	   		othelloBoard.boardArray[i][j] = '.';
+			if(i == secondPos && j == secondPos)
+	   			othelloBoard.boardArray[i][j] = 'W';
+			else if(i == firstPos && j == firstPos) 
+				othelloBoard.boardArray[i][j] = 'W';
+			else if(i == secondPos && j == firstPos) 
+				othelloBoard.boardArray[i][j] = 'B';
+			else if(i == firstPos && j == secondPos) 
+				othelloBoard.boardArray[i][j] = 'B';
+			else
+				othelloBoard.boardArray[i][j] = '.';
 	   }
 	}
 }
@@ -99,7 +112,7 @@ void displayBoard(Board &othelloBoard)
 		}
 }
 
-void getMove()
+void getMove(Board &othelloBoard)
 {
 	int userRow;
 	int userCol;
@@ -119,8 +132,10 @@ void getMove()
 	userRow = userRow - 1;
 	userCol = userCol - 1;
 
+	othelloBoard.boardArray[userRow][userCol] = 'W';
+
 }
-bool checkWin()
+bool checkWin(Board &othelloBoard)
 {
 	std::cout << "checking for win" << std::endl;
 	return true;
