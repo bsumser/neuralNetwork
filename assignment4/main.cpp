@@ -6,10 +6,20 @@ class Board
 {
 	private:
 		int size = 0;
+		char turn = ' ';
 	public:
 		char **boardArray; 
 		Board(int);
 
+		int getTurn()
+		{
+			return turn;
+		}
+
+		int setTurn(char i)
+		{
+			turn = i;
+		}
 		int getSize()
 		{
 			return size;
@@ -56,7 +66,13 @@ int main()
 			//display the board
 			displayBoard(othelloBoard);
 			
-			//get a move
+			//get a move for white player
+			getMove(othelloBoard);
+
+			//display the board
+			displayBoard(othelloBoard);
+
+			//get a move for black player
 			getMove(othelloBoard);
 
 			//check if legal
@@ -83,7 +99,9 @@ void setBoard(Board &othelloBoard)
 {
 	int firstPos = ((othelloBoard.getSize() / 2) - 1); //position for starting pieces 
 	int secondPos = ((othelloBoard.getSize()) / 2); //position for starting pieces 
-		
+	char firstPlayer = 'W'; //sets the first player to go as white
+	
+	//sets all spaces to blank except starting 4	
 	for(int i = 0; i < othelloBoard.getSize(); i++) {
 	   for(int j = 0; j < othelloBoard.getSize(); j++) {
 			if(i == secondPos && j == secondPos)
@@ -98,6 +116,9 @@ void setBoard(Board &othelloBoard)
 				othelloBoard.boardArray[i][j] = '.';
 	   }
 	}
+
+	//set white player as current turn
+	othelloBoard.setTurn(firstPlayer);
 }
 
 void displayBoard(Board &othelloBoard)
@@ -116,7 +137,10 @@ void getMove(Board &othelloBoard)
 {
 	int userRow;
 	int userCol;
+	char white = 'W';
+	char black = 'B';
 
+	std::cout << "Player " << char(othelloBoard.getTurn()) << " it is your turn" << std::endl;
 	std::cout << "Please input your move in format row then column" << std::endl;
 	std::cin >> userRow >> userCol;
 
@@ -132,7 +156,14 @@ void getMove(Board &othelloBoard)
 	userRow = userRow - 1;
 	userCol = userCol - 1;
 
-	othelloBoard.boardArray[userRow][userCol] = 'W';
+	if (othelloBoard.getTurn() == 'W') {
+			othelloBoard.boardArray[userRow][userCol] = 'W'; //set space as white
+			othelloBoard.setTurn(black); //switch the turn
+	}
+	else {
+			othelloBoard.boardArray[userRow][userCol] = 'B'; //sets the space as black
+			othelloBoard.setTurn(white);//switch the turn
+	}
 
 }
 bool checkWin(Board &othelloBoard)
