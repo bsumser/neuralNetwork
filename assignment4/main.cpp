@@ -7,16 +7,18 @@ class Board
 	private:
 		int size = 0;
 		char turn = ' ';
+	   	int curRow = 0;
+		int curCol = 0;
 	public:
-		char **boardArray; 
+		char **boardArray;
 		Board(int);
 
-		int getTurn()
+		char getTurn()
 		{
 			return turn;
 		}
 
-		int setTurn(char i)
+		char setTurn(char i)
 		{
 			turn = i;
 		}
@@ -28,6 +30,24 @@ class Board
 		int setSize(int i)
 		{
 			size = i;
+		}
+		int getCurCol()
+		{
+			return curCol;
+		}
+
+		int setCurCol(int i)
+		{
+			curCol = i;
+		}
+		int getCurRow()
+		{
+			return curRow;
+		}
+
+		int setCurRow(int i)
+		{
+			curRow = i;
 		}
 
 };
@@ -52,7 +72,7 @@ void setBoard(Board &othelloBoard); //sets all the spaces to blank
 void displayBoard(Board &othelloBoard); //displays current state of board
 void getMove(Board &othelloBoard); //receives move from player
 bool checkWin(Board &othelloBoard); //checks if board is in win state
-bool checkLegal(); //checks if move is legal
+bool checkLegal(Board &othelloBoard); //checks if move is legal
 
 
 int main()
@@ -68,6 +88,9 @@ int main()
 			
 			//get a move for white player
 			getMove(othelloBoard);
+
+			//check if move was legal
+			checkLegal(othelloBoard);
 
 			//display the board
 			displayBoard(othelloBoard);
@@ -172,8 +195,9 @@ bool checkWin(Board &othelloBoard)
 	return true;
 }
 
-bool checkLegal()
+bool checkLegal(Board &othelloBoard)
 {
+	//first check to see if the space is empty
 
 	std::cout << "checking if move is legal" << std::endl;
 	return true;
