@@ -1,0 +1,21 @@
+** Project Name: Breakfree
+
+**Project Repository: breakFree folder on my uoregon-cis330 repo
+
+** Team Members: Brett Sumser
+
+** Description:
+	Will be a clone of the popular game breakout, with the paddle and ball.
+	Object of the game is to break all the bricks in a level and move on to the next.
+	Class encapsulation for different objects in game, including possible powerups.
+	For game art I plan to use the SDL 2.0, which has a fair amount of 
+	open source game art.
+	
+**Implementation Approach:
+	Will be using C++ classes for the ball, paddle, and breaks.
+	Want to include a few powerups that affect gameplay, and different levels as well
+
+**Risk Management Plan:
+	Plan is to work for at least 2 hours every day. 
+	Attempt to finish at least 1 class a week.
+	Research 2d physics to apply to powerups changing ball speed/trajectory
