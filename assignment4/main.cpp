@@ -92,18 +92,8 @@ int main()
 			//check if move was legal
 			checkLegal(othelloBoard);
 
-			//display the board
-			displayBoard(othelloBoard);
-
-			//get a move for black player
-			getMove(othelloBoard);
-
-			//check if legal
-			checkLegal();
-
-			//checking for a win
-			checkWin(othelloBoard);
-	}while(true);
+			//checking for a win in while condition
+	}while(checkWin(othelloBoard) == false);
 		
 	return 0;
 }
@@ -160,8 +150,6 @@ void getMove(Board &othelloBoard)
 {
 	int userRow;
 	int userCol;
-	char white = 'W';
-	char black = 'B';
 
 	std::cout << "Player " << char(othelloBoard.getTurn()) << " it is your turn" << std::endl;
 	std::cout << "Please input your move in format row then column" << std::endl;
@@ -179,25 +167,41 @@ void getMove(Board &othelloBoard)
 	userRow = userRow - 1;
 	userCol = userCol - 1;
 
-	if (othelloBoard.getTurn() == 'W') {
-			othelloBoard.boardArray[userRow][userCol] = 'W'; //set space as white
-			othelloBoard.setTurn(black); //switch the turn
-	}
-	else {
-			othelloBoard.boardArray[userRow][userCol] = 'B'; //sets the space as black
-			othelloBoard.setTurn(white);//switch the turn
-	}
-
+	othelloBoard.setCurRow(userRow);
+	othelloBoard.setCurCol(userCol);
 }
+
 bool checkWin(Board &othelloBoard)
 {
-	std::cout << "checking for win" << std::endl;
-	return true;
+	std::cout << "no win found" << std::endl;
+	return false;
 }
 
 bool checkLegal(Board &othelloBoard)
 {
+	char white = 'W';
+	char black = 'B';
 	//first check to see if the space is empty
+	
+	if(othelloBoard.boardArray[othelloBoard.getCurRow()][othelloBoard.getCurCol()] != '.') {
+			std::cout << "That space is already taken, choose another" << std::endl;
+			return false;
+	}
+	
+	
+	//move is accepted as valid, making move	
+	if (othelloBoard.getTurn() == 'W') {
+		//set space as white
+		othelloBoard.boardArray[othelloBoard.getCurRow()][othelloBoard.getCurCol()] = 'W'; 
+		//set turn to black
+		othelloBoard.setTurn(black); 
+	}
+	else {
+		//set space as black
+		othelloBoard.boardArray[othelloBoard.getCurRow()][othelloBoard.getCurCol()] = 'B'; 
+		//set turn to white
+		othelloBoard.setTurn(white); 
+	}
 
 	std::cout << "checking if move is legal" << std::endl;
 	return true;
