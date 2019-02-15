@@ -1,6 +1,8 @@
 #include <iostream>
 #include "caesar.hpp"
 
+class Cipher
+
 int main() 
 {
 	print();
