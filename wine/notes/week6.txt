@@ -1,0 +1,6 @@
+Switched project from breakout game to wine search sql app.
+Started work on sql query functions, need to research callback function more and add more options.
+Need to add user input via command line before work begins on frontend
+Need to work on frontend
+Possibly implement class for user profiles
+Get weather data from regions of wines that are in use in csv file
