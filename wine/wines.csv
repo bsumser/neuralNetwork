@@ -1,0 +1,463 @@
+Number,Varietal,Vineyard,Classification,Name,Region,Year,Price,WS,WE,JS,WA,Tag1,Tag2,Tag3
+115,Chardonnay,Fontanelle,IGT,Castello Banfi,Toscana,2014,53
+116,Cortese,Gavi,DOCG,Principessa Gavia,Piedmont,2016,42
+117,Pinot Grigio,delle Venezie IGT,Riff,Progetto Lageder,Veneto 2016,40
+118,Pinot Grigio,IGT,Stemmari,Sicily,2016,39
+119,Pinot Grigio,Livio Felluga,Friuli Colli Orientali DOC 2014,49
+120,Pinot Grigio,Terlato Vineyards,Friuli Colli Orientali DOC,2016,45
+121,Pinot Grigio,Valdadige,DOC,Barone Fini,Trentino,2016,40
+125,Orvieto Classico, “Campogrande,” Santa Cristina 2015,39
+126,Soave,Anselmi “San Vincenzo,” Veneto 2016,80% Garganega,15% Chardonnay,42
+127,Soave Classico DOC, Pieropan, Veneto 2016,38
+128,Verdicchio dei Castelli di Jesi,Lucchetti,Classico,DOC,Marche,2014,39
+WHITE WINES: PACIFIC NORTHWEST AND CALIFORNIA
+100,Albariño,Abacela,,,Umpqua Valley,2016,45
+101,Chardonnay,Château St. Michelle,,Canoe Ridge,Columbia Valley,2015,45
+102,Chardonnay,Domaine Serene,,Evenstad Reserve,Dundee Hills,2015,95,95
+103,Chardonnay,Domaine Serene,,Recolte,Dundee Hills,2014,165
+104,Chardonnay,Hamacher,,Cuvée Forêts Diverses,Willamette Valley,2013,68
+105,Chardonnay,Hendry Barrel Fermented,,,Napa Valley,2014,60
+106,Chardonnay,Jayson by Pahlmeyer,,,North Coast,2014,85
+107,Chardonnay,Jordan,,,Russian River Valley Sonoma,2014,68
+108,Chardonnay,La Crema,,,Sonoma Coast,2016,48
+109,Chardonnay,Newton Skyside,,,Sonoma County,2016,48
+110,Chardonnay,Patz & Hall,,,Dutton Ranch,Russian River Valley,2015,65,,97,93,90
+111,Chardonnay,Rombauer,,Carneros,,2016,72
+112,Chardonnay,Sonoma-Cutrer,,,Russian River Ranches,2016,45
+113,Chardonnay,Stag’s Leap,,Karia,Napa Valley,2015,47,,,90
+WHITE WINES: PACIFIC NORTHWEST AND CALIFORNIA
+114,Chardonnay,Stoller Family Estate,,,Dundee Hills,2016,45
+120,Fumé Blanc,Ferrari Carano,,,Sonoma County,2017,35
+121,Gewürztraminer,Hyland Estates,,,McMinnville,2015,45
+122,Pinot Blanc,Willakenzie,,,Willamette Valley,2016,48
+130,Pinot Gris,,The Eyrie Vineyards,,Willamette Valley,2015,38
+131,Pinot Gris,Four Graces,,,Willamette Valley,2016,48,93
+132,Pinot Gris,King Estate,,,Willamette Valley,2016,45
+133,Pinot Gris,King Estate,,Domaine,Willamette Valley,2016,48
+134,Pinot Gris,Lange,,Reserve,Willamette Valley,2016,45,,91
+135,Pinot Gris,Silvan Ridge,,,Willamette Valley,2015,42
+136,Pinot Gris,Archery Summit,,Vireton,Willamette Valley,2016,45
+140,Riesling,Brooks Estate Vineyards,,Sweet Pea,Eola-Amity Hills,2015,48
+145,Sauvignon Blanc,Browne Family,,,Columbia Valley,2017,38
+146,Sauvignon Blanc,Simi,,,Sonoma County,2016,40
+150,Viognier,Sundown Vineyard,,Dobbes Family Estate,Rogue Valley,2016,38
+WHITE WINES: PACIFIC NORTHWEST AND CALIFORNIA SPARKLING WINES
+200,Brut,Argyle,,,Willamette Valley,2015,56
+201,Brut,Taittinger,,La Française,Champagne,,68
+202,Brut,Veuve Clicquot Ponsardin,,,Champagne,,85
+203,Brut Champagne,Dom Perignon,Vintage Epernay,,Champagne,2009,225,96
+204,Brut Reserve,Pol Roger,,,Champagne,,75,90
+205,Brut Rosé,,Trento DOC,Rotari,Trentino,2013,39
+210,Moscato d’Asti,Saracco,Piedmont 2015,The beautiful aromas of the grapes are enhanced by a light frizzante and sweetness of natural sugar. 39
+211,Moscoto d’Asti,Sourgal,Elio Perrone, DOCG, Piedmont, Italy,Refreshingly sweet with crisp acidity. Notes of lime, peach, and florals. 36
+215,Prosecco Superiore Brut,,Sorelle Bronca, Valdobbiadene DOCG, Italy Fresh and delicious with notes of pear and crisp minerality. Certified organic. 38
+SPARKLING WINES
+6
+300 Barbaresco, Candina del Pino, Normale 2014
+Delicate floral perfume with aromas of dark cherry, black pepper, and a hint of tobacco from the finest cigar. Elegant and balanced with intense ripe fruit. WA: 92pts. 75
+301 Barbaresco Gallina DOCG, La Spinetta 2008
+Ripe fruit aromas and flavors of blueberry and boysenberry are accented by flowers and Asian spices. IWC: 94pts, V: 94pts, WS: 92pts. 165
+302 Barbaresco Paitin, ‘Serraboella’ 2013
+Currant, strawberry, cherry, floral, and leafy flavors are the highlights of this racy, elegant red. Balanced on the firm side with excellent length. WS: 92pts. 68
+305 Barbera d’Alba DOC, Marchesi di Barolo ‘Ruvei’ 2016
+Barbera with 15% Nebbiolo as permitted in the Alba DOC. Fresh, intense aromas of wild berries and spices. Warm and robust on the palate with cherry, raspberry, and white pepper savory notes. 39
+306 Barbera d’Alba Superiore, Brezza 2013
+Fruit forward, cedar, and spice. This deep and complex choice is perfect for Zinfandel and Syrah lovers. 48
+307 Barbera d’Alba, Superiore,
+Bruna Grimaldi 2015
+Undertones of cocoa and espresso with a classic finish and vein of texture. 43
+308 Barbera d’Asti DOC, Renato Ratti, 2016
+Well-balanced, rich fruit, subtle tannins, and fresh acidity. WS: 90pts. 45
+309 Barbera d’Asti DOC, Superiore, Tenuta Olim Bauda Nizza 2013
+Dark cherries, licorice, tar, and smoke. Medium to full-bodied with high acidity and silky tannins. A very balanced selection with a long finish. Needs aeration. 58
+312 Barolo Cannubi DOCG, Brezza 2011/2013
+Classic Barolo from one of the best vintages in decades. Pretty, aromatic nose of flowers and spices, followed by flavors of small red fruits and minerals. Fine and ripe tannins. 85
+313 Barolo, Cordero di Montezemolo, Monfalletto 2014
+Intense garnet color with a nose full of floral and spicy notes. Flavors of tobacco, cherries, cocoa, and fresh raspberry create a perfect balance. On the palate it is rich, full-bodied, and elegant. 75
+314 Barolo DOCG, “Brunate,” Marcarini 2012
+“Soft and supple. Full-bodied with ripe black cherries, chocolate liqueur and hints of citrus zest. A wine of substantial length and elegance.” -Robert Parker. WA: 91pts and WE: 93pts. 93
+315 Barolo DOCG,“Francia,”
+Giacomo Conterno 2012
+Roses, violets, sweet spices, and cherry. Seamless tannins with plenty of earth and minerals. 315
+RED WINES: PIEDMONT, ITALY
+Bordering Switzerland in the northwest, Piedmont is the home of some of Italy’s most regal red wines. Nebbiolo is the noble grape of both Barolo and Barbaresco, producing wines of great finesse and complexity. Barbera and Dolcetto from the area are also wines of notable class.
+RED WINES: PIEDMONT, ITALY
+7
+RED WINES: PIEDMONT, ITALY
+RED WINES: PIEDMONT, ITALY
+316 Barolo DOCG, Pertinace 2013
+Lush and complex bouquet with hints of sweet spice, ripe fruit, and vanilla. Great depth on the palate with dried fruit and herbs. A well-balanced, structured, and smooth choice. WE: 90pts 75
+317 Barolo, Marcenasco DOCG, Renato Ratti 2013/2014
+Ripe cherries, raspberry jam, cinnamon, sage, and white pepper fill the palate. WA: 93pts and WE: 95pts. 80
+318 Barolo, “Pressenda” DOCG,
+Marziano Abbona 2011
+From the Monforte d’Alba commune of Barolo. Intense and ethereal aromas of dried roses, tar, and violets with notes of warm wood and spice. This full-body wine is comprised of sweet fruit with a long, caressing finish. WS: 91pts. 95
+319 Barolo, Serralunga d’Alba DOCG, “Cascina Francia,” Giacomo Conterno 1993
+Dark ruby and purple nuances with roasted herbs, tobacco, and dried cherries. Very mellow, yet round in the mouth. 385
+320 Barolo Serralunga d’Alba DOCG, Fontanafredda 2012
+An intense, clear-cut nose with overtones of vanilla, spice, roses, and underbrush. Dry, but soft, velvety, and full-bodied. Well-balanced, long-lasting on the palate. 79
+323 Dolcetto Dogliani DOCG, “Papa Celso,” Marziano Abbona 2016/2017
+A single vineyard Dolcetto Superior from a 12-acre parcel. Complex aromas of dark cherry, cloves, and pepper. Karissa recommends. 49
+325 Gattinara DOCG, Travaglini 2011
+100% Nebbiolo. Undertones of very ripe fruits and dried flowers. Big and chewy, yet smooth and complex with a rich finish.
+David recommends. 55
+328 Nebbiolo, Mauro Molino Langhe 2017
+Stainless steel fermented and aged. Fresh and fruit forward with soft, delicate tannins and hints of rose and violet on the nose. Always an elegant and enchanting bottle. JS: 90pts. 38
+329 Nebbiolo, Corsini Langhe 2016
+Light spice and dark fruit with medium body. Soft, beautiful tannins and medium acidity with a wonderful finish. 40
+330 Sfursat della Valtellina DOCG, Nino Negri 2015
+100% Nebbiolo sourced from the steep, terraced vineyards east of Piedmont in Lombardy. Aromas of cloves, cinnamon, and pepper with plum jam, raisins, and tar notes. Full-bodied and dry with prominent acidity. GR: Tre Bicchieri. 78
+8
+RED WINES: TUSCANY
+Although Chianti is the best known area in Tuscany and Sangiovese the most important grape, this region has far more to offer. Brunello (a superior clone of Sangiovese) is Tuscany’s wine of greatest stature, producing wines of legendary power and longevity. The Cabernet Sauvignon or Merlot based wines aged in small French oak barrels, often called “Super Tuscans,” give Tuscany another dimension with their powerful concentration and luxurious richness.
+RED WINES: TUSCANY
+335 Barco Reale di Carmignano DOC, Cappezzano 2014
+Concentrated with sweet dense tannins and a lush velvety texture with ripe blackberry and dark cherry flavors mingling on the finish. JS: 91pts, V: 90pts. 41
+336 Bolgheri DOC Superiore, Ornellaia 2013/14
+Deep and intense wine with confit style cherry-pie fruit and a smoky character that is full on the palate. 295
+340 Brunello di Montalcino DOCG, Canalicchio 2012
+Full-bodied with layers of fruit and raisins across the palate. A complex choice, yet very smooth for its youth. JS: 92pts, WS: 90pts, WE: 90pts. 75
+341 Brunello di Montalcino DOCG, Caprili 2012
+Aromas of red currants, black cherries, and licorice. A finely balanced wine with an intensity of velvet on the palate and a lengthy, heavy finish. WS: 94pts. 78
+342 Brunello di Montalcino DOCG,
+La Fortuna 2013
+Dark cherry and berry blends with notes of coffee, white pepper, and wild herbs. 78
+343 Brunello di Montalcino, La Gerla 2013
+Classic, traditional Brunello. Cherry, cedar, and spice with firm tannins on the long, perfect finish. WS: 92pts. 78
+344 Brunello di Montalcino DOCG,
+II Poggione 2012
+Cherry, leather, spices, and underbrush, with soft, integrated tannins and well balanced acidity. WA: 95+, WE/W&S: 93pts, WS: 92pts. 125
+345 Chianti Classico DOCG,
+Isole E Olena 2014
+Aromas of smoky black fruit and plum complement this medium-bodied wine with fine, delicate tannins. A nice, fruity finish with a twist of chocolate. 55
+346 Chianti Classico DOCG, Petroio 2013
+Deep, earthy Sangiovese with fruity notes of black cherries and firm, food-friendly tannins. 41
+347 Chianti Classico DOCG,
+Vignamaggio Estate 2015
+A beautiful, well balanced, and fruit forward choice from one of Tuscany’s oldest wineries. Smooth with a silky finish. 42
+348 Chianti Classico DOCG, Riserva,
+Brancaia 2012
+Rooted in the bold Super Tuscan movement, this is a classic Chianti Classico with a modern touch. Black cherry and sweet herbs. Nice balance of power and finesse. JS: 92pts, V:91pts. 68
+349 Chianti Classico Riserva DOCG,
+Casa Emma 2015
+Dried fruits, mushrooms, and flowers dance around a core of classic Sangiovese cherry fruit. WS: 92pts. 68
+9
+RED WINES: TUSCANY
+RED WINES: TUSCANY
+350 Chianti Classico DOCG, Riserva Marchesi Antinori Tenuta Tignanello 2014
+Tignanello is one of the top wines made by the famous Antinori family from the 1500s. WS/WE: 91pts, V: 90pts. 70
+353 Fontalloro, Fattoria di Felsina 2012/2013
+100% Sangiovese. A fresh and chunky red that is well structured and balanced with chocolate and ripe cherry aromatics on the nose. A medium to full-bodied choice with soft, silky tannins, and a long, clean fruit finish. WE: 94pts, JS: 93pts. David recommends. 95
+355 Rosso di Montalcino DOC,
+Castello Banfi 2015
+Intense, fresh, and fruity bouquet of aromatics with typical violet, cherry, and plum undertones. Gentle, yet full on the palate with a long finish. 56
+356 Rosso di Montalcino DOC,
+II Poggione 2015
+Sweet cherries, raspberries, and pomegranate create a fabulous value from one of the highest regarded Brunello producers. V: 90pts, WS & WE: 91pts. 58
+357 Rosso di Montalcino DOCG,
+Siro Pacenti 2013/2014
+A big wine with massive structure and rich, dark and firm tannins. Wine Spectator calls Giancarlo Pacenti, “the greatest winemaker in the appellation.” 65
+358 Rosso di Montepulciano DOC, Poliziano 2016
+80% Sangiovese, 20% Merlot. Known as the “baby brother” to Vino Nobile, one of Tuscany’s most illustrious red wines. Notes of cherry, blackberry, and velvety tannins. 42
+360 Sondraia Bolgheri DOC Superiore, Poggio al Tesoro 2013
+From the Allegrini family, this Bordeaux blend of Cabernet, Merlot, and Cabernet Franc shows why Bolgheri is so celebrated. Exotic spices, ripe black fruits, and herbs. WS: 92pts. 65
+361 Tignanello Toscana IGT, Marchesi Antinori Tenuta Tignanello 2015
+The original Super Tuscan, produced only in favorable vintages. Sangiovese with Cabernet and Cabernet Franc from the Chianti Classico zone. A truly great and iconic Tuscan wine. JS: 98pts, WS: 97pts, and WA: 96pts. 145
+362 Vino Nobile di Montepulciano DOCG, Corte alla Flora 2014
+Intense, clear, and fragrant fruit aromas of raspberry with soft and velvety flavors followed by pleasant tannins across the palate. 54
+10
+THE WINES OF ANGELO GAJA
+“Like Robert Mondavi in Napa, Angelo Gaja’s name has become intrinsically tied to the vineyards of Barbaresco. Gaja is internationally acknowledged as one of the world’s great winemakers. His uncompromising exploration of quality has raised the bar for everyone. Hundreds of Italian winemakers make much better wine today because of Gaja.” -Matt Kramer, Wine Spectator
+365 Barbaresco DOCG, Gaja 2006
+“A sensual nose in its complexity, with aromas of forest fruits, plums, licorice, mineral and coffee. Terrific concentration and silk-like tannins on a long complex finish.” -Robert Parker. WA: 93pts, WE: 93pts, WS: 91pts and Tanzer: 90pts. 350
+366 Barbaresco, Gaja Costa Russi, 1989/2014
+“From one of the best known vintages of the twentieth century. Aged aromas of berry, mint, roses and violets on a medium to full palate with a ripe fruit finish.” -Robert Parker. WA: 97pts, V: 97pts, WS: 95pts. 680
+367 Barolo, Gaja “Sperrs,” Langhe DOC 2005
+“Floral aromatics give way to bright spiced red fruits, menthol and licorice. Firm and classically built with notable elegance.” -Robert Parker. WA: 94pts, WS: 95pts. 425
+368 Brunello di Montalcino DOCG, Gaja,
+“Pieve Santa Restituta,” Tuscany 2013
+Aroma of wildflowers, red berries, and fresh balsamic notes, sweet licorice, and thyme. Clean on the palate, well integrated flavors of fresh plum and red cherry with wood aromas and silky tannins. WS: 94pts. 145
+369 Ca’Marcanda Vistamare, Gaja, Toscana 2016
+Vermentino/Viognier blend with generous bouquets of peach, apricot, and sage. Fresh, yet round, and remarkably complex. 100
+370 Costa Russi, Gaja, Langhe DOC 2006
+Elegant Nebbiolo with 5% Barbera from the Costa Russi vineyard in Barbaresco. Wild berry with beautiful background renderings of smoke and graphite. WE: 95pts, WA: 92pts, WS: 92pts. 450
+371 Darmagi, Gaja, Langhe DOC 2010
+“Darmagi” or what a shame is what Angelo Gaja’s father exclaimed upon learning that his son had planted Cabernet Sauvignon in their historic Barbaresco vineyards. Cabernet with a touch of Merlot and Cabernet Franc, another impressive, powerful, and iconic estate wine. 225
+372 Magari, Gaja, Ca’Marcanda, Tuscany 2015
+Vineyard maturation has led to not only DOC recognition, but to the starring role of Cabernet Franc in the blend. Juiciness and concentration as well as elegance and drinkability are features of this vintage; a blend of Cabernet Franc and Petit Verdot. WA: 95pts, JS: 93pts, WS: 92pts. 115
+373 Promis, Gaja, Ca’Marcanda, Tuscany 2015
+Bright and fruity with a jammy nose. This delightful wine combines the elegance and suppleness of Merlot and Syrah with the austerity of Sangiovese. 77
+374 Sito Moresco, Gaja, Langhe DOC 2013
+Roasted black fruits and roasted herbs with complex notes of cloves and finely tanned leather. It is smooth and richly textured with an approachable tannic backbone and correct acidity. A fine structure, graceful and stylish, almost gliding across the palate. 100
+RED WINES: THE WINES OF ANGELO GAJA
+11
+RED WINES: CAMPANIA, ABRUZZO, UMBRIA, VENETO AND SICILY
+Valpolicella is the name given to a blend of native grapes, of which Corvina Veronese is the key component, especially in Amarone and Reciotto, since the drying process seems to bring out its best.
+RED WINES: CAMPANIA, ABRUZZO, UMBRIA, VENETO AND SICILY
+380 Amarone della Valpolicella Classico DOC, Allegrini 2013
+A true classic of the appellation with its imposing structure and depth. Through aromas of mature fruit and spices, this
+wine is sustained by the right degree of acidity and refined tannins on the palate.
+GR: Tre Bicchieri, JS: 94pts, WS: 93pts,
+V: 93pts. 125
+381 Amarone della Valpolicella DOC, Righetti 2012
+From a family run winery established in 1904, this Amarone shows a classic bouquet of dried fruit and almonds with a hint of anise. Extremely rich flavors with a long, smooth finish. 66
+382 Amarone della Valpolicella DOC,
+Villa Arvedi, Bertani Valpantena 2013
+Intense purple coloring with a deep nose and expressive flavors. Raisins, cherries, and wild berries create a full-bodied, yet approachable house favorite. 88
+383 Etna Rosso, Pistus, I Custodi, DOC, Sicily, Italy 2015
+From the foothills of Mt. Etna. Blend of 80% Nerello Mascalese and Nerello Cappuccio. Bright ruby in color, with fresh fruit on the palate. Soft tannins balanced with some acidity. 48
+384 Montefalco Rosso, DOC, Lungarotti, Umbria, Italy 2014
+Sweet spices and cinnamon with pleasant tannins and fresh red fruit. JS: 92pts. 46
+385 Montepulciano d’Abruzzo DOC, Quattro Mani 2017
+Fresh and fruity with smooth flavors of currant, strawberry, and raspberry. Attilio Pagli is one of the “four hands” in this project to showcase traditional wines that are grown sustainably. 41
+386 Palazzo della Torre IGT, Veronese, Allegrini 2015
+Rich, full-bodied with great concentration. A perfect complement to our traditional Spaghetti alla Bolognese. JS: 92pts 48
+387 Sagrantino di Montefalco, DOCG, Cantina Scacciadiavoli, Umbria, Italy 2010
+A well integrated blend of fruit, spice, and oak characteristics. 49
+388 Tancredi di Donna Fugata Terre Siciliane IGT, Sicily 2012
+A blend of Cabernet Sauvignon, Nero d’Avola, and Tannat. Deep ruby red in color with fragrance of cherry and cranberry as well as flavors of sweet tobacco, cocoa, spices, and black pepper. 68
+389 Valpolicella Classico Superiore DOC, Ripasso “Solane,” Santi 2012
+Intense bouquet of cloves, vanilla, cherry jam, and almonds. On the palate, the wine is full and warm with a harmonious, elegant finish. 43
+12
+PINOT NOIR: THE WILLAMETTE VALLEY
+The Willamette Valley is recognized as one of the premier Pinot Noir producing regions in the world.
+Protected from the Pacific storms by the Coastal Range and from the dry, high heat of the desert by the Cascades, our valley boasts the ideal conditions for the picky, cool-climate Pinot.
+This is our local wine and we have reason to be proud of it.
+RED WINES: PINOT NOIR FROM THE WILLAMETTE VALLEY
+400 Pinot Noir, Archery Summit, “Arcus,” Dundee Hills, Estate 2014
+Opulent fruit flavors of raspberry, wild strawberry, cherry, and blackberry with notes of spice box and lavender melt into a dark chocolate finish. WS 94 pts, WE 92 pts, WA 90 pts. 150
+401 Pinot Noir, Archery Summit, “Premier Cuvée” 2015
+H. Steinman of Wine Spectator has called Archery Summit the “Rolls-Royce of Oregon for Pinot Noir.” Violet, plum, black licorice, powdered chocolate, and ground coffee integrate on the palate with a chocolate finish. WS: 91pts. 68
+402 Pinot Noir, Argyle, “Nut House,” Lone Star & Spirit Hill Vineyards, Eola-Amity Hills 2014
+Elegant with spicy floral, bright raspberry, and black tea flavors in a rich, yet energetic frame. JS: 93pts, WS: 91pts. 79
+403 Pinot Noir Reserve, Argyle, Willamette Valley 2015
+Sweet cherry, red-heart plum, and toasted, rich earth nose. Pure-fruit flavors, juicy acidity, and trademark silky texture. WS: 93pts. 68
+404 Pinot Noir, Beaux Frères, Willamette Valley 2015
+Dark cherries, ripe berries, savory, and baking spices with plush tannins. 85
+405 Pinot Noir, Benton-Lane, Willamette Valley 2014
+Nicely balanced with delicate smoky cedar and floral aromatics highlighting flavors of rich black cherry, candied fruit, and a slight hint of black licorice and rose petals. 36
+406 Pinot Noir, Bethel Heights Estate 2015
+One of Oregon’s oldest wineries presents this classic Eola-Amity Pinot. High notes with cherry flavors. Beautifully balanced. 46
+407 Pinot Noir, Brick House, “Les Dijonnais,” Ribbon Ridge 2015
+Raspberry, baking spice, herbs, and rose petal. Lively acidity with firm tannins. WS: 94pts. 75
+408 Pinot Noir, Cristom Estate, Eola- Amity 2014
+“Bright red. Suave, smoke-accented aromas of raspberry preserves, pungent flowers, a hint of allspice in the background. On the palate intense red berry and floral pastille flavors. Superb clarity and spicy bite on a long finish. The interplay of power and finesse here is really something.” -Josh Reynolds, 95pts. 80
+409 Pinot Noir, Cristom Mt. Jefferson Cuveé 2016
+Bright red color with fresh berry and rose petal aromas. Sweet cherry and vibrant acidity with a lively, mineral-tinged raspberry. W&S voted #1 in America. 60
+13
+RED WINES: PINOT NOIR FROM THE WILLAMETTE VALLEY
+PINOT NOIR: THE WILLAMETTE VALLEY
+410 Pinot Noir, Domaine Drouhin 2015
+Some toasty oak and cherry fruit flavors create a big, rich, silky, and full flavor with a long, spicy finish. 75
+411 Pinot Noir, Domaine Serene, Evenstad Reserve 2014
+Deep in color with hints of cherry and tobacco on the nose and layers of earth, chocolate, and dried fruits throughout the mouth. This youthful choice does not disappoint. 105
+412 Pinot Noir, Domaine Serene, Yamhill Cuvée, Willamette Valley 2014
+Dark in color and fruity on the mouth, this choice is earthy. WS: 91pts. 100
+413 Pinot Noir, Four Graces,
+Willamette Valley 2016
+Earth and elegant with raspberry, strawberry, plum, and cherry notes with soft, focused tannins and a velvety structure. 58
+414 Pinot Noir, J.K Carriere Vespidae, Willamette Valley 2015
+Foral notes of ripe cherry, caramel, pepper spice, and mossy forest fill the nose. On the palate it is elegant and intensely dark with flavors of cherry and pomegranate creating a balance that is just short of sweet, yet shy of bitter. Tannins lay balanced on the palate. 65
+415 Pinot Noir, King Estate 2015
+Black cherries with a long and complex finish. King Estate is established as one of Eugene’s most definitive wineries. 48
+416 Pinot Noir, Lange Freedom Hill, Eola-Amity Hills 2014
+Aromas of brambly earth, pomegranate, huckleberry, and cigar box spice fill the nose. Velvety palate showing blueberry, candied cherry, vanilla, and licorice. JS: 95pts, WE: 92pts. 110
+417 Pinot Noir, Panther Creek, ‘Winemaker’s Cuvée,’ Willamette Valley 2016
+Strawberry and black cherry notes with a hint of tobacco leaf. Elegant tannins with a touch of black pepper and cranberry on the finish. WE: 90pts. 44
+418 Pinot Noir, Patricia Green Cellars,
+Reserve 2016
+Subtle red fruit, cranberry, dried herbs, and wild mushrooms. 48
+419 Pinot Noir, Primarius, Willamette Valley 2016
+Light in color and Burgundian in style. This delicate Pinot has classic scents of violets and rose petals, which gracefully introduce flavors of raspberry, marionberry, chocolate, and spice. 45
+420 Pinot Noir, Stoller Family Estate, Dundee Hills, Willamette Valley 2015
+Dark cherry and smoky flint with subtle notes of raspberries, roses, and hibiscus. 48
+421 Pinot Noir, Stoller Family Estate, Reserve 2015
+An integrated balance of dark cherry and raspberry, accented by spicy notes and a seamless finish. 70
+422 Pinot Noir, Willakenzie Estate, “Pierre Leon,” Yamhill-Carlton 2014
+Vibrant aromas of blackberries, lavender, vanilla, and cherry come together to create this jammy, smooth, dark wine with a peppery finish. JS: 92pts, WE & WS: 91pts. 74
+423 Pinot Noir, Willakenzie Estate, “Terres Basses,” Yamhill 2013
+A round, smooth choice with great aromas of earth, cherries, and fruit finishing with a velvety texture. WE: 91pts 100
+14
+RED WINES: MERLOT
+500 Merlot, Abacela, Umpqua Valley 2013
+Wonderful aromas of black currants and spice. 46
+501 Merlot, Dry Creek Vineyards, Dry Creek Valley, Sonoma County 2013
+Rich, well-structured and intense. 45
+502 Merlot, Ferrari Carano, Sonoma Valley 2014
+Fruit forward and velvety with red and purple fruits, chocolate spice, coffee, caramel, and cedar notes. Elegant structure and long finish. 45
+503 Merlot, Leonetti, Walla Walla Valley 2014/2015
+Beautiful expression of blueberries and raspberries with a touch of dried apricot. A hint of Cabernet Franc brings notes of violets to the nose and a silkiness to the palate. 135
+504 Merlot, Markham Vineyards, Napa Valley 2015
+Elegant and supple with concentrated flavors of plum, cherry, and black pepper spice. 40
+505 Merlot, Paradigm, Napa Valley 2013/14
+Ripe with a plush texture and flavors of licorice, black currants, and round tannins that are firm on the finish. 90
+RED WINES: MERLOT
+15
+RED WINES: CABERNET SAUVIGNON
+For many, Cabernet Sauvignon is the king of wine grapes, and the Cabernets from certain vineyards in Napa, Sonoma and other areas of California are among the very best anywhere. In less than thirty years, California wineries making Cabernet Sauvignon have gone from candidates to authorities, so that even wine makers in Bordeaux are studying (and copying) the styles and methods of California Cabernet.
+In Washington’s Columbia, Yakima and Walla Walla appellations, these “Bordeaux Varieties” are world-class. With the intense hot days and cold nights of these regions, the wines develop great fruit and structure. More and more Cabernets from Washington’s hot arid climate are also attaining this high quality.
+RED WINES: CABERNET SAUVIGNON
+510 Cabernet Sauvignon, Beaulieu
+Vineyard, George de Latour
+Reserve, Napa Valley 2012/13
+Aged in small oak barrels, this elegant wine has the structure to age and improve for decades as it exhibits complex flavors of black cherry and currants. WA: 94. 175
+511 Cabernet Sauvignon, Black Stallion, Napa Valley 2015
+Blackberry, black cherry, and toasty aromas lead to bold velvety flavors of cassis, plum, blackberry, and dried apple. WE: 92 pts, JS: 91 pts. Brett Recommends. 60
+512 Cabernet Sauvignon, Caymus, Napa Valley 2015
+This well-balanced and inviting wine is almost universally ranked among the top Cabernets made in California. Ripe, deep, supple, and loaded with rich, creamy oak flavors. 125
+513 Cabernet Sauvignon, Chateau St. Michelle, Cold Creek Vineyard, Columbia Valley 2013
+A full-bodied, single vineyard wine that is ready to drink. 56
+514 Cabernet Sauvignon, Col Solare, Red Mountain, Washington 2014
+Celebrating the 20th vintage, this partnership is between Tuscany’s Marchesi Antinori and Washington’s Chateau Ste Michelle. Dark mountain fruit and flavors of cinnamon, rose petal, vanilla, and chocolate, dried fruit and cocoa. WA: 94pts, W&S: 94pts, JS: 93pts, V: 91pts, WE 90pts. 110
+515 Cabernet Sauvignon, Conn Creek, Napa Valley 2014
+Ripe fruits are accented with baking spices, mountain herbs, and a light dusting of cocoa powder. 50
+516 Cabernet Sauvignon, Freemark Abbey, Napa Valley 2014
+A complex and very inviting wine sourced from Rutherford, Mount Veeder, and Atlas peak vineyards. Classic Bordeaux varieties combine for great depth, plush texture, and firm structure. D: 95pts, WA: 92 pts. 70
+517 Cabernet Sauvignon, Ghost Pines, Napa/Sonoma 2015
+72% Napa, 28% Sonoma. This is a delicious, easy to love choice with structure and flavors of jammy dark fruit, sweet nuts, and black pepper. 46
+518 Cabernet Sauvignon, Hendry Estate, Napa Valley 2013
+A single vineyard wine with some leather and tobacco flavors, this is a very popular house
+favorite. 92
+519 Cabernet Sauvignon, Hess Collection, Mt. Veeder, Napa Valley Estate 2003
+On her third anniversary of joining Ambrosia, this is a salute to our manager, Karissa, who shares the same last name. A blend of 85% Cabernet and 15% Malbec. Bold red fruit, dominant, intense, offering blueberry, vanilla cassis, and chocolate. Long finish. 115
+16
+RED WINES: CABERNET SAUVIGNON
+RED WINES: CABERNET SAUVIGNON
+520 Cabernet Sauvignon, Jordan, Alexander Valley 2013
+Soft and supple across the palate with flavors of black cherry and cedar. 98
+521 Cabernet Sauvignon, Joseph Phelps, Napa Valley 2014
+Highlights of blackberry, dried blueberry, and violet with notes of graphite, cloves, currant, coffee, tobacco, and dried fig. Full-bodied, deeply concentrated with supple tannins and a lengthy finish. WA: 92pts. 110
+522 Cabernet Sauvignon, Kendall Jackson Vintner’s Reserve, California 2014
+A blend of grapes from Sonoma, Napa, and Mendocino create this big, rich, and tannic choice. Oaky and toasty with flavors of black currants and black cherry. 44
+523 Cabernet Sauvignon, Leonetti, Walla Walla Valley 2014
+Dark and powerful. Generous with a nose of blackberries, spice, blue fruits, and black tea with a hint of toasted French oak. WA: 96pts. 155
+524 Cabernet Sauvignon, Mount Peak ‘Sentinel,’ Sonoma/Napa County 2014
+The Sentinel Block of famed Monte Rosso Vineyard is the main source of this muscular and intense wine. Concentrated flavors of dark currant, blackberry, cherry, brown sugar spice, mint, and toasted cedar woven throughout. 100
+525 Cabernet Sauvignon, Mt. Brave, Mt. Veeder, Napa Valley 2015
+Great spice, minerality, and notes of blue fruits, toast, and dark cherry that combine with bright floral notes, weight and a wonderful finish. WA: 96pts. 125
+526 Cabernet Sauvignon, Mount Veeder, Napa Valley 2014
+Deep ruby in color with aromas of chocolate, currants, blackberry, and smoke. This house favorite has a long and balanced finish with hints of tobacco. 68
+527 Cabernet Sauvignon, Orin Swift ‘Palermo,’ Napa Valley 2016
+A bold representation of Napa’s signature varietal. Immediate aromas of ripe cassis and blackberry. Hints of cocoa and new oak complement the juicy dark fruits and integrated minerality. JS: 92 pts, WA: 91 pts, IWR: 93 pts. 75
+528 Cabernet Sauvignon Reserve, Rodney Strong Rockaway Vineyard, Alexander Valley 2014
+Concentrated black cherry, red currant, plum, and leather. The earthy minerality of the wine is balanced out by notes of baking spices with a rich, complex structure, and a long lingering finish. WA: 91pts. 115
+529 Cabernet Sauvignon, Stag’s Leap Wine Cellars, ‘Artemis,’ Napa Valley 2016
+Lush fruit flavors balanced by extraordinary structure and elegance. Dark berries, currants, raspberry, nutmeg, and baking spices with subtle oak undertones. 85
+530 Cabernet Sauvignon, Woodward Canyon, Columbia Valley 2014
+Artist Series #14 is a typical Washington Cabernet. With round fruit and layers of flavor, this choice is robust, yet silky and soft. 82
+531 Justin Isosceles, Paso Robles 2014
+A classic Left Bank Bordeaux style wine of Cabernet, Cabernet Franc, and Merlot. Rich and aromatic with dark fruit, licorice, cinnamon, vanilla, tobacco, and cocoa. IWC: 91pts, WA: 92pts. 120
+17
+RED WINES: CABERNET FRANC
+Cabernet Franc is one of the major black grape varieties worldwide. it is principally grown for blending with Cabernet Sauvignon and Merlot in the Bordeaux style. It can also be vinified alone and is increasingly found in Washington, California, and Italy. Cabernet Franc is lighter in color than Cabernet Sauvignon with the same level of intensity and richness.
+The first Cabernet Franc varietal wine released in Washington was by Columbia Winery in 1991. California, while perfectly warm enough to ripen Cabernet Sauvignon, produces some particularly rich forms of Cabernet Franc. The variety is increasinly well-regarded in Tuscany, particularly in Bolgheri on the Tuscan coast. We invite you to explore and enjoy our selection of this facsinating varietal.
+RED WINES: CABERNET FRANC
+600 Cabernet Franc, Achaval Ferrer, Mendoza, Argentina 2015
+Focused and full of rich savory notes that wrap around pure-tasting flavors of red berry, currant, and plum. Green herbal details show on the tannic finish. WS: 90pts. 38
+601 Cabernet Franc, Browne Family, Columbia Valley 2014
+Aromatic with cherries, roasted red peppers, and cedar. Lighter tannins make the wine refreshing and easy to drink with prominent flavors of strawberry and mixed fruit chutney. Savory notes and a hint of smoky oak on the finish. 50
+602 Cabernet Franc, Casadei IGT, Toscana 2014
+From the organically farmed vineyards of Stephano and Anna Casadei in southern Tuscany, this 100% Cabernet Franc has explosive aromas of pure fruit and sweet spices. Layers of black fruits, leather, pepper, cinnamon, and licorice. Earthy and spicy with a hint of chocolate. 80
+603 Cabernet Franc, Lady Hill, Columbia Valley, Washington 2015
+100% Slide Mountain, 100% Cabernet Franc. Fresh and fruity with flavors of red raspberry and tobacco leaf. Herbaceous flavors and spices mingle with cherry and white pepper to create a medium-bodied mouthfeel. Soft tannins and balanced with bright acidity. 55
+604 Cabernet Franc, Maxville, Napa Valley 2014
+Nutmeg and ripe raspberry on the nose. Elegant hints of spice, toasty oak, and an opulent texture with a persistent silky finish that keeps you wanting more. Chiles Valley AVA of Napa Valley. Armen recommends. 85
+605 Cabernet Franc, Mt. Brave, Mt. Veeder 2015
+From famed La Jota winemaker, Chris Carpenter, this rocky, high elevation vineyard creates distinct concentrated flavors of baked black cherry and bay leaf with typical Mt. Veeder acidity and tannin structure. Subtle vanilla and lush fruit lead to a long finish. 105
+606 Cabernet Franc, Paradigm, Napa, 2017
+Very lush across the palate with a silky softness and sweet impression of ripe blueberry fruit. Easy drinking, rich, complete, and very enjoyable. 100
+607 Cabernet Franc, Owen Roe “The Pearl,” Union Gap Vineyard Yakima Valley 2013
+Admirably Old World in style with soft scents of forest floor, dried herbs, and tobacco. Cherry and bright berry flavors lead to silky tannins, textural minerality, and a long finish with hints of tobacco, spice, and earthy cacao nibs. 105
+18
+608 Cabernet Franc, Soos Creek “Stampede Pass,” Columbia Valley, Washington 2014
+A full-blown version of Cabernet Franc. Aromas of red currant, plum, licorice, and brown spice. Lush and smooth on the palate with easy sweetness to its flavors of dried plum, leather, and herbs. 50
+609 Cabernet Franc, Spring Valley “Katherine Corkrum,” Walla Walla, Washington 2012
+Floral and toasted almond notes on the nose. Cherry and vanilla flavors burst on the palate while sweet, lingering tannins with a lengthy, satisfying finish. WA: 93pts, WE: 93 pts, WS: 91pts, IWC: 90pts. 55
+610 Cabernet Franc, Tero Estates, Walla Walla, Washington 2014
+100% Windrow Vineyard, 100% Cabernet Franc. This wine is decadent with a rich garnet color and a nose of dark cherry, cocoa, and eucalyptus. Bright red fruits on the palate. Balances nicely with savory notes of black pepper, toast, and earth. A long finish with good acidity. 65
+RED WINES: CABERNET FRANC
+RED WINES: CABERNET FRANC
+19
+RED WINES: PACIFIC NORTHWEST AND CALIFORNIA
+RED WINES: THE PACIFIC NORTHWEST AND CALIFORNIA
+700 Malbec, Abacela, Umpqua Valley 2015
+Aromas of ripe, red cherries with plum, anise, and black pepper compliment the flavors of hibiscus, sandalwood, and cherry to create a long, lush finish. 49
+701 Petite Sirah, Earthquake Phillips, Lodi, California 2014
+Dark red in color, this is a lush choice with fruity flavors of maraschino cherries and a great, long finish. 45
+702 Petite Sirah, Girard, Napa Valley 2013
+Aromas of olive, anise, coffee, thyme, and dark fruits unveil a rich palate with a mouthful of bittersweet chocolate,
+espresso, and blackberry cobbler. The finish evolves with bright acidity and inky tannins. WA: 93pts, WE: 92pts, WS: 90pts. 55
+703 Petite Sirah, Parducci “True Grit,” Reserve Mendocino 2015
+Heady aromas of ripe fruit, white pepper, and vanilla followed by an intense rush of fresh blackberry, dark chocolate, pepper, and caramel flavors. WE: 93pts. 46
+705 Syrah, Gramercy Cellars
+“Lagniappe,” Columbia Valley, Washington 2014
+Extremely complex with smoked meat notes around a core of intense red fruit, blueberry, minerals, black olive, and pepper. WA: 95pts, V: 93pts. 85
+706 Syrah, Klinkerbrick Farrah, Lodi, California 2015
+A classic, Left Bank Bordeaux style wine comprised of Cabernet, Cabernet Franc, and Merlot. Rich and aromatic with dark fruit, licorice, cinnamon, vanilla, tobacco, and cocoa. IWC: 91pts, WA: 92pts. 48
+707 Syrah, Owen Roe “Ex Umbris,” Columbia Valley 2017
+Nose of caramel, dark chocolate, and hazelnut with licorice, plum, black cherry, and hints of tobacco on the palate. 45
+750 Tempranillo, Abacela “Fiesta Blend,” Estate Grown,Umpqua Valley 2015
+A big, dark wine with flavors of ripe stone fruits with hints of leather and floral notes on the nose. Flavors of blackberry, plum, vanilla, spice, and licorice cover the palate. A house favorite. 49
+751 Tempranillo, Chateau Lorane, Willamette Valley 2008
+Dark, rich fruit with toasty oak and firm tannins. 44
+20
+RED WINES: ZINFANDEL
+Zinfandel is a black-skinned grape indigenous to Croatia that made its way to Italy where it is known as Primitivo. The plantings there are predominantly in the heel region of Apulia. Sometime in the mid 1800’s the grape made its way into California where it has become a mainstay of California’s wine identity. Zinfandel is stylistically very versatile with wines that range from bright and lively to deeply brooding and port-like, depending on the soils and climate where it is grown and the winemaker’s intention. We bring you an interesting cross section of our southern neighbor’s offerings.
+RED WINES: ZINFANDEL
+710 Zinfandel, Biale “Black Chicken” 2016
+This perennial favorite offers rich tones of mocha, blackberry, and cinnamon toast that are balanced by underlying acidity. It’s a crowd-pleasing style that strikes a harmonious chord between fruit and structure. 70
+711 Zinfandel, Klinker Brick, Lodi, California 2015
+Aromatics of black raspberry, cedar shavings, pepper, and spice with flavors of berries and dark cherry. This wine is medium-bodied with firm structure and a silky texture. 48
+712 Zinfandel, Orin Swift, ‘8 Years in the Desert,’ California 2017
+Dave Phinney’s California Red Field Blend featuring Zinfandel plus Petite Sirah and Syrah. Ripe brambly fruit, a touch of earth, and notes of espresso bean with an aromatic tinge of minerality and charred meat. 69
+713 Zinfandel, “The Prisoner,” Napa Valley 2016
+A field blend, predominately comprised of Zinfandel with other old vine mixes and black grapes. This choice was a featured as two-time top 100 wine for Wine Spectator 2004 and 2005. 75
+714 Zinfandel, Rodney Strong “Knotty Vines,” Alexander Valley 2014
+Fresh bright berry fruit from the 105-year-old Russian River vines combine with the ripe peppery jamminess from the Alexander Valley vineyards creating wonderful diversity of flavor. 48
+715 Zinfandel, Seghesio, Sonoma County 2016
+Wild berry patch aromas and flavors of briary spiciness, cracked pepper, tilled soil, and creamy oak with ever present acidity and fine, dusty tannins. WS: 93pts. 45
+716 Zinfandel, Turley “Juvenile,” California 2016
+A multiple vineyard blend creates a light wine with great balance. Flavors of roses, sweet cherry, and plum are layered with mint and cinnamon notes. 52
+21
+RED WINES: IBERIA, SPAIN
+Top quality, food friendly wines from the Iberian Peninsula have been recognized since at least the Roman era. Typically blended from indigenous grape varietals such as Tempranillo, Touriga, Grenache, Carignan and Graciano, these wines have a capacity to age long periods or to be enjoyed young.
+In the 1980s, wine makers moved away from the traditional extended aging in old oak, toward a deeper, fruit-forward international style, using newer oak barrels and at times adding small amounts of Merlot and Cabernet Sauvignon. We find these wines to be a natural companion to our style of regional cuisine.
+745 Emilio Moro, Ribera del Duero 2013
+Cherry in color. On the mouth it is intense and mouth-watering. On the nose its richness and notes of wood, black fruit, and vanilla stand out. 50
+746 Garnacha, Las Rocas “Viñas Viejas,” Calatayud, Spain 2013
+The spicy, rich cranberry bouquet is followed by dark cherry flavors providing an excellent structure and elegant oak. WS: 90pts. 45
+747 Plaer, Ritme Cellar, Priorat 2015
+Ripe blackberry and cola aromas, hints of black pepper, and smoky minerals washes over the palate. The finish is bright and long with a gentle tannic grip and a zesty mineral quality. 60
+748 Red Blend, Torres “Salmos,”Priorat Spain 2014
+A blend of Cariñena, Garnacha, and Syrah. Predominant notes of dark cherry and plum. Well-structured with a velvety palate creates an elegant, fresh finish. JS: 94 pts, WE: 93 pts, WA: 90 pts, WS: 90 pts. 55
+752 Tempranillo, Cruz de Alba, Ribera del Duero 2013/2014
+100% Tempranillo, biodynamically and organically farmed. Very fruity with red berries and ripe cherry aromas, hints of licorice and cedar. Fresh in the mouth with notes of raspberries and chocolate for a silky, soft finish. 55
+753 Tempranillo, El Coto, Rioja
+Crianza 2014
+100% Tempranillo with layers of fresh raspberries, cherry, cedar, vanilla, and leather. This classically styled Rioja has a long, soft finish. 45
+754 Tempranillo, Muga, Rioja Reserva, unfiltered 2014
+Fruit sourced from century-old valley-floor vineyards ensures rich flavor extraction. Complex layers from multiple soil types highlights flavors of Kirsch, raspberry, red licorice, dark plum, tobacco, and cedar over the palate. WE: 90pts. 60
+755 Tempranillo, Pesquera Crianza, Ribera del Duero 2014
+Intensely wild and gamy with grilled meats and perfumed musk layered atop notes of black currant and cherry. WS: 92pts, V: 92pts. 58
+756 Tempranillo, Rioja Grand Reserva, Faustino 2004
+A prime example of an aged Rioja. Powerful, yet elegant, with a complex array of flavors. Delicate use of creamy oak and spicy, leathery notes combined with ripe bramble fruits and a mineral finish. D: 97pts, WE: 91pts. 70
+757 Tempranillo, Viña Tondonia,
+Reserva, R. López de Heredia,
+Rioja 2004
+Plum, prune, and vanilla with notes of cherry, balsamic, and licorice. 65
+RED WINES: IBERIA, SPAIN
+22
+VINTAGE PORTS
+Port has changed very little since its origins in the 1800s. The grapes are picked, crushed and fermented quickly. After about two days the must is fortified with neutral spirit, which arrests the fermentation and leaves some sweetness. While other kinds of Port are aged for many years, vintage Port is bottled unfiltered after only two years.
+VINTAGE PORTS
+950 Beringer 1995 38
+952 Taylor Fladgate 1995 85
+954 Dow 1983 140
+“Very stylish and elegant...complex nose of pepper, spice, flowers and blackberries. Full-bodied.” -Wine Spectator: 88pts
+956 Dow Quinta do Bomfim 1995 75
+The Bomfim vineyard is perfectly situated on the banks of the Douro River at Pinhao and makes great wines nearly every year Drier than most Ports, this choice has lots of fresh berry fruits and a classic Bomfrim finish of almonds.
+958 Dow Quinta do Bomfim 1995 48
+375ml
+970 Khron 1985 75
+976 Quinta do Crasto 1985 70
+978 Quinto do Infantado 1997 75
