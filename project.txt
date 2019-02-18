@@ -1,21 +1,17 @@
-** Project Name: Breakfree
+** Project Name: Wine List App
 
-**Project Repository: breakFree folder on my uoregon-cis330 repo
+**Project Repository: wine folder on my uoregon-cis330 repo
 
 ** Team Members: Brett Sumser
 
 ** Description:
-	Will be a clone of the popular game breakout, with the paddle and ball.
-	Object of the game is to break all the bricks in a level and move on to the next.
-	Class encapsulation for different objects in game, including possible powerups.
-	For game art I plan to use the SDL 2.0, which has a fair amount of 
-	open source game art.
-	
+	Implement a wine application that lets users browse a wine list and filter by criteria	
 **Implementation Approach:
-	Will be using C++ classes for the ball, paddle, and breaks.
-	Want to include a few powerups that affect gameplay, and different levels as well
+	Will be using C++ for backend work.
+	SQLite3 will be used to manage a database of wines and their characteristics
+	Implement a gui frontend, and a command line interface for testing user input
+	Weather data for wine regions
+	Maybe include machine learning/neural net for reccomendations
 
 **Risk Management Plan:
 	Plan is to work for at least 2 hours every day. 
-	Attempt to finish at least 1 class a week.
-	Research 2d physics to apply to powerups changing ball speed/trajectory
