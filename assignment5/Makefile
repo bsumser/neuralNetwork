@@ -9,5 +9,13 @@ testCaesar.o: testCaesar.cpp
 caesar.o: caesar.cpp caesar.hpp
 	g++ -c caesar.cpp
 
+testDate.exe: testDate.o date.o
+	g++ -o testDate.exe testDate.o date.o
+
+testDate.o: testDate.cpp
+	g++ -c testDate.cpp
+
+date.o: date.cpp date.hpp
+	g++ -c date.cpp
 clean:
-	rm *.o output	
+	-rm *.o testCaesar.exe testDate.exe	
