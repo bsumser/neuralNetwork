@@ -5,7 +5,7 @@
 
 class CaesarCipher: public Cipher {
 public:
-	CaesarCipher(int s); //constructor
+	CaesarCipher(); //constructor
 
 	virtual std::string encrypt( std::string &text );
 	virtual std::string decrypt( std::string &text );
