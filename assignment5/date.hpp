@@ -11,7 +11,7 @@ public:
 	virtual std::string decrypt( std::string &inputText);
 
 private:
-	int date;
+	std::string date;
 };
 
 #endif /*DATE_HPP_*/
