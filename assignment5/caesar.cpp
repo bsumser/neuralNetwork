@@ -1,15 +1,18 @@
-#include <iostream>
-#include "caesar.hpp"
+#include "cipher.hpp"
 
-class Cipher
+//single arguement constructor
+CaesarCipher::CaesarCipher() : Cipher(), shift(x) {
 
-int main() 
-{
-	print();
-	return 0;
 }
 
-void print()
-{
-	std::cout << "test print" << std::endl;
+std::string
+CaesarCipher::encrypt( std::string &inputText ) {
+	std::string text = inputText;
+	std::string::size_type len = text.length();
+
+	for(int i = 0; i != len; ++i) {
+
+
+	}
+	
 }
