@@ -1,6 +1,7 @@
 #include <iostream>
 #include <random>
 
+int printVector(const std::vector<int> &v);
 
 int main()
 {
@@ -12,7 +13,8 @@ int main()
 	for(int i = 0; i < 15; i++) {
 		int number = distribution(generator);
 		v.push_back(number);
-	}	
+	}
+	printVector(v);	
 	return 0;
 }
 
