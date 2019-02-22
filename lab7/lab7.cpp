@@ -11,7 +11,7 @@ int main()
 	std::uniform_int_distribution<int> distribution(1,100);
 	for(int i = 0; i < 15; i++) {
 		int number = distribution(generator);
-		v.push_back(number);
+		v[i] = number;
 	}	
 	
 	return 0;
