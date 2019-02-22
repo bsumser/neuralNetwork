@@ -11,8 +11,12 @@ int main()
 	std::uniform_int_distribution<int> distribution(1,100);
 	for(int i = 0; i < 15; i++) {
 		int number = distribution(generator);
-		v[i] = number;
+		v.push_back(number);
 	}	
-	
 	return 0;
+}
+
+int printVector(const std::vector<int>)
+{
+	return 0;	
 }
