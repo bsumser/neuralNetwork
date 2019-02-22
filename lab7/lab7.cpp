@@ -16,7 +16,10 @@ int main()
 	return 0;
 }
 
-int printVector(const std::vector<int>)
+int printVector(const std::vector<int> &v)
 {
+	std::vector<int>::const_iterator it; 
+	for (it = v.begin(); it != v.end(); ++it)
+			std::cout << "\t" << *it;
 	return 0;	
 }
