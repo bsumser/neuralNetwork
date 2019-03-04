@@ -1,0 +1,10 @@
+Worked on the layout of gui this week. Mostly drew sketches and made paper copies of what I want the gui to be like.
+Deciding what features to add/cut based on time constraints.
+Researching how to implement a neural net that predicts wine scores based on climate data for the vineyard.
+	-Focusing on US wines for this aspect, as climate data for US is easier to get
+	-Examining other implementations of predictive neural nets
+This week looking to
+	-Finish getting the gui ironed out
+	-make sure that gui works fine on linux machines
+	-Implement basic neural net 
+	-Possibly need to research JSON parsing in c++ for weather data
