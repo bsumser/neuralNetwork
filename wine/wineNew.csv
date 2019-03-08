@@ -1,14 +1,14 @@
-Number,Varietal,Region,Classification,Winery,Name,Year,Tag1,Tag2,Tag3,Tag4,Tag5,Pair1,Pair2,Pair3,GR,WA,W&S,WE,D,WS,V,TP,JS,IWC,Price
+Number,Varietal,Region,Classification,Winery,Name,Year,Tag1,Tag2,Tag3,Tag4,Tag5,Tag6,Tag7,Tag8,Pair1,Pair2,Pair3,GR,WA,W&S,WE,D,WS,V,TP,JS,IWC,Price
 
 WHITE WINES: ITALY
-115,Chardonnay,Tuscany,IGT,Castello Banfi,Fontanelle,2014,apple,vanilla,toast,full body,long finish,Barrel fermented and aged,poultry,seafood,,,,,,,,,,,53
-116,Cortese,Piedmont,DOCG,Gavi,Principessa Gavia,2016,Crisp,dry,minerality,pineapple,green apple,seafood,chicken,,,,,,,,,,,,,,,,,,,,,,45
-117,Pinot Grigio,Veneto,IGT,Riff,Progetto Lageder,2016,Semi-dry,citrus,fruit,long finish,,,,,,,,,,,,,,,40
-118,Pinot Grigio,Scicily,IGT,Stemmari,,2016,Rich,floral,magnolia,citrus,appetizers,pastas,soups,seafood,,,,,,,,,,,42
-119,Pinot Grigio,,DOC,Livio Felluga,Friuli-Venezia,2014,Crisp,floral,peach,apple,dry,mineral note,,,,,,,,,,,,,49
-120,Pinot Grigio,Fruili-Venezie,DOC,Terlato,,2016,ripe peach,apricot,pear,crisp,mineral finish,,,,,,,,,,,,,,45
-121,Pinot Grigio,Valdadige,DOC,Barone Fini,Trentino,2016,Bright acidity and crisp minerality with subtle floral notes and citrus with ripe flavors of honeydew and apples.,40
-125,Orvieto Classico, “Campogrande,”    Santa Cristina,2015,Medium richness. Earthy flavors with citrus fruit and a long almond finish.,43
+115,Chardonnay,Tuscany,IGT,Castello Banfi,Fontanelle,2014,apple,vanilla,toast,full body,long finish,Barrel fermented and aged,poultry,seafood,,,,,,,,,,,,,,53
+116,Cortese,Piedmont,DOCG,Gavi,Principessa Gavia,2016,Crisp,dry,minerality,pineapple,green apple,seafood,chicken,,,,,,,,,,,,,,,,,,,,,,,,,45
+117,Pinot Grigio,Veneto,IGT,Riff,Progetto Lageder,2016,Semi-dry,citrus,fruit,long finish,,,,,,,,,,,,,,,,,,40
+118,Pinot Grigio,Scicily,IGT,Stemmari,,2016,Rich,floral,magnolia,citrus,appetizers,pastas,soups,seafood,,,,,,,,,,,,,,42
+119,Pinot Grigio,,DOC,Livio Felluga,Friuli-Venezia,2014,Crisp,floral,peach,apple,dry,mineral note,,,,,,,,,,,,,,,,49
+120,Pinot Grigio,Fruili-Venezie,DOC,Terlato,,2016,ripe peach,apricot,pear,crisp,mineral finish,,,,,,,,,,,,,,,,,45
+121,Pinot Grigio,Valdadige,DOC,Barone Fini,Trentino,2016,acidic,crisp,minerality,floral,citrus,honeydew,apples,,,,,,,,,,,,,,,40
+125,Orvieto Classico,Campogrande,Santa Cristina,2015,Medium richness. Earthy flavors with citrus fruit and a long almond finish.,43
 126,Soave, Anselmi “San Vincenzo,”    Veneto,2016,80% Garganega, 15% Chardonnay. Crisp with scents of minerals, apples, and lemon blossoms. Dry finish on the palate.,45
 127,Soave Classico DOC, Pieropan, Veneto ,2016,Organically grown in volcanic soils producing delicate aromas of almond blossoms and marzipan. A zingy acidity and good depth of fruit flavors last long on the palate.,40
 128,Verdicchio dei Castelli di Jesi,    Lucchetti, Classico DOC, Marche  ,2014,Delicate aromas of flowers, fruit, and fresh cut grass, yet round and soft on the palate.  Expresses great structure and minerality.,43
