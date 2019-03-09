@@ -8,15 +8,14 @@ WHITE WINES: ITALY
 119,Pinot Grigio,,DOC,Livio Felluga,Friuli-Venezia,2014,Crisp,floral,peach,apple,dry,mineral note,,,,,,,,,,,,,,,,49
 120,Pinot Grigio,Fruili-Venezie,DOC,Terlato,,2016,ripe peach,apricot,pear,crisp,mineral finish,,,,,,,,,,,,,,,,,45
 121,Pinot Grigio,Valdadige,DOC,Barone Fini,Trentino,2016,acidic,crisp,minerality,floral,citrus,honeydew,apples,,,,,,,,,,,,,,,40
-125,Orvieto Classico,Campogrande,Santa Cristina,2015,Medium richness. Earthy flavors with citrus fruit and a long almond finish.,43
-126,Soave, Anselmi “San Vincenzo,”    Veneto,2016,80% Garganega, 15% Chardonnay. Crisp with scents of minerals, apples, and lemon blossoms. Dry finish on the palate.,45
-127,Soave Classico DOC, Pieropan, Veneto ,2016,Organically grown in volcanic soils producing delicate aromas of almond blossoms and marzipan. A zingy acidity and good depth of fruit flavors last long on the palate.,40
-128,Verdicchio dei Castelli di Jesi,    Lucchetti, Classico DOC, Marche  ,2014,Delicate aromas of flowers, fruit, and fresh cut grass, yet round and soft on the palate.  Expresses great structure and minerality.,43
-3
-WHITE WINES: PACIFIC NORTHWEST AND CALIFORNIA Our list of Pacific Northwest and California Chardonnays offers an exciting example of how the distinct California, Oregon and Washington regions express the characteristics of this noble varietal. Other selections are hand-picked to complement the Ambrosia menu.
-100,Albariño, Abacela, Umpqua Valley  ,2016,Aromas and flavors of fresh apples, pears, citrus, and a frame that skirts the edge between creamy textures and minerality. Great with seafood, especially clams.,48
-101,Chardonnay, Château Ste. Michelle   “Canoe Ridge” Columbia Valley,2015,Buttery, tropical fruit tones layered with hazelnut and spice.,45
-102,Chardonnay, Domaine Serene,    Evenstad Reserve, Dundee Hills,2015,Citrus blossom, stone fruit, and nutmeg. Elegant and balanced with firm acidity, richness, and length. Voted #2 in the world. WS: 95 pts.,95
+125,Orvieto Classico,Orvieto,,Santa Cristina,,Campogrande,2015,Medium richness,Earthy,citrus,long finish,almond,,,,,,,,,,,,,,,,43
+126,Soave,Veneto,,Anselmi,San Vincenzo,2016,Crisp,mineral,apples,lemons,Dry finish,,,,,,,,,,,,,,,,,45
+127,Soave,Veneto,DOC,Pieropan,,2016,almond blossoms,marzipan,zingy acidity,fruit flavors,long finish,,,,,,,,,,,,,,,,,40
+#######128,Verdicchio dei Castelli di Jesi,    Lucchetti, Classico DOC, Marche  ,2014,Delicate aromas of flowers, fruit, and fresh cut grass, yet round and soft on the palate.  Expresses great structure and minerality.,43
+WHITE WINES: PACIFIC NORTHWEST AND CALIFORNIA
+100,Albariño,Umpqua Valley,,Abacela,,2016,fresh apples,pears,citrus,creamy texture,minerality,,,,seafood,clams,,,,,,,,,,,,48
+101,Chardonnay,Columbia Valley,,Château Ste. Michelle,Canoe Ridge,2015,Buttery,tropical fruit,hazelnut,spice,,,,,,,,,,,,,,,,,,45
+102,Chardonnay,Domaine Serene,    Evenstad Reserve, Dundee Hills,2015,Citrus blossom, stone fruit, and nutmeg. Elegant and balanced with firm acidity, richness, and length. Voted #2 in the world. WS: 95 pts.,95
 104,Chardonnay, Hamacher, Cuvée Forêts   Diverses, Willamette Valley,2013,Aromas of honey, green apple, and mandarin orange with notes of peach, apple, vanilla spice, and graphite.,68
 105,Chardonnay, Hendry Barrel    Fermented, Napa Valley,2015,Rich fruit flavors and excellent structure. Spicy, toasty oak finish.,65
 106,Chardonnay, Jayson by Pahlmeyer,   North Coast,2014,Light gold in color with aromas of ripe oranges and tropical fruits with a hint of spice.,85
@@ -92,7 +91,7 @@ RED WINES: TUSCANY
 340,Brunello di Montalcino DOCG,    Canalicchio,2012,Full-bodied with fruit and raisins across the palate. Complex, yet smooth for its youth.  JS: 92pts, WS: 90pts, WE: 90pts.,80
 341,Brunello di Montalcino DOCG,    Caprili,2012,Aromas of red currants, black cherries, and licorice. A finely balanced wine with an intensity of velvet on the palate and a lengthy, heavy finish. WS: 94pts.,80
 342,Brunello di Montalcino DOCG,  La Fortuna,2013,Dark cherry and berry blends with notes of coffee, white pepper, and wild herbs.,80
-343,Brunello di Montalcino, La Gerla,2013,Classic, traditional Brunello. Cherry, cedar, and spice with firm tannins on the long, perfect finish. WS: 92pts.,85
+343,Sangiovese,Tuscany,Brunello di Montalcino DOCG,La Gerla,2013,old oak,Classic Brunello,Cherry,leather,cedar,spice,firm tannins,long finish,WS: 92,,,,,,,,,,,,,,,85
 344,Brunello di Montalcino DOCG,  II Poggione,2012,Cherry, leather, spices, and underbrush, with soft, integrated tannins and well balanced acidity. WA: 95+, WE/W&S: 93pts, WS: 92pts.,140
 345,Chianti Classico DOCG,  Isole E Olena,2015,Aromas of smoky black fruit and plum complement this medium-bodied wine with fine, delicate tannins. A nice, fruity finish with a twist of chocolate.,60
 346,Chianti Classico DOCG, Petroio,2013,Deep, earthy Sangiovese with fruity notes of black cherries and firm, food-friendly tannins.,45
@@ -107,7 +106,7 @@ RED WINES: TUSCANY
 356,Rosso di Montalcino DOC,  II Poggione,2016,Sweet cherries, raspberries, and pomegranate create a fabulous value from one of the highest regarded Brunello producers. V: 90pts, WS & WE: 91pts.,60
 358,Rosso di Montepulciano DOC,    Poliziano,2016,80% Sangiovese, 20% Merlot. Known as the “baby brother” to Vino Nobile, one of Tuscany’s most illustrious red wines. Notes of cherry, blackberry, and velvety tannins.,50
 361,Tignanello Toscana IGT, Marchesi    Antinori Tenuta Tignanello,2015,The original Super Tuscan, produced only in favorable vintages. Sangiovese with Cabernet and Cabernet Franc from the Chianti Classico zone. A truly great and iconic Tuscan wine. JS: 98pts, WS: 97pts, and WA: 96pts.,165
-362,Vino Nobile di Montepulciano DOCG,   Corte alla Flora,2014,Intense, clear, and fragrant fruit aromas of raspberry with soft and velvety flavors followed by pleasant tannins across the palate.,54
+362,Sangiovese,Vino Nobile di Montepulciano,DOCG,Corte alla Flora,2014,Intense,clear,fruit aromas,raspberry,soft,velvety,pleasant tannins,steak,pizza.54
 10
 THE WINES OF ANGELO GAJA “Like Robert Mondavi in Napa, Angelo Gaja’s name has become intrinsically tied to the vineyards of Barbaresco. Gaja is internationally acknowledged as one of the world’s great winemakers. His uncompromising exploration of quality has raised the bar for everyone. Hundreds of Italian winemakers make much better wine today because of Gaja.” -Matt Kramer, Wine Spectator
 365,Barbaresco DOCG, Gaja,2006,“A sensual nose in its complexity, with aromas of forest fruits, plums, licorice, mineral and coffee. Terrific concentration and silk-like tannins on a long complex finish.” -Robert Parker. WA: 93pts, WE: 93pts,  WS: 91pts and Tanzer: 90pts.,350
