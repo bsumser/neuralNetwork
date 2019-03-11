@@ -1,8 +1,8 @@
 Number,Varietal,Region,Classification,Winery,Name,Year,Tag1,Tag2,Tag3,Tag4,Tag5,Tag6,Tag7,Tag8,Pair1,Pair2,Pair3,GR,WA,W&S,WE,D,WS,V,TP,JS,IWC,Price
 
 WHITE WINES: ITALY
-115,Chardonnay,Tuscany,IGT,Castello Banfi,Fontanelle,2014,apple,vanilla,toast,full body,long finish,Barrel fermented and aged,poultry,seafood,,,,,,,,,,,,,,53
-116,Cortese,Piedmont,DOCG,Gavi,Principessa Gavia,2016,Crisp,dry,minerality,pineapple,green apple,seafood,chicken,,,,,,,,,,,,,,,,,,,,,,,,,45
+115,Chardonnay,Tuscany,IGT,Castello Banfi,,2014,apple,vanilla,toast,full body,long finish,Barrel fermented and aged,,,poultry,seafood,,,,,,,,,,,,53
+116,Cortese,Piedmont,DOCG,Gavi,Principessa Gavia,2016,Crisp,dry,minerality,pineapple,green apple,seafood,chicken,,,,,,,,,,,,,,,45
 117,Pinot Grigio,Veneto,IGT,Riff,Progetto Lageder,2016,Semi-dry,citrus,fruit,long finish,,,,,,,,,,,,,,,,,,40
 118,Pinot Grigio,Scicily,IGT,Stemmari,,2016,Rich,floral,magnolia,citrus,appetizers,pastas,soups,seafood,,,,,,,,,,,,,,42
 119,Pinot Grigio,,DOC,Livio Felluga,Friuli-Venezia,2014,Crisp,floral,peach,apple,dry,mineral note,,,,,,,,,,,,,,,,49
@@ -16,17 +16,17 @@ WHITE WINES: PACIFIC NORTHWEST AND CALIFORNIA
 100,Albariño,Umpqua Valley,,Abacela,,2016,fresh apples,pears,citrus,creamy texture,minerality,,,,seafood,clams,,,,,,,,,,,,48
 101,Chardonnay,Columbia Valley,,Château Ste. Michelle,Canoe Ridge,2015,Buttery,tropical fruit,hazelnut,spice,,,,,,,,,,,,,,,,,,45
 102,Chardonnay,Domaine Serene,    Evenstad Reserve, Dundee Hills,2015,Citrus blossom, stone fruit, and nutmeg. Elegant and balanced with firm acidity, richness, and length. Voted #2 in the world. WS: 95 pts.,95
-104,Chardonnay, Hamacher, Cuvée Forêts   Diverses, Willamette Valley,2013,Aromas of honey, green apple, and mandarin orange with notes of peach, apple, vanilla spice, and graphite.,68
-105,Chardonnay, Hendry Barrel    Fermented, Napa Valley,2015,Rich fruit flavors and excellent structure. Spicy, toasty oak finish.,65
-106,Chardonnay, Jayson by Pahlmeyer,   North Coast,2014,Light gold in color with aromas of ripe oranges and tropical fruits with a hint of spice.,85
-107,Chardonnay, “Jordan,” Russian River   Valley, Sonoma,2014,One of the most well known wineries of the Russian River. Soft, smooth, and long on the palate.,75
-108,Chardonnay, La Crema, Sonoma    Coast,2016,Flavorful with bright ripe fruit and acidity with vanilla and caramel shortbread richness. Mary recommends.,48
-109,Chardonnay, Newton Skyside,    Sonoma County,2016,Rich and balanced with pear, baked apple, peach, tangerine, and hints of vanilla.,50
-110,Chardonnay, Patz & Hall ‘Dutton    Ranch,’ Russian River Valley,2015,Minerality supports a graceful, energetic structure with an oak-inspired finish. Apple and pear, sweet smoke and burnt sugar. WE: 97pts, JS: 93pts, and WA: 90pts.,68
-111,Chardonnay, Rombauer, Carneros  ,2016,Apple, pear, and butter with tropical fruit, hints of grapefruit, lime, and oak.,78
-112,Chardonnay, Sonoma Cutrer Estate,   Russian River Ranches,2016,Lively lemon and lime aromas with peach, green apple, and sweet lychee flavors.,48
-113,Chardonnay, Stag’s Leap, ‘Karia,’    Napa Valley,2015,Fresh and elegant with notes of green apple, honeysuckle, peach, pear, and lemon zest.  JS: 90pts.,53
-114,Chardonnay, Stoller Family Estate,   Dundee Hills,2016,Unoaked with aromas of preserved lemon, passion fruit, and lime. Flavors of lemon curd and citrus fruits are prominent.,50
+104,Chardonnay,Hamacher, Cuvée Forêts   Diverses, Willamette Valley,2013,Aromas of honey, green apple, and mandarin orange with notes of peach, apple, vanilla spice, and graphite.,68
+105,Chardonnay,Hendry Barrel    Fermented, Napa Valley,2015,Rich fruit flavors and excellent structure. Spicy, toasty oak finish.,65
+106,Chardonnay,Jayson by Pahlmeyer,   North Coast,2014,Light gold in color with aromas of ripe oranges and tropical fruits with a hint of spice.,85
+107,Chardonnay,“Jordan,” Russian River   Valley, Sonoma,2014,One of the most well known wineries of the Russian River. Soft, smooth, and long on the palate.,75
+108,Chardonnay,La Crema, Sonoma    Coast,2016,Flavorful with bright ripe fruit and acidity with vanilla and caramel shortbread richness. Mary recommends.,48
+109,Chardonnay,Newton Skyside,    Sonoma County,2016,Rich and balanced with pear, baked apple, peach, tangerine, and hints of vanilla.,50
+110,Chardonnay,Patz & Hall ‘Dutton    Ranch,’ Russian River Valley,2015,Minerality supports a graceful, energetic structure with an oak-inspired finish. Apple and pear, sweet smoke and burnt sugar. WE: 97pts, JS: 93pts, and WA: 90pts.,68
+111,Chardonnay,Rombauer, Carneros  ,2016,Apple, pear, and butter with tropical fruit, hints of grapefruit, lime, and oak.,78
+112,Chardonnay,Sonoma Cutrer Estate,   Russian River Ranches,2016,Lively lemon and lime aromas with peach, green apple, and sweet lychee flavors.,48
+113,Chardonnay,Stag’s Leap, ‘Karia,’    Napa Valley,2015,Fresh and elegant with notes of green apple, honeysuckle, peach, pear, and lemon zest.  JS: 90pts.,53
+114,Chardonnay,Stoller Family Estate,   Dundee Hills,2016,Unoaked with aromas of preserved lemon, passion fruit, and lime. Flavors of lemon curd and citrus fruits are prominent.,50
 WHITE WINES: PACIFIC NORTHWEST AND CALIFORNIA
 4
 122,Fumé Blanc, Ferrari Carano, Sonoma   County,2017,Rich and lively with grapefruit, pear, and tropical fruit. David recommends.,42
