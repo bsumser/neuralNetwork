@@ -29,7 +29,7 @@ Net::Net(const vector<unsigned> &topology)
 		m_layers.push_back(Layer());
 
 	        //inner loop to add neurons to layer, and adds a bias neuron
-			for (unsigned neuronNum = 0; neuronNum <= topology[layerNum];) {
+			for (unsigned neuronNum = 0; neuronNum <= topology[layerNum]; ++neuronNum) {
 				
 				//adresses most recent layer added
 				m_layers.back().push_back(Neuron());
