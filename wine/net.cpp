@@ -1,6 +1,8 @@
 #include <iostream>
 #include <vector>
 
+using namespace std;
+
 class Neuron{};
 
 typedef vector<Neuron> Layer;
@@ -31,7 +33,7 @@ Net::Net(const vector<unsigned> &topology)
 				
 				//adresses most recent layer added
 				m_layers.back()back().push_back(Neuron());
-				std::cout << "added a neuron " << std::endl;
+				cout << "added a neuron " << endl;
 			}
 	}
 }
@@ -50,19 +52,19 @@ int main()
 	Net myNet(topology);
 
 	//vector to hold input values
-	std::vector<double> inputVals;
+	vector<double> inputVals;
 	
 	//function to feed values fowards from one layer to the next
 	myNet.feedForward(inputVals);
 
 	//vector to hold target values
-	std::vector<double> targetVals;
+	vector<double> targetVals;
 	
 	//function to back propagate learning
 	myNet.backProp(targetVals);
 
 	//vector to hold result values
-	std::vector<double> resultVals;
+	vector<double> resultVals;
 	
 	//function that reads outputs and feeds in back in
 	myNet.getResults(resultsVals);
