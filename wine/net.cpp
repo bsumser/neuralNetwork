@@ -29,10 +29,10 @@ Net::Net(const vector<unsigned> &topology)
 		m_layers.push_back(Layer());
 
 	        //inner loop to add neurons to layer, and adds a bias neuron
-			for (unsigned neuronNum = 0; neruonNum <= topology[layerNum];) {
+			for (unsigned neuronNum = 0; neuronNum <= topology[layerNum];) {
 				
 				//adresses most recent layer added
-				m_layers.back()back().push_back(Neuron());
+				m_layers.back().push_back(Neuron());
 				cout << "added a neuron " << endl;
 			}
 	}
@@ -64,7 +64,7 @@ int main()
 	myNet.backProp(targetVals);
 
 	//vector to hold result values
-	vector<double> resultVals;
+	vector<double> resultsVals;
 	
 	//function that reads outputs and feeds in back in
 	myNet.getResults(resultsVals);
