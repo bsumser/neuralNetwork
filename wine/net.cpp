@@ -1,12 +1,56 @@
 #include <iostream>
 #include <vector>
+#include <cstdlib>
+#include <cassert>
 
 using namespace std;
 
-class Neuron{};
+struct Connection
+{
+	//values for weights in neurons and the changes in weights
+	double weight;
+	double deltaWeight;
+
+};
+
+//forward reference so that typedef will function
+class Neuron;
 
 typedef vector<Neuron> Layer;
 
+
+//**************** class Neuron ***************************
+
+class Neuron
+{
+public:
+		Neuron(unsigned numOutputs);
+
+private:
+		double m_outputVal;
+
+		static double randomWeight(void) { return rand() / double(RAND_MAX); }
+		
+		//element in this vector for each neuron of the layer
+		//to the right that it feeds
+		vector<Connection> m_outputWeights;
+
+};
+
+Neuron::Neuron(unsinged numOutputs)
+{
+	for (unsigned c = 0; c < numOutputs; ++c) {
+		m_outputWeights.push_back(Connection());
+		
+		//set weight to random value
+		m_outputWeights.back().weight = randomWeight();
+	}
+
+}
+
+
+
+//**************** class Net ***************************
 class Net 
 {
 public:
@@ -20,6 +64,21 @@ private:
 	vector<Layer> m_layers; //m_layers[layerNum][neuronNum]
 };
 
+Net::feedForward(const vector<double> &inputVals)
+{
+	//check if input values and number of neurons in layer are the same
+	//size() - 1 to account for the bias neuron
+	assert(inputVals.size() == m_layers[0].size() - 1;)
+	
+	//assign the input values to the input neurons
+	for (unsigned i = 0; i < inputVals.size(); ++i) {
+		m_layers[0][i].setOutputVal(inputVals[i]);
+	}
+
+	//forward propagate the values
+	for (unsigned layerNum = 1; layerNum)
+}	
+
 Net::Net(const vector<unsigned> &topology)
 {
 	unsigned numLayers = topology.size();
@@ -28,11 +87,16 @@ Net::Net(const vector<unsigned> &topology)
 	for (unsigned layerNum = 0; layerNum < numLayers; ++layerNum) {
 		m_layers.push_back(Layer());
 
+		//if layer number is output layer, then number of outputs is 0
+		//otherwise number of outputs is whatever is in topology for the
+		//next layer over
+		unsigned numOutputs = layerNum == topology.size() - 1 ? 0 : topology[layerNum + 1];
+
 	        //inner loop to add neurons to layer, and adds a bias neuron
 			for (unsigned neuronNum = 0; neuronNum <= topology[layerNum]; ++neuronNum) {
 				
 				//adresses most recent layer added
-				m_layers.back().push_back(Neuron());
+				m_layers.back().push_back(Neuron(numOutputs));
 				cout << "added a neuron " << endl;
 			}
 	}
