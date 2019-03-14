@@ -269,14 +269,17 @@ int main()
 	vector<unsigned> topology;
 
 	//
-	topology.push_back(12);
+	topology.push_back(13);
 	topology.push_back(3);
 
 	//class constructor, topology is layers and neurons per layer
 	Net myNet(topology);
 	
 	//vector to hold input values
-	vector<double> inputVals = {7.4, 0.7, 0, 1.9, 0.076, 11, 34, 0.9978, 3.51, 0.56, 9.4, 5};
+	vector<double> inputVals = {14.23, 1.71, 2.43, 15.6, 127, 2.8, 3.06, .28, 2.29, 5.64, 1.04,
+									3.92, 1065};
+
+	vector<double> targetVals = {1, 0, 0};
 	
 	//open csv file
 	//TODO FIX THIS READING INPUT FROM FILE
@@ -302,7 +305,7 @@ int main()
 	myNet.feedForward(inputVals);
 
 	//vector to hold target values
-	vector<double> targetVals;
+	//vector<double> targetVals;
 	
 	//function to back propagate learning
 	myNet.backProp(targetVals);
@@ -312,6 +315,10 @@ int main()
 	
 	//function that reads outputs and feeds in back in
 	myNet.getResults(resultsVals);
+	
+	for (size_t i = 0; i < resultsVals.size(); ++i){
+		cout << inputVals[i];
+	}
 
 	//need to add loop for training samples
 }
