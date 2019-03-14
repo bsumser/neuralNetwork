@@ -153,6 +153,7 @@ private:
 	double m_recentAverageError;
 	double m_recentAverageSmoothingFactor;
 };
+
 void Net::getResults(vector<double> &resultVals) const
 {
 	//clear previos reults
@@ -168,7 +169,7 @@ void Net::feedForward(const vector<double> &inputVals)
 {
 	//check if input values and number of neurons in layer are the same
 	//size() - 1 to account for the bias neuron
-	assert(inputVals.size() == m_layers[0].size() - 1);
+	//assert(inputVals.size() == m_layers[0].size() - 1);
 	
 	//assign the input values to the input neurons
 	for (unsigned i = 0; i < inputVals.size(); ++i) {
@@ -268,17 +269,18 @@ int main()
 	vector<unsigned> topology;
 
 	//
-	topology.push_back(13);
+	topology.push_back(12);
 	topology.push_back(3);
 
 	//class constructor, topology is layers and neurons per layer
 	Net myNet(topology);
 	
 	//vector to hold input values
-	vector<double> inputVals;
+	vector<double> inputVals = {7.4, 0.7, 0, 1.9, 0.076, 11, 34, 0.9978, 3.51, 0.56, 9.4, 5};
 	
 	//open csv file
-	ifstream ifs ("/data/winequality-red.csv");
+	//TODO FIX THIS READING INPUT FROM FILE
+	/*ifstream ifs ("/data/winequality-red.csv");
 
 	char dummy;
 	double x;
@@ -294,7 +296,7 @@ int main()
 
 	for (size_t i = 0; i < inputVals.size(); ++i){
 		cout << inputVals[i];
-	}
+	}*/
 	
 	//function to feed values fowards from one layer to the next
 	myNet.feedForward(inputVals);
