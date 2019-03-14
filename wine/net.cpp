@@ -254,11 +254,15 @@ Net::Net(const vector<unsigned> &topology)
 				m_layers.back().push_back(Neuron(numOutputs, neuronNum));
 				cout << "added a neuron " << endl;
 			}
+			//assign bias neuron's value to be constant 1.0
+			m_layers.back().back().setOutputVal(1.0);
 	}
 }
 
 int main()
 {
+	
+	
 	//vector to dictate node and layer setup for network
 	vector<unsigned> topology;
 
@@ -290,4 +294,3 @@ int main()
 
 	//need to add loop for training samples
 }
-
