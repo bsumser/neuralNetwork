@@ -3,6 +3,7 @@
 #include <cstdlib>
 #include <cassert>
 #include <cmath>
+#include <fstream>
 
 using namespace std;
 
@@ -267,15 +268,33 @@ int main()
 	vector<unsigned> topology;
 
 	//
+	topology.push_back(13);
 	topology.push_back(3);
-	topology.push_back(2);
-	topology.push_back(1);
 
 	//class constructor, topology is layers and neurons per layer
 	Net myNet(topology);
-
+	
 	//vector to hold input values
 	vector<double> inputVals;
+	
+	//open csv file
+	ifstream ifs ("/data/winequality-red.csv");
+
+	char dummy;
+	float x;
+	for (int i = 0; i < 1; ++i) {
+		for (int i = 0; i < 11; ++i) {
+			ifs >> x;
+			inputVals.push_back(x);
+			//so digits dont get eaten
+			if (i < (11-1))
+				ifs >> dummy;
+		}
+	}
+
+	for (size_t i = 0; i < inputVals.size(); ++i){
+		cout << inputVals[i];
+	}
 	
 	//function to feed values fowards from one layer to the next
 	myNet.feedForward(inputVals);
