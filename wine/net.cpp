@@ -29,19 +29,70 @@ public:
 		void setOutputVal(double val) { m_outputVal = val; }
 		double getOutputVal(void) const { return m_outputVal; }
 		void feedForward(const Layer &prevLayer);
+		void calcOutputGradients(double targetVal);
+		void calcHiddenGradients(const Layer &nextLayer);
+		void updateInputWeights(Layer &prevLayer);
 
 private:
+		static double eta; //momentum term for updating weights in training 0-1
+		static double alpha; //learning rate, controls how much weights are adjusted after each update 0-n
 		double m_outputVal;
 		static double transferFunction(double x);
 		static double transferFunctionDerivative(double x);
 		static double randomWeight(void) { return rand() / double(RAND_MAX); }
-		
+		double sumDOW(Layer &nextLayer) const;	
 		//element in this vector for each neuron of the layer
 		//to the right that it feeds
 		vector<Connection> m_outputWeights;
 		unsigned m_myIndex;
+		double m_gradient;
 
 };
+
+double Neuron::eta = 0.15; //net learning rate 0-1
+double Neuron::alpha = 0.5; //momentum, multiplier of previous delta weight, 0-n
+
+void Neuron::updateInputWeights(Layer &prevLayer)
+{
+	//update weights in the Connection Struct
+	//of the neurons in previous layer
+	for (unsigned n = 0; n < prevLayer.size(); ++n)
+	{
+		Neuron &neuron = prevLayer[n];
+		double oldDeltaWeight = neuron.m_outputWeights[m_myIndex].deltaWeight;
+
+		double newDeltaWeight = eta * neuron_getOutputVal() * m_gradient 
+				+ alpha * oldDeltaWeight;
+
+		neuron.m_outputWeights[m_myIndex].deltaWeight = newDeltaWeight;
+		neuron.m_outputWeights[m_myIndex].weight += newDeltaWeight;
+	}
+}
+
+double Neuron::sumDOW(const Layer &nextLayer) const
+{
+	double sum = 0.0;
+
+	//sum up all the errors of the nodes it feeds
+	for (unsigned n = 0; n < nextLayer.size() - 1; ++n) {
+		sum += m_outputWeights[n].weight * nextLayer[n].m_gradient;
+	}
+	return sum;
+}
+
+void Neuron::calcHiddenGradients(const Layer &nextLayer)
+{
+	double dow = sumDOW(nextLayer);
+	m_gradient = dow * Neuron::transferFunctionDerivative(m_outputVal);
+}
+
+void Neuron::calcOutputGradients(double targetVal)
+{
+	//take difference between target value, and actaul value
+	//and multiply difference by derivative of its output value
+	double delta = targetVal - m_outputVal;
+	m_gradient = delta * Neuron::transferFunctionDerivative(m_outputVal);
+}
 
 double Neuron::transferFunction(double x)
 {
@@ -91,14 +142,27 @@ class Net
 public:
 	Net(const vector<unsigned> &topology);
 	void feedForward(const vector<double> &inputVals);
-	void backProp(const vector<double> &targetVals) {};
-	void getResults(vector<double> &resultVals) const {};
+	void backProp(const vector<double> &targetVals);
+	void getResults(vector<double> &resultVals) const; 
 
 
 private:
 	vector<Layer> m_layers; //m_layers[layerNum][neuronNum]
+	double m_error;
+	double m_recentAverageError;
+	double m_recentAverageSmoothingFactor;
 };
+void Net::getResults(vector<double> &resultVals) const
+{
+	//clear previos reults
+	resultVals.clear();
 
+	//loop through every output neuron, and move
+	//output value to results vals
+	for (unsigned n = 0; n < m_layers.back().size() - 1; ++n) {
+		resultVals.push_back(m_layers.back()[n].getOutputVal());
+	}
+}
 void Net::feedForward(const vector<double> &inputVals)
 {
 	//check if input values and number of neurons in layer are the same
@@ -118,6 +182,57 @@ void Net::feedForward(const vector<double> &inputVals)
 		}
 	}
 }	
+
+void Net::backProp(const vector<double> &targetVals)
+{
+	//needs to calculate net error (root mean square error of 
+	//output neuron errors
+	Layer &outputLayer = m_layers.back();
+	m_error = 0.0;
+
+	//loop through neurons in output layer(not including bias), 
+	//figure out error(delta) between actual value and the expected value
+	for (unsigned n = 0; n < outputLayer.size() - 1; ++n) {
+		double delta = targetVals[n] - outputLayer[n].getOutputVal();
+		m_error += delta * delta;
+	}
+	m_error /= outputLayer.size() - 1 ; //get the average error squared
+	m_error = sqrt(m_error); //this is the root mean square error(RMS)
+
+	//recent average measurement for how well error is
+	m_recentAverageError = (m_recentAverageError * m_recentAverageSmoothingFactor +
+					m_error) / (m_recentAverageSmoothingFactor + 1.0);
+	
+	//calculate output layer gradients
+	for (unsigned n = 0; n < outputLayer.size() - 1; ++n) {
+		outputLayer[n].calcOutputGradients(targetVals[n]);
+	}
+	
+	//calculate gradients on hidden layers, starting at the rightmost layer
+	for (unsigned layerNum = m_layers.size() - 2; layerNum > 0; --layerNum) {
+		Layer &hiddenLayer = m_layers[layerNum];
+		Layer &nextLayer = m_layers[layerNum + 1];
+
+		for (unsigned n = 0; n < hiddenLayer.size(); ++n) {
+			hiddenLayer[n].calcHiddenGradients(nextLayer);
+		}
+
+	}
+	
+	//for all layers from outputs to the first hidden layer,
+	//you need to update the connection weights
+	
+	for (unsigned layerNum = m_layers.size() - 1; layerNum > 0; --layerNum) {
+		Layer &layer = m_layers[layerNum];
+		Layer &prevLayer = m_layers[layerNum - 1];
+		
+		//for each neuron,index and update index weights based on previous layer
+		for (unsigned n = 0; n < layer.size() - 1; ++n) {
+			layer[n].updateInputWeights(prevLayer);
+		}
+
+	}
+}
 
 Net::Net(const vector<unsigned> &topology)
 {
