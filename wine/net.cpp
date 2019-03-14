@@ -40,7 +40,7 @@ private:
 		static double transferFunction(double x);
 		static double transferFunctionDerivative(double x);
 		static double randomWeight(void) { return rand() / double(RAND_MAX); }
-		double sumDOW(Layer &nextLayer) const;	
+		double sumDOW(const Layer &nextLayer) const;	
 		//element in this vector for each neuron of the layer
 		//to the right that it feeds
 		vector<Connection> m_outputWeights;
@@ -61,7 +61,7 @@ void Neuron::updateInputWeights(Layer &prevLayer)
 		Neuron &neuron = prevLayer[n];
 		double oldDeltaWeight = neuron.m_outputWeights[m_myIndex].deltaWeight;
 
-		double newDeltaWeight = eta * neuron_getOutputVal() * m_gradient 
+		double newDeltaWeight = eta * neuron.getOutputVal() * m_gradient 
 				+ alpha * oldDeltaWeight;
 
 		neuron.m_outputWeights[m_myIndex].deltaWeight = newDeltaWeight;
