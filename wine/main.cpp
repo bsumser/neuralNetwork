@@ -42,7 +42,7 @@ void returnPrice(sqlite3* DB)
 void returnReds(sqlite3* DB)
 {
 	std::string data("CALLBACK FUNCTION"); 
-	std::string sql("SELECT * FROM WINE Varietal = 'Pinot Noir'");	
+	std::string sql("SELECT * FROM WINE WHERE Varietal = 'Pinot Noir'");	
 	
 	int rc = sqlite3_exec(DB, sql.c_str(), callback, (void*)data.c_str(), NULL);
 
@@ -69,7 +69,6 @@ int main(int argc, char **argv)
 	sqlite3* DB;
 	int exit = 0;
 	exit = sqlite3_open("wine.db::memory:", &DB);
-	std::cout << "Welcome to wine database, please select your search parameters" << std::endl;
    	
 	returnWhites(DB);
 	returnReds(DB);
