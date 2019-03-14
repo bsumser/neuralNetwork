@@ -2,6 +2,7 @@
 #include <vector>
 #include <cstdlib>
 #include <cassert>
+#include <cmath>
 
 using namespace std;
 
@@ -24,20 +25,52 @@ typedef vector<Neuron> Layer;
 class Neuron
 {
 public:
-		Neuron(unsigned numOutputs);
+		Neuron(unsigned numOutputs, unsigned myIndex);
+		void setOutputVal(double val) { m_outputVal = val; }
+		double getOutputVal(void) const { return m_outputVal; }
+		void feedForward(const Layer &prevLayer);
 
 private:
 		double m_outputVal;
-
+		static double transferFunction(double x);
+		static double transferFunctionDerivative(double x);
 		static double randomWeight(void) { return rand() / double(RAND_MAX); }
 		
 		//element in this vector for each neuron of the layer
 		//to the right that it feeds
 		vector<Connection> m_outputWeights;
+		unsigned m_myIndex;
 
 };
 
-Neuron::Neuron(unsinged numOutputs)
+Neuron::double transferFunction(double x)
+{
+	//tanh - output range [-1.0...1.0]
+	return tanh(x);
+}
+
+Neuron::double transferFunctionDerivative(double x)
+{
+	//tanh derivative 
+	return 1.0 - x * x;
+}
+
+Neuron::feedForward(const Layer &prevLayer)
+{
+	//variable to hold inputs
+	double sum = 0.0;
+
+	//sum all the previous layers inputs
+	//include bias node from previous layer
+	for (unsigned n = 0; n < prevLayer.size(); ++n) {
+		sum += prevLayer[n].getOutputVal() *
+				prevLayer[n].m_outputWeights[m_myIndex].weight;
+	}
+
+	m_outputVal = Neuron::transferFunction(sum);
+}
+
+Neuron::Neuron(unsinged numOutputs, unsigned myIndex)
 {
 	for (unsigned c = 0; c < numOutputs; ++c) {
 		m_outputWeights.push_back(Connection());
@@ -45,6 +78,8 @@ Neuron::Neuron(unsinged numOutputs)
 		//set weight to random value
 		m_outputWeights.back().weight = randomWeight();
 	}
+
+	m_myIndex = myIndex;
 
 }
 
@@ -76,7 +111,12 @@ Net::feedForward(const vector<double> &inputVals)
 	}
 
 	//forward propagate the values
-	for (unsigned layerNum = 1; layerNum)
+	for (unsigned layerNum = 1; layerNum < m_layers.size(); ++layerNum) {
+		Layer &prevLayer = m_layers[layerNum - 1];
+		for (unsigned n = 0; n < m_layers[layerNum].size() - 1; ++n) {
+			m_layers[layerNum][n].feedForward(prevLayer);
+		}
+	}
 }	
 
 Net::Net(const vector<unsigned> &topology)
@@ -96,7 +136,7 @@ Net::Net(const vector<unsigned> &topology)
 			for (unsigned neuronNum = 0; neuronNum <= topology[layerNum]; ++neuronNum) {
 				
 				//adresses most recent layer added
-				m_layers.back().push_back(Neuron(numOutputs));
+				m_layers.back().push_back(Neuron(numOutputs, neuronNum));
 				cout << "added a neuron " << endl;
 			}
 	}
