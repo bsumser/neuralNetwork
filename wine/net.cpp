@@ -43,19 +43,19 @@ private:
 
 };
 
-Neuron::double transferFunction(double x)
+double Neuron::transferFunction(double x)
 {
 	//tanh - output range [-1.0...1.0]
 	return tanh(x);
 }
 
-Neuron::double transferFunctionDerivative(double x)
+double Neuron::transferFunctionDerivative(double x)
 {
 	//tanh derivative 
 	return 1.0 - x * x;
 }
 
-Neuron::feedForward(const Layer &prevLayer)
+void Neuron::feedForward(const Layer &prevLayer)
 {
 	//variable to hold inputs
 	double sum = 0.0;
@@ -70,7 +70,7 @@ Neuron::feedForward(const Layer &prevLayer)
 	m_outputVal = Neuron::transferFunction(sum);
 }
 
-Neuron::Neuron(unsinged numOutputs, unsigned myIndex)
+Neuron::Neuron(unsigned numOutputs, unsigned myIndex)
 {
 	for (unsigned c = 0; c < numOutputs; ++c) {
 		m_outputWeights.push_back(Connection());
@@ -90,7 +90,7 @@ class Net
 {
 public:
 	Net(const vector<unsigned> &topology);
-	void feedForward(const vector<double> &inputVals) {};
+	void feedForward(const vector<double> &inputVals);
 	void backProp(const vector<double> &targetVals) {};
 	void getResults(vector<double> &resultVals) const {};
 
@@ -99,11 +99,11 @@ private:
 	vector<Layer> m_layers; //m_layers[layerNum][neuronNum]
 };
 
-Net::feedForward(const vector<double> &inputVals)
+void Net::feedForward(const vector<double> &inputVals)
 {
 	//check if input values and number of neurons in layer are the same
 	//size() - 1 to account for the bias neuron
-	assert(inputVals.size() == m_layers[0].size() - 1;)
+	assert(inputVals.size() == m_layers[0].size() - 1);
 	
 	//assign the input values to the input neurons
 	for (unsigned i = 0; i < inputVals.size(); ++i) {
