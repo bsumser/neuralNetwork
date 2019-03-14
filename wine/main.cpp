@@ -68,12 +68,8 @@ int main(int argc, char **argv)
 {
 	sqlite3* DB;
 	int exit = 0;
-	exit = sqlite3_open("wine.db", &DB);
+	exit = sqlite3_open("wine.db::memory:", &DB);
 	std::cout << "Welcome to wine database, please select your search parameters" << std::endl;
-	std::cout << "(1) Search by color" << std::endl;
-	std::cout << "(2) Search by varietal" << std::endl;
-	std::cout << "(3) Search by price " << std::endl;
-	std::cout << "(4) Search by region" << std::endl;
    	
 	returnWhites(DB);
 	returnReds(DB);
