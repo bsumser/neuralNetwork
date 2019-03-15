@@ -1,5 +1,13 @@
 #ifndef NEURON_H
 #define NEURON_H
+#include <vector>
+#include <stdlib.h>
+#include "Connection.h"
+
+class Neuron;
+
+typedef std::vector<Neuron> Layer;
+
 
 //**************** class Neuron ***************************
 
@@ -25,7 +33,7 @@ private:
 		double sumDOW(const Layer &nextLayer) const;	
 		//element in this vector for each neuron of the layer
 		//to the right that it feeds
-		vector<Connection> m_outputWeights;
+		std::vector<Connection> m_outputWeights;
 		unsigned m_myIndex;
 		double m_gradient;
 

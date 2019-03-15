@@ -1,4 +1,14 @@
 #include "Net.h"
+#include <iostream>
+#include <vector>
+#include <cstdlib>
+#include <cassert>
+#include <cmath>
+#include <fstream>
+#include <string>
+#include <iomanip>
+
+using namespace std;
 
 void Net::getResults(vector<double> &resultVals) const
 {

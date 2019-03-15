@@ -6,22 +6,12 @@
 #include <fstream>
 #include <string>
 #include <iomanip>
+#include "Net.h"
+#include "Neuron.h"
 
 using namespace std;
 
-struct Connection
-{
-	//values for weights in neurons and the changes in weights
-	double weight;
-	double deltaWeight;
-
-};
-
 //forward reference so that typedef will function
-class Neuron;
-
-typedef vector<Neuron> Layer;
-
 
 int main()
 {
