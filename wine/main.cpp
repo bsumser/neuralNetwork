@@ -37,7 +37,7 @@ int main()
 
 	char dummy;
 	double x;
-	for (int i = 0; i < 4; ++i) {
+	for (int i = 0; i < 178; ++i) {
 		for (int j = 0; j < 14; ++j) {
 			data >> x;
 			if (j == 0) {
