@@ -25,7 +25,7 @@ void Net::feedForward(const vector<double> &inputVals)
 {
 	//check if input values and number of neurons in layer are the same
 	//size() - 1 to account for the bias neuron
-	//assert(inputVals.size() == m_layers[0].size() - 1);
+	assert(inputVals.size() == m_layers[0].size() - 1);
 	
 	//assign the input values to the input neurons
 	for (unsigned i = 0; i < inputVals.size(); ++i) {
