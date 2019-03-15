@@ -270,25 +270,26 @@ int main()
 
 	//
 	topology.push_back(13);
+	topology.push_back(6);
 	topology.push_back(3);
 
 	//class constructor, topology is layers and neurons per layer
 	Net myNet(topology);
 	
 	//vector to hold input values
-	vector<double> inputVals = {14.23, 1.71, 2.43, 15.6, 127, 2.8, 3.06, .28, 2.29, 5.64, 1.04,
-									3.92, 1065};
+	vector<double> inputVals; //= {14.23, 1.71, 2.43, 15.6, 127, 2.8, 3.06, .28, 2.29, 5.64, 1.04,
+									//3.92, 1065};
 
 	vector<double> targetVals = {1, 0, 0};
 	
 	//open csv file
 	//TODO FIX THIS READING INPUT FROM FILE
-	/*ifstream ifs ("/data/winequality-red.csv");
+	ifstream ifs ("/data/winequality-red.csv");
 
 	char dummy;
-	double x;
+	double x = 0;
 	for (int i = 0; i < 1; ++i) {
-		for (int i = 0; i < 11; ++i) {
+		for (int i = 0; i < 13; ++i) {
 			ifs >> x;
 			inputVals.push_back(x);
 			//so digits dont get eaten
@@ -299,7 +300,7 @@ int main()
 
 	for (size_t i = 0; i < inputVals.size(); ++i){
 		cout << inputVals[i];
-	}*/
+	}
 	
 	//function to feed values fowards from one layer to the next
 	myNet.feedForward(inputVals);
