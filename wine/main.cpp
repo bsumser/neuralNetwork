@@ -32,16 +32,15 @@ int main()
 	//vector for target values
 	vector<double> targetVals;
 
-	//open csv file
-	//TODO FIX THIS READING INPUT FROM FILE
+	//open data file
 	ifstream data ("wine.data");
 
 	char dummy;
 	double x;
-	for (int i = 0; i < 100; ++i) {
-		for (int i = 0; i < 14; ++i) {
+	for (int i = 0; i < 4; ++i) {
+		for (int j = 0; j < 14; ++j) {
 			data >> x;
-			if (i == 0) {
+			if (j == 0) {
 				if (x == 1)
 					targetVals = {1, 0, 0};
 				if (x == 2)
@@ -49,28 +48,12 @@ int main()
 				if (x == 3)
 					targetVals = {0, 0, 1};
 			}
-			else {
-				//scale the training data first
-				if(i == 1) {x = (x - 2) / (14.83 - 11.03);}
-				if(i == 2) {x = (x - 2) / (5.8 - 0.74);}
-				if(i == 3) {x = (x - 2) / (3.23 - 1.36);}
-				if(i == 4) {x = (x - 2) / (30 - 10.6);}
-				if(i == 5) {x = (x - 2) / (162 - 170);}
-				if(i == 6) {x = (x - 2) / (3.88 - 0.98);}
-				if(i == 7) {x = (x - 2) / (5.08 - 0.34);}
-				if(i == 8) {x = (x - 2) / (0.66 - 0.13);}
-				if(i == 9) {x = (x - 2) / (3.58 - 0.41);}
-				if(i == 10) {x = (x - 2) / (13 - 1.28);}
-				if(i == 11) {x = (x - 2) / (1.71 - 0.48);}
-				if(i == 12) {x = (x - 2) / (4 - 1.27);}
-				if(i == 13) {x = (x - 2) / (1680 - 278);}
+			else
 				inputVals.push_back(x);
-			}
 
-			if (i < (14 - 1))
+			if (j < (14 - 1))
 				data >> dummy;
 		}
-
 		
 		cout << "input values are: ";
 		for (size_t i = 0; i < inputVals.size(); ++i){
