@@ -290,7 +290,7 @@ int main()
 
 	char dummy;
 	double x;
-	for (int i = 0; i < 5; ++i) {
+	for (int i = 0; i < 100; ++i) {
 		for (int i = 0; i < 14; ++i) {
 			data >> x;
 			if (i == 0) {
