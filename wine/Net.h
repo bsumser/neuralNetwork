@@ -28,9 +28,16 @@ public:
 
 
 private:
+	//vector made up of each layer, vector of vectors
 	std::vector<Layer> m_layers; //m_layers[layerNum][neuronNum]
+	
+	//used to compute error
 	double m_error;
+	
+	//used to track recent errors in iteration
 	double m_recentAverageError;
+	
+	//
 	double m_recentAverageSmoothingFactor;
 };
 #endif

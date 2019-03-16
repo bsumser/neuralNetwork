@@ -27,9 +27,13 @@ private:
 		static double alpha; //learning rate, controls how much weights 
 							//are adjusted after each update 0-n
 		double m_outputVal;
-		static double transferFunction(double x);
+		static double transferFunction(double x); //hyperbolic tan function
 		static double transferFunctionDerivative(double x);
+		
+		//to init neuron with random weight
 		static double randomWeight(void) { return rand() / double(RAND_MAX); }
+		
+		//helper to computer error 
 		double sumDOW(const Layer &nextLayer) const;	
 		//element in this vector for each neuron of the layer
 		//to the right that it feeds
