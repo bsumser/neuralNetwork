@@ -41,9 +41,9 @@ int main()
 	int userEpoch;
 	int userLine;
 	do {
-		cout << "Please enter amount of epochs" << endl;
+		cout << "Please enter amount of epochs, 1 to infinity" << endl;
 		cin >> userEpoch;
-		cout << "Please enter amount of lines" << endl;
+		cout << "Please enter amount of lines 1 - 178" << endl;
 		cin >> userLine;
 		for (int epoch = 0; epoch < userEpoch; ++epoch) {
 			//open data file
