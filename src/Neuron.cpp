@@ -1,4 +1,4 @@
-#include "Neuron.h"
+#include "../include/Neuron.h"
 #include <cmath>
 
 double Neuron::eta = 0.05; //net learning rate 0-1

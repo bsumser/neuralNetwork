@@ -6,8 +6,8 @@
 #include <fstream>
 #include <string>
 #include <iomanip>
-#include "Net.h"
-#include "Neuron.h"
+#include "../include/Net.h"
+#include "../include/Neuron.h"
 
 using namespace std;
 
@@ -47,7 +47,7 @@ int main()
 		cin >> userLine;
 		for (int epoch = 0; epoch < userEpoch; ++epoch) {
 			//open data file
-			ifstream data ("wine.data");
+			ifstream data ("/data/wine.data");
 			for (int i = 0; i < userLine; ++i) {
 				for (int j = 0; j < 14; ++j) {
 					data >> x;

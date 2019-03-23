@@ -1,4 +1,4 @@
-#include "Net.h"
+#include "../include/Net.h"
 #include <iostream>
 #include <vector>
 #include <cstdlib>
