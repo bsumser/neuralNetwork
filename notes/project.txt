@@ -1,0 +1,17 @@
+** Project Name: Wine List App
+
+**Project Repository: wine folder on my uoregon-cis330 repo
+
+** Team Members: Brett Sumser
+
+** Description:
+	Implement a wine application that lets users browse a wine list and filter by criteria	
+**Implementation Approach:
+	Will be using C++ for backend work.
+	SQLite3 will be used to manage a database of wines and their characteristics
+	Implement a gui frontend, and a command line interface for testing user input
+	Weather data for wine regions
+	Maybe include machine learning/neural net for reccomendations
+
+**Risk Management Plan:
+	Plan is to work for at least 2 hours every day. 
