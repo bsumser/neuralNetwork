@@ -47,7 +47,7 @@ int main()
 		cin >> userLine;
 		for (int epoch = 0; epoch < userEpoch; ++epoch) {
 			//open data file
-			ifstream data ("/data/wine.data");
+			ifstream data ("wine.data");
 			for (int i = 0; i < userLine; ++i) {
 				for (int j = 0; j < 14; ++j) {
 					data >> x;
