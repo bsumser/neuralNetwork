@@ -97,6 +97,12 @@ int main()
 					cout << normalVals[i] << " ";
 				}
 				cout << endl;
+				
+				for (size_t i = 0; i < targetVals.size(); ++i){
+					if (targetVals[i] == 1)
+						cout << "Expected wine is wine number " << i + 1;
+				}
+				cout << endl;
 
 				//function to feed values fowards from one layer to the next
 				myNet.feedForward(normalVals);
@@ -115,6 +121,17 @@ int main()
 					cout << resultsVals[i] << " ";
 				}
 				cout << endl;
+					
+				//TODO 86 this global var
+				int big = resultsVals[0];
+				int bigIndex = 0;
+				for (size_t i = 0; i < resultsVals.size(); ++i){
+					if (resultsVals[i] > big) {
+						big = resultsVals[i];
+						bigIndex = i;
+					}
+				}
+				cout << "Wine identified as wine " << bigIndex + 1 << endl;
 				
 
 				//need to add loop for training samples
