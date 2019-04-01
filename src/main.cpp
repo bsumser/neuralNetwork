@@ -123,7 +123,7 @@ int main()
 				cout << endl;
 					
 				//TODO 86 this global var
-				int big = resultsVals[0];
+				float big = resultsVals[0];
 				int bigIndex = 0;
 				for (size_t i = 0; i < resultsVals.size(); ++i){
 					if (resultsVals[i] > big) {
