@@ -3,7 +3,7 @@
 - [Description](#description)
 - [Citation](#citation)
 
-	## Description
+## Description
 ------------------Wine Neural Network----------------------------
 
 This program is a Neural Net to determine which of 3 possible cultivars of wine a set
