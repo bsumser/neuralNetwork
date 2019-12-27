@@ -44,7 +44,7 @@ The data set was found in the UCI machine learning database.
 
 
 ## Citation
-------------------Citation for data----------------------------
+
 Original Owners:
 
 Forina, M. et al, PARVUS -
@@ -55,5 +55,3 @@ Institute of Pharmaceutical and Food Analysis and Technologies, Via Brigata Sale
 Donor:
 
 Stefan Aeberhard, email: stefan '@' coral.cs.jcu.edu.au
-
-------------------End citation--------------------------------
