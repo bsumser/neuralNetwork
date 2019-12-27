@@ -11,7 +11,8 @@
 
 using namespace std;
 
-int main()
+//TODO add parameters for file input
+int main(int argc, char *argv[])
 {
 	//vector to dictate node and layer setup for network
 	vector<unsigned> topology;
@@ -45,7 +46,7 @@ int main()
 		cin >> userLine;
 		for (int epoch = 0; epoch < userEpoch; ++epoch) {
 			//open data file
-			ifstream data ("wine.data");
+			ifstream data (argv[1]);
 			for (int i = 0; i < userLine; ++i) {
 				for (int j = 0; j < 14; ++j) {
 					data >> x;
