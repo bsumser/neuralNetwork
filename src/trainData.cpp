@@ -6,6 +6,8 @@ TrainData::TrainData(char *fileArg)
 {
 	std::cout << "setting the input file" << std::endl;
 	std::ifstream inputFile(fileArg);
+	//TODO get the number of data items in a line
+	//TODO determine lines in the file
 }
 void TrainData::getRow()
 {
