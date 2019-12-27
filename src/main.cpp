@@ -11,8 +11,6 @@
 
 using namespace std;
 
-//forward reference so that typedef will function
-
 int main()
 {
 	//vector to dictate node and layer setup for network
