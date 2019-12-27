@@ -1,3 +1,11 @@
+## Table of Contents (Optional)
+
+- [Description](#description)
+- [Citation](#citation)
+
+
+
+	## Description
 ------------------Wine Neural Network----------------------------
 
 This program is a Neural Net to determine which of 3 possible cultivars of wine a set
@@ -37,6 +45,7 @@ Each neuron applies a hyperbolic tan function to the normalized data.
 The data set was found in the UCI machine learning database.
 
 
+## Citation
 ------------------Citation for data----------------------------
 Original Owners:
 
