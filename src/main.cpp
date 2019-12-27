@@ -59,6 +59,7 @@ int main()
 						if (x == 3)
 							targetVals = {0, 0, 1};
 					}
+					//TODO fix this hard coded bullshit
 					else {
 						if(j == 1) { normalVals.push_back((x - 13.00062) / 0.807278);}
 						if(j == 2) { normalVals.push_back((x - 2.336348) / 1.110888);}
@@ -132,7 +133,6 @@ int main()
 					}
 				}
 				cout << "Wine identified as wine " << bigIndex + 1 << endl;
-				
 
 				//need to add loop for training samples
 				inputVals.clear();
