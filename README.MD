@@ -1,9 +1,10 @@
-## Table of Contents (Optional)
+---
+## Table of Contents
 
 - [Description](#description)
 - [Citation](#citation)
 
-
+---
 
 	## Description
 ------------------Wine Neural Network----------------------------
