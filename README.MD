@@ -5,7 +5,6 @@
 - [Installation](#installation)
 
 ## Description
-------------------Wine Neural Network----------------------------
 
 This program is a Neural Net to determine which of 3 possible cultivars of wine a set
 of data is based on these characteristics:
