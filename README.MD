@@ -18,10 +18,10 @@ of data is based on these characteristics:
 7) Flavanoids
 8) Nonflavanoid phenols
 9) Proanthocyanins
-10)Color intensity
-11)Hue
-12)OD280/OD315 of diluted wines
-13)Proline 
+10) Color intensity
+11) Hue
+12) OD280/OD315 of diluted wines
+13) Proline 
 
 The program compiles with make or make clean. You can enter the amount of epochs to
 loop through the input file, and the amount of lines (1-178) to loop through.
