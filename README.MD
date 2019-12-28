@@ -2,6 +2,7 @@
 
 - [Description](#description)
 - [Citation](#citation)
+- [Installation](#installation)
 
 ## Description
 ------------------Wine Neural Network----------------------------
@@ -42,6 +43,11 @@ Each neuron applies a hyperbolic tan function to the normalized data.
 
 The data set was found in the UCI machine learning database.
 
+## Installation
+This program includes a makefile, and can be compiled with the command make. To run, use 
+"./main data/wine.csv".
+
+Remove object files and executables with make clean.
 
 ## Citation
 
