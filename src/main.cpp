@@ -14,9 +14,10 @@ using namespace std;
 
 int main(int argc, char *argv[])
 {
-	if (argc > 2) {
+  if (argc > 2) {
 		cout << "flag received" << endl;
 		TrainData trainData(argv[2]);
+    //test comment for emacs check
 	}
 
 	else {
@@ -30,14 +31,14 @@ int main(int argc, char *argv[])
 
 		//class constructor, topology is layers and neurons per layer
 		Net myNet(topology);
-		
+
 		//vector to hold input values
-		vector<double> inputVals; 
-		
+		vector<double> inputVals;
+
 		//vector for target values
 		vector<double> targetVals;
 
-		//array to calc mean and 
+		//array to calc mean and
 		vector<double> normalVals;
 
 
@@ -85,25 +86,25 @@ int main(int argc, char *argv[])
 						if (j < (14 - 1))
 							data >> dummy;
 					}
-					
+
 					cout << "input values are: ";
 					for (size_t i = 0; i < inputVals.size(); ++i){
 						cout  << setprecision(4) << inputVals[i] << " ";
 					}
 					cout << endl;
-				
-					cout << "target values are: ";	
+
+					cout << "target values are: ";
 					for (size_t i = 0; i < targetVals.size(); ++i){
 						cout << targetVals[i] << " ";
 					}
 					cout << endl;
-					
+
 					cout << "Normalized data is: ";
 					for (size_t i = 0; i < normalVals.size(); ++i) {
 						cout << normalVals[i] << " ";
 					}
-					cout << endl;
-					
+          cout << endl;
+
 					for (size_t i = 0; i < targetVals.size(); ++i){
 						if (targetVals[i] == 1)
 							cout << "Expected wine is wine number " << i + 1;
@@ -118,16 +119,16 @@ int main(int argc, char *argv[])
 
 					//vector to hold result values
 					vector<double> resultsVals;
-					
+
 					//function that reads outputs and feeds in back in
 					myNet.getResults(resultsVals);
-					
-					cout << "Reulting Values are: ";	
+
+					cout << "Reulting Values are: ";
 					for (size_t i = 0; i < resultsVals.size(); ++i){
 						cout << resultsVals[i] << " ";
 					}
 					cout << endl;
-						
+
 					//TODO 86 this global var
 					float big = resultsVals[0];
 					int bigIndex = 0;
