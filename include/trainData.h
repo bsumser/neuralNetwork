@@ -1,6 +1,7 @@
 #ifndef TRAINDATA_H
 #define TRAINDATA_H
 #include <vector>
+#include <fstream>
 
 class TrainData
 {
@@ -20,6 +21,7 @@ private:
 	int row;
 	int col;
 	char *fileArg;
+	ifstream infile;
 	std::vector<double> inputVals;
 	std::vector<double> normalVals;
 	std::vector<double> targetVals;
