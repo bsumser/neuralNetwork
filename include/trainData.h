@@ -21,7 +21,7 @@ private:
 	int row;
 	int col;
 	char *fileArg;
-	ifstream infile;
+	std::ifstream infile;
 	std::vector<double> inputVals;
 	std::vector<double> normalVals;
 	std::vector<double> targetVals;
