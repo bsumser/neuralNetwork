@@ -14,10 +14,13 @@ using namespace std;
 
 int main(int argc, char *argv[])
 {
-  if (argc > 2) {
-		cout << "flag received" << endl;
+	bool verbosity = 0;
+	if (argc > 2) {
+		cout << "more than 1 args registered, args are" <<  " " << 
+		argv[1]  << " " << argv[2] << endl;
+		verbosity = 1;
+		cout << "setting verbosity from 0 to " << verbosity << endl;
 		TrainData trainData(argv[2]);
-    //test comment for emacs check
 	}
 
 	else {
@@ -103,7 +106,7 @@ int main(int argc, char *argv[])
 					for (size_t i = 0; i < normalVals.size(); ++i) {
 						cout << normalVals[i] << " ";
 					}
-          cout << endl;
+					cout << endl;
 
 					for (size_t i = 0; i < targetVals.size(); ++i){
 						if (targetVals[i] == 1)
