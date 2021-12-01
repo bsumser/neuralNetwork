@@ -60,3 +60,5 @@ Institute of Pharmaceutical and Food Analysis and Technologies, Via Brigata Sale
 Donor:
 
 Stefan Aeberhard, email: stefan '@' coral.cs.jcu.edu.au
+
+![Your Repository's Stats](https://github-readme-stats.vercel.app/api?username=Your_GitHub_Username&show_icons=true)
