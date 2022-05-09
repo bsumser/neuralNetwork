@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
 	}
 	
 	//TODO: work on the training data class
-	//TrainData trainData(argv[2]);
+	TrainData trainData(argv[1]);
 
 	if (0 == 1) {
 		//vector to dictate node and layer setup for network
