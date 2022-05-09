@@ -8,8 +8,7 @@ TrainData::TrainData(char *fileArg)
 {
 	std::string line, word, temp; //var for the csv line
 	std::vector<double> input;
-	double x = 0;
-	int lineCount = 0; //counter for lines in csv file
+	int lineCount = 1; //counter for lines in csv file
 	std::cout << "setting the input file" << std::endl;
 	std::ifstream data(fileArg);
 
@@ -22,19 +21,15 @@ TrainData::TrainData(char *fileArg)
 	//https://www.geeksforgeeks.org/csv-file-management-using-c/
 
 	//check that file is open/readable
-	if (std::getline(data,temp)) {std::cout << temp << std::endl;}
+	if (std::getline(data,temp)) {std::cout << "file opened success " << std::endl << temp << std::endl;}
 	else {std::cout << "failed to read file" << std::endl;}
 
 	while(data)  {
 		//row.clear();
 
-		data >> x;
+		std::getline(data, line); //read row and store into string
 
-		std::cout << x << std::endl;
-
-		//std::getline(inputFile, line); //read row and store into string
-
-		//std::cout << "line read was: " << line << std::endl;
+		std::cout << "line " << lineCount << " read was: " << line << std::endl;
 
 		//std::stringstream s(line); //stringstream to break into words
 
@@ -42,6 +37,8 @@ TrainData::TrainData(char *fileArg)
 		//	//add all the column data of row to vector
 		//	std::cout << word << std::endl;
 		//}
+
+        lineCount++;
 	}
 	//inputFile.close();
 }
