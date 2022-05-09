@@ -5,6 +5,7 @@
 #include <cmath>
 #include <fstream>
 #include <string>
+#include <cstring>
 #include <iomanip>
 #include "../include/Net.h"
 #include "../include/Neuron.h"
@@ -19,16 +20,15 @@ int main(int argc, char *argv[])
 	for (int i = 0; i < argc; i++)
 	{
 		cout << "argument " << i << " is " << argv[i] << endl;
+		if (strcmp(argv[i], "-v") == 0) {verbosity = 1; cout << "verbosity set to 1" << endl;}
+		else if (strcmp(argv[i], "-vv") == 0) {verbosity = 2; cout << "verbosity set to 2" << endl;}
+		else if (strcmp(argv[i], "-vvv") == 0) {verbosity = 3; cout << "verbosity set to 3" << endl;}
 	}
-	if (argc > 2) {
-		cout << "more than 1 args registered, args are" <<  " " << 
-		argv[1]  << " " << argv[2] << endl;
-		verbosity = 1;
-		cout << "setting verbosity from 0 to " << verbosity << endl;
-		TrainData trainData(argv[2]);
-	}
+	
+	//TODO: work on the training data class
+	//TrainData trainData(argv[2]);
 
-	else {
+	if (0 == 1) {
 		//vector to dictate node and layer setup for network
 		vector<unsigned> topology;
 
