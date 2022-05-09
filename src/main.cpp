@@ -14,7 +14,12 @@ using namespace std;
 
 int main(int argc, char *argv[])
 {
-	bool verbosity = 0;
+	int verbosity = 0;
+
+	for (int i = 0; i < argc; i++)
+	{
+		cout << "argument " << i << " is " << argv[i] << endl;
+	}
 	if (argc > 2) {
 		cout << "more than 1 args registered, args are" <<  " " << 
 		argv[1]  << " " << argv[2] << endl;
