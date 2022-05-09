@@ -25,7 +25,7 @@ TrainData::TrainData(char *fileArg)
 	while(std::getline(data,line))  {
 		//row.clear();
 
-		//std::getline(data, line); //read row and store into string
+		std::getline(data, line); //read row and store into string
 
 		std::cout << "line " << lineCount << " read was: " << line << std::endl;
 
@@ -34,7 +34,7 @@ TrainData::TrainData(char *fileArg)
 		while (std::getline(s,word,',')) {
 			//add all the column data of row to vector
 			std::cout << word << std::endl;
-            tempLoop.push_back(std::stod(word));
+            //tempLoop.push_back(std::stod(word));
 		}
         input.push_back(tempLoop);
         tempLoop.clear();
