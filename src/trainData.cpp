@@ -18,9 +18,6 @@ TrainData::TrainData(char *fileArg)
 	//read data from the file as a string vector
 	std::vector<std::string> row;
 
-	//TODO finished this file input
-	//https://www.geeksforgeeks.org/csv-file-management-using-c/
-
 	//check that file is open/readable
 	if (std::getline(data,temp)) {std::cout << "file opened success " << std::endl << temp << std::endl;}
 	else {std::cout << "failed to read file" << std::endl;}
