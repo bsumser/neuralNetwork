@@ -156,4 +156,5 @@ int main(int argc, char *argv[])
 			}
 		}while(userEpoch != 0);
 	}
+	return 0;
 }

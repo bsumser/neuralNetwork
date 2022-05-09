@@ -22,6 +22,7 @@ private:
 	int col;
 	char *fileArg;
 	std::ifstream infile;
+	std::vector<std::vector<double>> input;
 	std::vector<double> inputVals;
 	std::vector<double> normalVals;
 	std::vector<double> targetVals;
