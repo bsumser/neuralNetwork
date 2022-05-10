@@ -44,7 +44,8 @@ The data set was found in the UCI machine learning database.
 
 ## Installation
 This program includes a makefile, and can be compiled with the command make. To run, use 
-"./main data/wine.csv".
+"./main data/wine.csv". You can also change the level of verbose output using the "-v" flag.
+Levels are currently set to use -v, -vv, and -vv.
 
 Remove object files and executables with make clean.
 
