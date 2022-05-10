@@ -6,7 +6,7 @@
 class TrainData
 {
 public:
-	TrainData(char *fileArg);
+	TrainData(char *fileArg, int verbosityFlag);
 	void getRow();
 	void setRow(int r);
 	void getCol();
@@ -26,6 +26,7 @@ private:
 	std::vector<double> inputVals;
 	std::vector<double> normalVals;
 	std::vector<double> targetVals;
+	int verbosity;
 
 };
 

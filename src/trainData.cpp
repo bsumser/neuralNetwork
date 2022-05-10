@@ -5,8 +5,13 @@
 #include <string>
 #include <algorithm>
 
-TrainData::TrainData(char *fileArg)
+TrainData::TrainData(char *fileArg, int verbosityFlag)
 {
+	//set the verbosity for training data
+	verbosity = verbosityFlag;
+	std::cout << "TrainData verbosity set to " << verbosity << std::endl;
+
+
 	std::string line, word, temp; //var for the csv line
 	input;
     std::vector<double> tempLoop;
@@ -28,13 +33,13 @@ TrainData::TrainData(char *fileArg)
 
 		std::getline(data, line); //read row and store into string
 
-		std::cout << "line " << lineCount << " read was: " << line << std::endl;
+		if (verbosity == 3) {std::cout << "line " << lineCount << " read was: " << line << std::endl;}
 
 		std::stringstream s(line); //stringstream to break into words
 
 		while (std::getline(s,word,',')) {
 			//add all the column data of row to vector
-			std::cout << word << std::endl;
+			if (verbosity == 3) {std::cout << word << std::endl;}
             tempLoop.push_back(std::stod(word));
 		}
         input.push_back(tempLoop);
@@ -42,6 +47,7 @@ TrainData::TrainData(char *fileArg)
         lineCount++;
 	}
 }
+
 void TrainData::getRow()
 {
 
@@ -69,6 +75,12 @@ void TrainData::fillData()
 
 void TrainData::printInputVals()
 {
+	for (int i = 0; i < input.size(); i++) {
+		for (int j = 0; j < input[0].size(); j++) {
+			std::cout << input[i][j] << " ";
+		}
+		std::cout << std::endl;
+	}
 
 }
 
@@ -89,17 +101,22 @@ void TrainData::normalizeData()
 	std::cout << "starting data normalization" << std::endl;
 	//Min-Max normalization https://www.baeldung.com/cs/normalizing-inputs-artificial-neural-network
 
-	double tempVal = 0;
 	double upperBound = 1;
 	double lowerBound = 0;
 
 	for (int i = 0; i < input.size(); i++) {
-		for (int j = 0; j < input[0].size(); j++) {
+		double tempVal = 0;
+		for (int j = 1; j < input[0].size(); j++) {
 			double min = *std::min_element(input[i].begin(), input[i].end());
 			double max = *std::max_element(input[i].begin(), input[i].end());
 			tempVal = (((input[i][j] - min) / (max-min)) * ((upperBound - lowerBound) + lowerBound));
+			input[i][j] = tempVal;
 
-			//std::cout << input[i][j] << "-" << min << "/" << max << "-" << min << "*" << upperBound << "-" << lowerBound << "+" << lowerBound << std::endl;
+			if (verbosity == 3) 
+			{ 
+				std::cout << tempVal << "=" << input[i][j] << "-" << min << "/" << max << "-" << min 
+				<< "*" << upperBound << "-" << lowerBound << "+" << lowerBound << std::endl;
+			}
 		}
 	}
 	std::cout << "finished data normalization" << std::endl;
