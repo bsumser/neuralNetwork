@@ -22,10 +22,10 @@ private:
 	int col;
 	char *fileArg;
 	std::ifstream infile;
-	std::vector<std::vector<double>> input;
-	std::vector<double> inputVals;
-	std::vector<double> normalVals;
-	std::vector<double> targetVals;
+	std::vector<std::vector<float>> input;
+	std::vector<float> inputVals;
+	std::vector<float> normalVals;
+	std::vector<float> targetVals;
 	int verbosity;
 
 };

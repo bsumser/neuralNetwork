@@ -14,7 +14,7 @@ TrainData::TrainData(char *fileArg, int verbosityFlag)
 
 	std::string line, word, temp; //var for the csv line
 	input;
-    std::vector<double> tempLoop;
+    std::vector<float> tempLoop;
 	int lineCount = 1; //counter for lines in csv file
 	std::cout << "setting the input file" << std::endl;
 	std::ifstream data(fileArg);
@@ -101,14 +101,14 @@ void TrainData::normalizeData()
 	std::cout << "starting data normalization" << std::endl;
 	//Min-Max normalization https://www.baeldung.com/cs/normalizing-inputs-artificial-neural-network
 
-	double upperBound = 1;
-	double lowerBound = 0;
+	float upperBound = 1;
+	float lowerBound = 0;
 
 	for (int i = 0; i < input.size(); i++) {
-		double tempVal = 0;
+		float tempVal = 0;
 		for (int j = 1; j < input[0].size(); j++) {
-			double min = *std::min_element(input[i].begin(), input[i].end());
-			double max = *std::max_element(input[i].begin(), input[i].end());
+			float min = *std::min_element(input[i].begin(), input[i].end());
+			float max = *std::max_element(input[i].begin(), input[i].end());
 			tempVal = (((input[i][j] - min) / (max-min)) * ((upperBound - lowerBound) + lowerBound));
 			input[i][j] = tempVal;
 
