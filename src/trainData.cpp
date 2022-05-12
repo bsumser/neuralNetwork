@@ -5,15 +5,16 @@
 #include <string>
 #include <algorithm>
 
-TrainData::TrainData(char *fileArg, int verbosityFlag)
+TrainData::TrainData(char *inputFileArg, int verbosityFlag)
 {
 	//set the verbosity for training data
 	verbosity = verbosityFlag;
 	std::cout << "TrainData verbosity set to " << verbosity << std::endl;
 
+	fileArg = inputFileArg;
+
 
 	std::string line, word, temp; //var for the csv line
-	input;
     std::vector<float> tempLoop;
 	int lineCount = 1; //counter for lines in csv file
 	std::cout << "setting the input file" << std::endl;
@@ -48,26 +49,6 @@ TrainData::TrainData(char *fileArg, int verbosityFlag)
 	}
 }
 
-void TrainData::getRow()
-{
-
-}
-
-void TrainData::setRow(int r)
-{
-
-}
-
-void TrainData::getCol()
-{
-
-}
-
-void TrainData::setCol(int c)
-{
-
-}
-
 void TrainData::fillData()
 {
 
@@ -75,8 +56,13 @@ void TrainData::fillData()
 
 void TrainData::printInputVals()
 {
-	for (int i = 0; i < input.size(); i++) {
-		for (int j = 0; j < input[0].size(); j++) {
+	//size variable for vector lenggths to avoid comparison of int to different datatype
+	size_t vector_i = input.size();
+	size_t vector_j = input[0].size();
+
+
+	for (size_t i = 0; i < vector_i; i++) {
+		for (size_t j = 0; j < vector_j; j++) {
 			std::cout << input[i][j] << " ";
 		}
 		std::cout << std::endl;
@@ -86,6 +72,18 @@ void TrainData::printInputVals()
 
 void TrainData::printNormalVals()
 {
+	//size variable for vector lenggths to avoid comparison of int to different datatype
+	size_t vector_i = input.size();
+	size_t vector_j = input[0].size();
+
+
+	for (size_t i = 0; i < vector_i; i++) {
+		for (size_t j = 0; j < vector_j; j++) {
+			std::cout << normalVals[i][j] << " ";
+		}
+		std::cout << std::endl;
+	}
+
 
 }
 
@@ -103,14 +101,22 @@ void TrainData::normalizeData()
 
 	float upperBound = 1;
 	float lowerBound = 0;
+	
+	//size variable for vector lenggths to avoid comparison of int to different datatype
+	size_t vector_i = input.size();
+	size_t vector_j = input[0].size();
+    
+	//temp vector for normalized values in loop
+	std::vector<float> tempLoop;
 
-	for (int i = 0; i < input.size(); i++) {
+	for (size_t i = 0; i < vector_i; i++) {
 		float tempVal = 0;
-		for (int j = 1; j < input[0].size(); j++) {
+        tempLoop.push_back(input[i][0]);
+		for (size_t j = 1; j < vector_j; j++) {
 			float min = *std::min_element(input[i].begin(), input[i].end());
 			float max = *std::max_element(input[i].begin(), input[i].end());
 			tempVal = (((input[i][j] - min) / (max-min)) * ((upperBound - lowerBound) + lowerBound));
-			input[i][j] = tempVal;
+            tempLoop.push_back(tempVal);
 
 			if (verbosity == 3) 
 			{ 
@@ -118,6 +124,8 @@ void TrainData::normalizeData()
 				<< "*" << upperBound << "-" << lowerBound << "+" << lowerBound << std::endl;
 			}
 		}
+        normalVals.push_back(tempLoop);
+        tempLoop.clear();
 	}
 	std::cout << "finished data normalization" << std::endl;
 }

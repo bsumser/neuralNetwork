@@ -6,11 +6,7 @@
 class TrainData
 {
 public:
-	TrainData(char *fileArg, int verbosityFlag);
-	void getRow();
-	void setRow(int r);
-	void getCol();
-	void setCol(int c);
+	TrainData(char *inputFileArg, int verbosityFlag);
 	void fillData(); //fills input vals vector with the input data
 	void printInputVals();
 	void printNormalVals();
@@ -18,13 +14,11 @@ public:
 	void normalizeData();
 
 private:
-	int row;
-	int col;
 	char *fileArg;
 	std::ifstream infile;
 	std::vector<std::vector<float>> input;
 	std::vector<float> inputVals;
-	std::vector<float> normalVals;
+	std::vector<std::vector<float>> normalVals;
 	std::vector<float> targetVals;
 	int verbosity;
 

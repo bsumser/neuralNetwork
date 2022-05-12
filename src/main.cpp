@@ -19,7 +19,10 @@ int main(int argc, char *argv[])
 
 	for (int i = 0; i < argc; i++)
 	{
+		//print out arguments
 		cout << "argument " << i << " is " << argv[i] << endl;
+
+		//string compare to -v flag and set/check verbosity level
 		if (strcmp(argv[i], "-v") == 0) {verbosity = 1; cout << "verbosity set to 1" << endl;}
 		else if (strcmp(argv[i], "-vv") == 0) {verbosity = 2; cout << "verbosity set to 2" << endl;}
 		else if (strcmp(argv[i], "-vvv") == 0) {verbosity = 3; cout << "verbosity set to 3" << endl;}
@@ -29,6 +32,7 @@ int main(int argc, char *argv[])
 	TrainData trainData(argv[1], verbosity);
 	trainData.normalizeData();
 	if (verbosity == 3) { trainData.printInputVals(); }
+	if (verbosity == 3) { trainData.printNormalVals(); }
 
 	if (0 == 1) {
 		//vector to dictate node and layer setup for network
