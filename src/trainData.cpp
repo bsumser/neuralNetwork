@@ -111,7 +111,7 @@ void TrainData::normalizeData()
 
 	for (size_t i = 0; i < vector_i; i++) {
 		float tempVal = 0;
-        tempLoop.push_back(input[i][0]);
+        tempLoop.push_back(input[i][0]);	//push_back first value into vector to avoid it being normalized
 		for (size_t j = 1; j < vector_j; j++) {
 			float min = *std::min_element(input[i].begin(), input[i].end());
 			float max = *std::max_element(input[i].begin(), input[i].end());
