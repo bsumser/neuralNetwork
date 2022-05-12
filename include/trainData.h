@@ -11,7 +11,7 @@ public:
 	void printInputVals();
 	void printNormalVals();
 	void printTargetVals();
-	void normalizeData();
+	void normalizeData(const char normalType);
 
 private:
 	char *fileArg;

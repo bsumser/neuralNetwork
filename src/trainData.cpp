@@ -94,38 +94,54 @@ void TrainData::printTargetVals()
 
 
 // TODO: finish this normalization
-void TrainData::normalizeData()
+void TrainData::normalizeData(const char normalType)
 {
 	std::cout << "starting data normalization" << std::endl;
-	//Min-Max normalization https://www.baeldung.com/cs/normalizing-inputs-artificial-neural-network
 
-	float upperBound = 1;
-	float lowerBound = 0;
+	//switch case for different types of data normalization
+	switch (normalType) {
+		case 'm':
+		{
+			std::cout << "min-max data normalization selected" << std::endl;
+			//Min-Max normalization https://www.baeldung.com/cs/normalizing-inputs-artificial-neural-network
+
+			float upperBound = 1;
+			float lowerBound = 0;
 	
-	//size variable for vector lenggths to avoid comparison of int to different datatype
-	size_t vector_i = input.size();
-	size_t vector_j = input[0].size();
-    
-	//temp vector for normalized values in loop
-	std::vector<float> tempLoop;
+			//size variable for vector lenggths to avoid comparison of int to different datatype
+			size_t vector_i = input.size();
+			size_t vector_j = input[0].size();
+	
+			//temp vector for normalized values in loop
+			std::vector<float> tempLoop;
 
-	for (size_t i = 0; i < vector_i; i++) {
-		float tempVal = 0;
-        tempLoop.push_back(input[i][0]);	//push_back first value into vector to avoid it being normalized
-		for (size_t j = 1; j < vector_j; j++) {
-			float min = *std::min_element(input[i].begin(), input[i].end());
-			float max = *std::max_element(input[i].begin(), input[i].end());
-			tempVal = (((input[i][j] - min) / (max-min)) * ((upperBound - lowerBound) + lowerBound));
-            tempLoop.push_back(tempVal);
+			for (size_t i = 0; i < vector_i; i++) {
+				float tempVal = 0;
+ 		       tempLoop.push_back(input[i][0]);	//push_back first value into vector to avoid it being normalized
+				for (size_t j = 1; j < vector_j; j++) {
+					float min = *std::min_element(input[i].begin(), input[i].end());
+					float max = *std::max_element(input[i].begin(), input[i].end());
+					tempVal = (((input[i][j] - min) / (max-min)) * ((upperBound - lowerBound) + lowerBound));
+ 		           tempLoop.push_back(tempVal);
 
-			if (verbosity == 3) 
-			{ 
-				std::cout << tempVal << "=" << input[i][j] << "-" << min << "/" << max << "-" << min 
-				<< "*" << upperBound << "-" << lowerBound << "+" << lowerBound << std::endl;
+					if (verbosity == 3) 
+					{ 
+						std::cout << tempVal << "=" << input[i][j] << "-" << min << "/" << max << "-" << min 
+						<< "*" << upperBound << "-" << lowerBound << "+" << lowerBound << std::endl;
+					}
+				}
+ 		       normalVals.push_back(tempLoop);
+ 		       tempLoop.clear();
 			}
 		}
-        normalVals.push_back(tempLoop);
-        tempLoop.clear();
+		case 's':
+			//TODO: implement this https://www.baeldung.com/cs/normalizing-inputs-artificial-neural-network
+			std::cout << "standardization data normalization selected (has not been implemented)" << std::endl;
+
+		case 'b':
+			//TODO: implement this https://www.baeldung.com/cs/normalizing-inputs-artificial-neural-network
+			//backprop algorithm will need to be changed
+			std::cout << "batch data normalization selected (has not been implemented)" << std::endl;
 	}
 	std::cout << "finished data normalization" << std::endl;
 }
