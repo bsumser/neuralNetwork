@@ -32,9 +32,7 @@ TrainData::TrainData(char *inputFileArg, int verbosityFlag)
 	while(std::getline(data,line))  {
 		row.clear();
 
-		std::getline(data, line); //read row and store into string
-
-		if (verbosity == 3) {std::cout << "line " << lineCount << " read was: " << line << std::endl;}
+		if (verbosity == 1) {std::cout << "line " << lineCount << " read was: " << line << std::endl;}
 
 		std::stringstream s(line); //stringstream to break into words
 
@@ -49,17 +47,13 @@ TrainData::TrainData(char *inputFileArg, int verbosityFlag)
 	}
 }
 
-void TrainData::fillData()
-{
-
-}
-
 void TrainData::printInputVals()
 {
+	std::cout << "printing input values" << std::endl;
+	
 	//size variable for vector lenggths to avoid comparison of int to different datatype
 	size_t vector_i = input.size();
 	size_t vector_j = input[0].size();
-
 
 	for (size_t i = 0; i < vector_i; i++) {
 		for (size_t j = 0; j < vector_j; j++) {
@@ -67,15 +61,16 @@ void TrainData::printInputVals()
 		}
 		std::cout << std::endl;
 	}
-
+	std::cout << "finished printing input values" << std::endl;
 }
 
 void TrainData::printNormalVals()
 {
+	std::cout << "printing normalized values" << std::endl;
+	
 	//size variable for vector lenggths to avoid comparison of int to different datatype
 	size_t vector_i = input.size();
 	size_t vector_j = input[0].size();
-
 
 	for (size_t i = 0; i < vector_i; i++) {
 		for (size_t j = 0; j < vector_j; j++) {
@@ -83,13 +78,19 @@ void TrainData::printNormalVals()
 		}
 		std::cout << std::endl;
 	}
-
-
+	std::cout << "finished printing normalized values" << std::endl;
 }
 
 void TrainData::printTargetVals()
 {
+	std::cout << "printing target values" << std::endl;
+	//size variable for vector lenggths to avoid comparison of int to different datatype
+	size_t vector_i = targetVals.size();
 
+	for (size_t i = 0; i < vector_i; i++) {
+		std::cout << "row " << i << " = " << targetVals[i][0] << " " << targetVals[i][1] << " " << targetVals[i][2] << std::endl;
+	}
+	std::cout << "finished printing target values" << std::endl;
 }
 
 
@@ -112,12 +113,19 @@ void TrainData::normalizeData(const char normalType)
 			size_t vector_i = input.size();
 			size_t vector_j = input[0].size();
 	
-			//temp vector for normalized values in loop
-			std::vector<float> tempLoop;
+			std::vector<float> tempLoop;	//temp vector for normalized values in loop
+			std::vector<float> tempTargetVals;	//temp vector for normalized values in loop
 
 			for (size_t i = 0; i < vector_i; i++) {
 				float tempVal = 0;
- 		       tempLoop.push_back(input[i][0]);	//push_back first value into vector to avoid it being normalized
+ 		    	tempLoop.push_back(input[i][0]);	//push_back first value into vector to avoid it being normalized
+
+				if (input[i][0] == 1) {tempTargetVals = {1, 0, 0,};}	//setup targetValues for output layer
+				else if (input[i][0] == 2) {tempTargetVals = {0, 1, 0,};}
+				else if (input[i][0] == 3) {tempTargetVals = {0, 0, 1,};}
+
+				targetVals.push_back(tempTargetVals);	//add temp vector of target values to full target values vector
+				
 				for (size_t j = 1; j < vector_j; j++) {
 					float min = *std::min_element(input[i].begin(), input[i].end());
 					float max = *std::max_element(input[i].begin(), input[i].end());

@@ -7,7 +7,6 @@ class TrainData
 {
 public:
 	TrainData(char *inputFileArg, int verbosityFlag);
-	void fillData(); //fills input vals vector with the input data
 	void printInputVals();
 	void printNormalVals();
 	void printTargetVals();
@@ -19,7 +18,7 @@ private:
 	std::vector<std::vector<float>> input;
 	std::vector<float> inputVals;
 	std::vector<std::vector<float>> normalVals;
-	std::vector<float> targetVals;
+	std::vector<std::vector<float>> targetVals;
 	int verbosity;
 
 };

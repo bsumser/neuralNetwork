@@ -33,6 +33,7 @@ int main(int argc, char *argv[])
 	trainData.normalizeData('m');
 	if (verbosity == 3) { trainData.printInputVals(); }
 	if (verbosity == 3) { trainData.printNormalVals(); }
+	if (verbosity == 3) { trainData.printTargetVals(); }
 
 	if (0 == 1) {
 		//vector to dictate node and layer setup for network
