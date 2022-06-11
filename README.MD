@@ -43,7 +43,7 @@ Each neuron applies a hyperbolic tan function to the normalized data.
 The data set was found in the UCI machine learning database.
 
 ## Installation
-This program includes a makefile, and can be compiled with the command make. To run, use:
+This program includes a makefile (g++ for compiling), and can be compiled with the command make. To run, use:
 
 ```console
 ./main data/wine.csv
