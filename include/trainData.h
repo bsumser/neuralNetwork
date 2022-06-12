@@ -11,14 +11,14 @@ public:
 	void printNormalVals();
 	void printTargetVals();
 	void normalizeData(const char normalType);
-
-private:
-	char *fileArg;
-	std::ifstream infile;
 	std::vector<std::vector<float>> input;
 	std::vector<float> inputVals;
 	std::vector<std::vector<float>> normalVals;
 	std::vector<std::vector<float>> targetVals;
+
+private:
+	char *fileArg;
+	std::ifstream infile;
 	int verbosity;
 
 };
