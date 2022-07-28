@@ -15,6 +15,7 @@ public:
 	std::vector<float> inputVals;
 	std::vector<std::vector<float>> normalVals;
 	std::vector<std::vector<float>> targetVals;
+	const int trainMax;
 
 private:
 	char *fileArg;

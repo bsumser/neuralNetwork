@@ -51,7 +51,7 @@ int main(int argc, char *argv[])
 	Net myNet(topology);
 	
 	for (int epoch = 0; epoch < userEpoch; ++epoch) {
-		for (int line = 0; line < trainMax; ++line) {
+		for (int line = 0; line < trainData.trainMax; ++line) {
 			cout << "input values are: ";
 			for (size_t i = 0; i < trainData.input.size(); ++i){
 				cout  << setprecision(4) << trainData.input[i] << " ";

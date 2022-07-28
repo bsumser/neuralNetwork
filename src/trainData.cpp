@@ -4,6 +4,7 @@
 #include <sstream>
 #include <string>
 #include <algorithm>
+#include <math.h>
 
 TrainData::TrainData(char *inputFileArg, int verbosityFlag)
 {
@@ -12,7 +13,6 @@ TrainData::TrainData(char *inputFileArg, int verbosityFlag)
 	std::cout << "TrainData verbosity set to " << verbosity << std::endl;
 
 	fileArg = inputFileArg;
-
 
 	std::string line, word, temp; //var for the csv line
     std::vector<float> tempLoop;
@@ -45,6 +45,8 @@ TrainData::TrainData(char *inputFileArg, int verbosityFlag)
         tempLoop.clear();
         lineCount++;
 	}
+	//set amount of training data to be used
+	trainMax = floor(lineCount * 8);
 }
 
 void TrainData::printInputVals()
