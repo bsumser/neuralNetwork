@@ -8,8 +8,11 @@ class TrainData
 public:
 	TrainData(char *inputFileArg, int verbosityFlag);
 	void printInputVals();
+	void printInputVals(int row);
 	void printNormalVals();
+	void printNormalVals(int row);
 	void printTargetVals();
+	void printTargetVals(int row);
 	void normalizeData(const char normalType);
 	std::vector<std::vector<float>> input;
 	std::vector<float> inputVals;

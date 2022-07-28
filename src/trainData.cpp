@@ -66,6 +66,21 @@ void TrainData::printInputVals()
 	std::cout << "finished printing input values" << std::endl;
 }
 
+void TrainData::printInputVals(int row)
+{
+	std::cout << "printing input values" << std::endl;
+	
+	//size variable for vector lenggths to avoid comparison of int to different datatype
+	size_t vector_j = input[0].size();
+
+	for (size_t j = 0; j < vector_j; j++) {
+		std::cout << input[row][j] << " ";
+	}
+	std::cout << std::endl;
+	
+	std::cout << "finished printing input values" << std::endl;
+}
+
 void TrainData::printNormalVals()
 {
 	std::cout << "printing normalized values" << std::endl;
@@ -83,6 +98,22 @@ void TrainData::printNormalVals()
 	std::cout << "finished printing normalized values" << std::endl;
 }
 
+void TrainData::printNormalVals(int row)
+{
+	std::cout << "printing normal values" << std::endl;
+	
+	//size variable for vector lenggths to avoid comparison of int to different datatype
+	size_t vector_j = normalVals[0].size();
+
+	for (size_t j = 0; j < vector_j; j++) {
+		std::cout << normalVals[row][j] << " ";
+	}
+	std::cout << std::endl;
+	
+	std::cout << "finished printing normal values" << std::endl;
+}
+
+
 void TrainData::printTargetVals()
 {
 	std::cout << "printing target values" << std::endl;
@@ -92,6 +123,21 @@ void TrainData::printTargetVals()
 	for (size_t i = 0; i < vector_i; i++) {
 		std::cout << "row " << i << " = " << targetVals[i][0] << " " << targetVals[i][1] << " " << targetVals[i][2] << std::endl;
 	}
+	std::cout << "finished printing target values" << std::endl;
+}
+
+void TrainData::printTargetVals(int row)
+{
+	std::cout << "printing target values" << std::endl;
+	
+	//size variable for vector lenggths to avoid comparison of int to different datatype
+	size_t vector_j = targetVals[0].size();
+
+	for (size_t j = 0; j < vector_j; j++) {
+		std::cout << targetVals[row][j] << " ";
+	}
+	std::cout << std::endl;
+	
 	std::cout << "finished printing target values" << std::endl;
 }
 
