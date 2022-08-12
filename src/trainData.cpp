@@ -15,7 +15,7 @@ TrainData::TrainData(char *inputFileArg, int verbosityFlag)
 	fileArg = inputFileArg;
 
 	std::string line, word, temp; //var for the csv line
-    std::vector<float> tempLoop;
+    std::vector<double> tempLoop;
 	int lineCount = 1; //counter for lines in csv file
 	std::cout << "setting the input file" << std::endl;
 	std::ifstream data(fileArg);

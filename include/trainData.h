@@ -14,11 +14,11 @@ public:
 	void printTargetVals();
 	void printTargetVals(int row);
 	void normalizeData(const char normalType);
-	std::vector<std::vector<float>> input;
-	std::vector<float> inputVals;
-	std::vector<std::vector<float>> normalVals;
-	std::vector<std::vector<float>> targetVals;
-	const int trainMax;
+	std::vector<std::vector<double>> input;
+	std::vector<double> inputVals;
+	std::vector<std::vector<double>> normalVals;
+	std::vector<std::vector<double>> targetVals;
+	int trainMax;
 
 private:
 	char *fileArg;

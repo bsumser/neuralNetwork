@@ -54,34 +54,34 @@ int main(int argc, char *argv[])
 		for (int line = 0; line < trainData.trainMax; ++line) {
 			cout << "input values are: ";
 			for (size_t i = 0; i < trainData.input.size(); ++i){
-				cout  << setprecision(4) << trainData.input[i] << " ";
+				cout << trainData.input[line][i] << " ";
 			}
 			cout << endl;
 
 			cout << "target values are: ";
 			for (size_t i = 0; i < trainData.targetVals.size(); ++i){
-				cout << trainData.targetVals[i] << " ";
+				cout << trainData.targetVals[line][i] << " ";
 			}
 			cout << endl;
 
 			cout << "Normalized data is: ";
 			for (size_t i = 0; i < trainData.normalVals.size(); ++i) {
-				cout << trainData.normalVals[i] << " ";
+				cout << trainData.normalVals[line][i] << " ";
 			}
 			cout << endl;
 
 			for (size_t i = 0; i < trainData.targetVals.size(); ++i){
-				if (trainData.targetVals[i] == 1)
+				if (trainData.targetVals[line][i] == 1)
 					cout << "Expected wine is wine number " << i + 1;
 			}
 			cout << endl;
 
 		
 			//function to feed values fowards from one layer to the next
-			myNet.feedForward(trainData.normalVals);
+			myNet.feedForward(trainData.normalVals[line]);
 
 			//function to back propagate learning
-			myNet.backProp(trainData.targetVals);
+			myNet.backProp(trainData.targetVals[line]);
 
 			//vector to hold result values
 			vector<double> resultsVals;
