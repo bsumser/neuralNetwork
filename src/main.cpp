@@ -42,41 +42,22 @@ int main(int argc, char *argv[])
 	//vector to dictate node and layer setup for network
 	vector<unsigned> topology;
 
-	//network topology of 13 input nodes, 6 nodes hidden layer and 3 node output layer
-	topology.push_back(13);
+	//network topology of 13 input nodes, 6 nodes hidden layer and 10 node output layer
+	topology.push_back(trainData.inputVals.size() - 1);
 	topology.push_back(6);
-	topology.push_back(3);
+	topology.push_back(10);
 			
 	//class constructor, topology is layers and neurons per layer
 	Net myNet(topology);
 	
 	for (int epoch = 0; epoch < userEpoch; ++epoch) {
 		for (int line = 0; line < trainData.trainMax; ++line) {
-			cout << "input values are: ";
-			for (size_t i = 0; i < trainData.input.size(); ++i){
-				cout << trainData.input[line][i] << " ";
-			}
-			cout << endl;
+			trainData.printInputVals(line);
 
-			cout << "target values are: ";
-			for (size_t i = 0; i < trainData.targetVals.size(); ++i){
-				cout << trainData.targetVals[line][i] << " ";
-			}
-			cout << endl;
+			trainData.printTargetVals(line);
 
-			cout << "Normalized data is: ";
-			for (size_t i = 0; i < trainData.normalVals.size(); ++i) {
-				cout << trainData.normalVals[line][i] << " ";
-			}
-			cout << endl;
+			trainData.printNormalVals(line);
 
-			for (size_t i = 0; i < trainData.targetVals.size(); ++i){
-				if (trainData.targetVals[line][i] == 1)
-					cout << "Expected wine is wine number " << i + 1;
-			}
-			cout << endl;
-
-		
 			//function to feed values fowards from one layer to the next
 			myNet.feedForward(trainData.normalVals[line]);
 
@@ -95,16 +76,16 @@ int main(int argc, char *argv[])
 			}
 			cout << endl;
 
-			//TODO 86 this global var
-			float big = resultsVals[0];
-			int bigIndex = 0;
-			for (size_t i = 0; i < resultsVals.size(); ++i){
-				if (resultsVals[i] > big) {
-					big = resultsVals[i];
-					bigIndex = i;
-				}
-			}
-			cout << "Wine identified as wine " << bigIndex + 1 << endl;
+			//TODO change this from old wine project to new digit recognition
+			//float big = resultsVals[0];
+			//int bigIndex = 0;
+			//for (size_t i = 0; i < resultsVals.size(); ++i){
+			//	if (resultsVals[i] > big) {
+			//		big = resultsVals[i];
+			//		bigIndex = i;
+			//	}
+			//}
+			//cout << "Wine identified as wine " << bigIndex + 1 << endl;
 		}
 	}
 	return 0;
