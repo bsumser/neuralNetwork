@@ -26,7 +26,8 @@ void Net::feedForward(const vector<double> &inputVals)
 	//check if input values and number of neurons in layer are the same
 	//size() - 1 to account for the bias neuron
 	assert(inputVals.size() == m_layers[0].size() - 1);
-	
+	std::cout << "inputVals.size() = " << inputVals.size() <<" m_layers[0].size() - 1 = " << m_layers[0].size() - 1 << std::endl;
+
 	//assign the input values to the input neurons
 	for (unsigned i = 0; i < inputVals.size(); ++i) {
 		m_layers[0][i].setOutputVal(inputVals[i]);
@@ -110,7 +111,7 @@ Net::Net(const vector<unsigned> &topology)
 				
 				//adresses most recent layer added
 				m_layers.back().push_back(Neuron(numOutputs, neuronNum));
-				cout << "added a neuron " << endl;
+				//cout << "added a neuron " << endl;
 			}
 			//assign bias neuron's value to be constant 1.0
 			m_layers.back().back().setOutputVal(1.0);
