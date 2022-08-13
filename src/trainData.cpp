@@ -41,12 +41,78 @@ TrainData::TrainData(char *inputFileArg, int verbosityFlag)
 			if (verbosity == 3) {std::cout << word << std::endl;}
             tempLoop.push_back(std::stod(word));
 		}
-        input.push_back(tempLoop);
-        tempLoop.clear();
-        lineCount++;
+        input.push_back(tempLoop);        //add temp vector to input member
+        tempLoop.clear();        //clear temp vector
+        lineCount++;        //increment line count for looping through file
+		int switchCase = (int)tempLoop[0];
+		switch(switchCase) {
+			case 0: {
+				std::vector<double> tempTargetVals = {1,0,0,0,0,0,0,0,0,0};
+				targetVals.push_back(tempTargetVals);
+				break;
+			}
+
+			case 1: {
+				std::vector<double> tempTargetVals = {0,1,0,0,0,0,0,0,0,0};
+				targetVals.push_back(tempTargetVals);
+				break;
+			}
+
+			case 2: {
+				std::vector<double> tempTargetVals = {0,0,1,0,0,0,0,0,0,0};
+				targetVals.push_back(tempTargetVals);
+				break;
+			}
+
+			case 3: {
+				std::vector<double> tempTargetVals = {0,0,0,1,0,0,0,0,0,0};
+				targetVals.push_back(tempTargetVals);
+				break;
+			}
+
+			case 4: {
+				std::vector<double> tempTargetVals = {0,0,0,0,1,0,0,0,0,0};
+				targetVals.push_back(tempTargetVals);
+				break;
+			}
+
+			case 5: {
+				std::vector<double> tempTargetVals = {0,0,0,0,0,1,0,0,0,0};
+				targetVals.push_back(tempTargetVals);
+				break;
+			}
+
+			case 6: {
+				std::vector<double> tempTargetVals = {0,0,0,0,0,0,1,0,0,0};
+				targetVals.push_back(tempTargetVals);
+				break;
+			}
+
+			case 7: {
+				std::vector<double> tempTargetVals = {0,0,0,0,0,0,0,1,0,0};
+				targetVals.push_back(tempTargetVals);
+				break;
+			}
+
+			case 8: {
+				std::vector<double> tempTargetVals = {0,0,0,0,0,0,0,0,1,0};
+				targetVals.push_back(tempTargetVals);
+				break;
+			}
+
+			case 9: {
+				std::vector<double> tempTargetVals = {0,0,0,0,0,0,0,0,0,9};
+				targetVals.push_back(tempTargetVals);
+				break;
+			}
+
+			default: {
+				std::cout << "case is default, couldnt read num" << std::endl;
+				break;
+			}
+		}
+	trainMax = floor(lineCount * 8);    //set the percentage of the training data to use
 	}
-	//set amount of training data to be used
-	trainMax = floor(lineCount * 8);
 }
 
 void TrainData::printInputVals()
@@ -68,7 +134,7 @@ void TrainData::printInputVals()
 
 void TrainData::printInputVals(int row)
 {
-	std::cout << "printing input values" << std::endl;
+	std::cout << "printing input values for row " << row << std::endl;
 	
 	//size variable for vector lenggths to avoid comparison of int to different datatype
 	size_t vector_j = input[0].size();
@@ -77,8 +143,6 @@ void TrainData::printInputVals(int row)
 		std::cout << input[row][j] << " ";
 	}
 	std::cout << std::endl;
-	
-	std::cout << "finished printing input values" << std::endl;
 }
 
 void TrainData::printNormalVals()
@@ -100,7 +164,7 @@ void TrainData::printNormalVals()
 
 void TrainData::printNormalVals(int row)
 {
-	std::cout << "printing normal values" << std::endl;
+	std::cout << "printing normal values for row " << row << std::endl;
 	
 	//size variable for vector lenggths to avoid comparison of int to different datatype
 	size_t vector_j = normalVals[0].size();
@@ -109,8 +173,6 @@ void TrainData::printNormalVals(int row)
 		std::cout << normalVals[row][j] << " ";
 	}
 	std::cout << std::endl;
-	
-	std::cout << "finished printing normal values" << std::endl;
 }
 
 
@@ -128,7 +190,7 @@ void TrainData::printTargetVals()
 
 void TrainData::printTargetVals(int row)
 {
-	std::cout << "printing target values" << std::endl;
+	std::cout << "printing target values for row " << row << std::endl;
 	
 	//size variable for vector lenggths to avoid comparison of int to different datatype
 	size_t vector_j = targetVals[0].size();
@@ -137,10 +199,7 @@ void TrainData::printTargetVals(int row)
 		std::cout << targetVals[row][j] << " ";
 	}
 	std::cout << std::endl;
-	
-	std::cout << "finished printing target values" << std::endl;
 }
-
 
 // TODO: finish this normalization
 void TrainData::normalizeData(const char normalType)
@@ -154,29 +213,23 @@ void TrainData::normalizeData(const char normalType)
 			std::cout << "min-max data normalization selected" << std::endl;
 			//Min-Max normalization https://www.baeldung.com/cs/normalizing-inputs-artificial-neural-network
 
-			float upperBound = 1;
-			float lowerBound = 0;
+			double upperBound = 1;
+			double lowerBound = 0;
 	
 			//size variable for vector lenggths to avoid comparison of int to different datatype
 			size_t vector_i = input.size();
 			size_t vector_j = input[0].size();
 	
-			std::vector<float> tempLoop;	//temp vector for normalized values in loop
-			std::vector<float> tempTargetVals;	//temp vector for normalized values in loop
+			std::vector<double> tempLoop;	//temp vector for normalized values in loop
+			std::vector<double> tempTargetVals;	//temp vector for normalized values in loop
 
 			for (size_t i = 0; i < vector_i; i++) {
-				float tempVal = 0;
+				double tempVal = 0;
  		    	tempLoop.push_back(input[i][0]);	//push_back first value into vector to avoid it being normalized
 
-				if (input[i][0] == 1) {tempTargetVals = {1, 0, 0,};}	//setup targetValues for output layer
-				else if (input[i][0] == 2) {tempTargetVals = {0, 1, 0,};}
-				else if (input[i][0] == 3) {tempTargetVals = {0, 0, 1,};}
-
-				targetVals.push_back(tempTargetVals);	//add temp vector of target values to full target values vector
-				
 				for (size_t j = 1; j < vector_j; j++) {
-					float min = *std::min_element(input[i].begin(), input[i].end());
-					float max = *std::max_element(input[i].begin(), input[i].end());
+					double min = *std::min_element(input[i].begin(), input[i].end());
+					double max = *std::max_element(input[i].begin(), input[i].end());
 					tempVal = (((input[i][j] - min) / (max-min)) * ((upperBound - lowerBound) + lowerBound));
  		           tempLoop.push_back(tempVal);
 
@@ -198,6 +251,8 @@ void TrainData::normalizeData(const char normalType)
 			//TODO: implement this https://www.baeldung.com/cs/normalizing-inputs-artificial-neural-network
 			//backprop algorithm will need to be changed
 			std::cout << "batch data normalization selected (has not been implemented)" << std::endl;
+		default:
+			std::cout << "no data normalization selected" << std::endl;
 	}
 	std::cout << "finished data normalization" << std::endl;
 }
