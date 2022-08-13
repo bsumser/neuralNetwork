@@ -18,7 +18,7 @@ public:
 	Net(const std::vector<unsigned> &topology);
 
 	//function to feed values from one layer to the next
-	void feedForward(const std::vector<int> &inputVals);
+	void feedForward(const std::vector<double> &inputVals);
 
 	//function that performs back propagation 
 	void backProp(const std::vector<double> &targetVals);
