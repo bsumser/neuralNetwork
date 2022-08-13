@@ -5,6 +5,9 @@
 #include <string>
 #include <algorithm>
 #include <math.h>
+#include <chrono>
+
+using namespace std::chrono;
 
 TrainData::TrainData(char *inputFileArg, int verbosityFlag)
 {
@@ -204,12 +207,12 @@ void TrainData::printTargetVals(int row)
 // TODO: finish this normalization
 void TrainData::normalizeData(const char normalType)
 {
+	auto start = high_resolution_clock::now();    //start the clock to track function execution time
 	std::cout << "starting data normalization" << std::endl;
 
 	//switch case for different types of data normalization
 	switch (normalType) {
-		case 'm':
-		{
+		case 'm': {
 			std::cout << "min-max data normalization selected" << std::endl;
 			//Min-Max normalization https://www.baeldung.com/cs/normalizing-inputs-artificial-neural-network
 
@@ -243,16 +246,23 @@ void TrainData::normalizeData(const char normalType)
  		       tempLoop.clear();
 			}
 		}
-		case 's':
+
+		case 's': {
 			//TODO: implement this https://www.baeldung.com/cs/normalizing-inputs-artificial-neural-network
 			std::cout << "standardization data normalization selected (has not been implemented)" << std::endl;
+		}
 
-		case 'b':
+		case 'b': {
 			//TODO: implement this https://www.baeldung.com/cs/normalizing-inputs-artificial-neural-network
 			//backprop algorithm will need to be changed
 			std::cout << "batch data normalization selected (has not been implemented)" << std::endl;
-		default:
+		}
+
+		default: {
 			std::cout << "no data normalization selected" << std::endl;
+		}
 	}
-	std::cout << "finished data normalization" << std::endl;
+	auto stop = high_resolution_clock::now();
+	auto duration = duration_cast<microseconds>(stop - start);
+	std::cout << "finished data normalization in " << duration.count() << " us" << std::endl;
 }
