@@ -52,11 +52,11 @@ int main(int argc, char *argv[])
 	
 	for (int epoch = 0; epoch < userEpoch; ++epoch) {
 		for (int line = 0; line < trainData.trainMax; ++line) {
-			trainData.printInputVals(line);
+			trainData.printInputVals(line);    //print the input values
 
-			trainData.printTargetVals(line);
+			trainData.printTargetVals(line);   //print the target values expected
 
-			trainData.printNormalVals(line);
+			trainData.printNormalVals(line);   //print the normalized data values
 
 			//function to feed values fowards from one layer to the next
 			myNet.feedForward(trainData.normalVals[line]);
