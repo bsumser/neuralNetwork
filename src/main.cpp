@@ -43,7 +43,7 @@ int main(int argc, char *argv[])
 	vector<unsigned> topology;
 
 	//network topology of 13 input nodes, 6 nodes hidden layer and 10 node output layer
-	topology.push_back(trainData.inputVals.size() - 1);
+	topology.push_back(trainData.input[0].size());
 	topology.push_back(6);
 	topology.push_back(10);
 			
@@ -90,81 +90,3 @@ int main(int argc, char *argv[])
 	}
 	return 0;
 }
-
-	/*----------------------------------OLD CODE HERE-------------------------------------------------------/
-
-	if (0 == 1) {
-		//vector to dictate node and layer setup for network
-		vector<unsigned> topology;
-
-		//
-		topology.push_back(13);
-		topology.push_back(6);
-		topology.push_back(3);
-
-		//class constructor, topology is layers and neurons per layer
-		Net myNet(topology);
-
-		//vector to hold input values
-		vector<double> inputVals;
-
-		//vector for target values
-		vector<double> targetVals;
-
-		//array to calc mean and
-		vector<double> normalVals;
-
-		cout << "input values are: ";
-		for (size_t i = 0; i < inputVals.size(); ++i){
-			cout  << setprecision(4) << inputVals[i] << " ";
-		}
-		cout << endl;
-
-		cout << "target values are: ";
-		for (size_t i = 0; i < targetVals.size(); ++i){
-			cout << targetVals[i] << " ";
-		}
-		cout << endl;
-
-		cout << "Normalized data is: ";
-		for (size_t i = 0; i < normalVals.size(); ++i) {
-			cout << normalVals[i] << " ";
-		}
-		cout << endl;
-
-		for (size_t i = 0; i < targetVals.size(); ++i){
-			if (targetVals[i] == 1)
-				cout << "Expected wine is wine number " << i + 1;
-		}
-		cout << endl;
-
-		//function to feed values fowards from one layer to the next
-		myNet.feedForward(normalVals);
-
-		//function to back propagate learning
-		myNet.backProp(targetVals);
-
-		//vector to hold result values
-		vector<double> resultsVals;
-
-		//function that reads outputs and feeds in back in
-		myNet.getResults(resultsVals);
-
-		cout << "Reulting Values are: ";
-		for (size_t i = 0; i < resultsVals.size(); ++i){
-			cout << resultsVals[i] << " ";
-		}
-		cout << endl;
-
-		//TODO 86 this global var
-		float big = resultsVals[0];
-		int bigIndex = 0;
-		for (size_t i = 0; i < resultsVals.size(); ++i){
-			if (resultsVals[i] > big) {
-				big = resultsVals[i];
-				bigIndex = i;
-			}
-		}
-		cout << "Wine identified as wine " << bigIndex + 1 << endl;
-	
-	/*----------------------------------OLD CODE HERE-------------------------------------------------------*/
