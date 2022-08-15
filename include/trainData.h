@@ -15,7 +15,6 @@ public:
 	void printTargetVals(int row);
 	void normalizeData(const char normalType);
 	std::vector<std::vector<double>> input;
-	std::vector<double> inputVals;
 	std::vector<std::vector<double>> normalVals;
 	std::vector<std::vector<double>> targetVals;
 	int trainMax;
