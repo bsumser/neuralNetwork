@@ -140,9 +140,9 @@ void TrainData::printInputVals(int row)
 	std::cout << "printing input values for row " << row << std::endl;
 	
 	//size variable for vector lenggths to avoid comparison of int to different datatype
-	size_t vector_j = input[0].size();
+	int size = input[0].size();
 
-	for (size_t j = 0; j < vector_j; j++) {
+	for (int j = 0; j < size; j++) {
 		std::cout << input[row][j] << " ";
 	}
 	std::cout << std::endl;
