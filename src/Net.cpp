@@ -12,6 +12,15 @@
 using namespace std;
 using namespace std::chrono;
 
+
+void Net::printTopology() const
+{
+	for (unsigned layerNum = 0; layerNum < m_layers.size(); ++layerNum) {
+		cout << "Layer " << layerNum << "contains " << m_layers[layerNum].size() << " neurons" << endl;
+	}
+}
+
+
 void Net::getResults(vector<double> &resultVals) const
 {
 	//clear previos reults
@@ -28,7 +37,7 @@ void Net::feedForward(const vector<double> &inputVals)
 	//check if input values and number of neurons in layer are the same
 	//size() - 1 to account for the bias neuron
 	assert(inputVals.size() == m_layers[0].size() - 1);
-	std::cout << "inputVals.size() = " << inputVals.size() <<" m_layers[0].size() - 1 = " << m_layers[0].size() - 1 << std::endl;
+	cout << "inputVals.size() = " << inputVals.size() <<" m_layers[0].size() - 1 = " << m_layers[0].size() - 1 << endl;
 
 	//assign the input values to the input neurons
 	for (unsigned i = 0; i < inputVals.size(); ++i) {
@@ -121,5 +130,5 @@ Net::Net(const vector<unsigned> &topology)
 	}
 	auto stop = high_resolution_clock::now();
 	auto duration = duration_cast<microseconds>(stop - start);
-	std::cout << "Constructed Neural Network in " << duration.count() << " ms" << std::endl;
+	cout << "Constructed Neural Network in " << duration.count() << " ms" << endl;
 }
