@@ -17,6 +17,9 @@ public:
 	//Constructor for neural network
 	Net(const std::vector<unsigned> &topology);
 
+	//print out network topology
+	void printTopology() const;
+
 	//function to feed values from one layer to the next
 	void feedForward(const std::vector<double> &inputVals);
 
