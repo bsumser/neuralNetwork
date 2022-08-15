@@ -7,8 +7,10 @@
 #include <fstream>
 #include <string>
 #include <iomanip>
+#include <chrono>
 
 using namespace std;
+using namespace std::chrono;
 
 void Net::getResults(vector<double> &resultVals) const
 {
@@ -95,6 +97,7 @@ void Net::backProp(const vector<double> &targetVals)
 
 Net::Net(const vector<unsigned> &topology)
 {
+	auto start = high_resolution_clock::now();
 	unsigned numLayers = topology.size();
 
 	//loops through layer number and adds new layer to m_layers container
@@ -116,4 +119,7 @@ Net::Net(const vector<unsigned> &topology)
 			//assign bias neuron's value to be constant 1.0
 			m_layers.back().back().setOutputVal(1.0);
 	}
+	auto stop = high_resolution_clock::now();
+	auto duration = duration_cast<microseconds>(stop - start);
+	std::cout << "Constructed Neural Network in " << duration.count() << " ms" << std::endl;
 }
