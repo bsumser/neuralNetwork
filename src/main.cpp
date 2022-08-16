@@ -13,6 +13,8 @@
 
 using namespace std;
 
+//https://towardsdatascience.com/convolutional-neural-networks-explained-9cc5188c4939
+
 int main(int argc, char *argv[])
 {
 	int verbosity = 0;
@@ -34,6 +36,11 @@ int main(int argc, char *argv[])
 	if (verbosity == 3) { trainData.printInputVals(); }
 	if (verbosity == 3) { trainData.printNormalVals(); }
 	if (verbosity == 3) { trainData.printTargetVals(); }
+
+	trainData.convolute();    //perform first convolution
+	trainData.batchNormalize();    //batch normalize the data
+	trainData.activationFuntion();    //rectified linear unit activation
+	trainData.pool();    //pooling layer
 
 	int userEpoch;	
 	cout << "Please enter amount of epochs, 1 to infinity" << endl;
