@@ -37,10 +37,17 @@ int main(int argc, char *argv[])
 	if (verbosity == 3) { trainData.printNormalVals(); }
 	if (verbosity == 3) { trainData.printTargetVals(); }
 
-	trainData.convolute();    //perform first convolution
+	std::vector<std::vector<double>> kernel;
+	int stride = 1;
+	int padding = 0;
+	const char act = 'r';
+	const char type = 'm';
+	int poolSize = 2;
+
+	trainData.convolute(kernel, stride, padding);    //perform first convolution
 	trainData.batchNormalize();    //batch normalize the data
-	trainData.activationFuntion();    //rectified linear unit activation
-	trainData.pool();    //pooling layer
+	trainData.activationFuntion(act);    //rectified linear unit activation
+	trainData.pool(type, poolSize, stride);    //pooling layer
 
 	int userEpoch;	
 	cout << "Please enter amount of epochs, 1 to infinity" << endl;
