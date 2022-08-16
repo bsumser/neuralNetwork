@@ -266,3 +266,29 @@ void TrainData::normalizeData(const char normalType)
 	auto duration = duration_cast<microseconds>(stop - start);
 	std::cout << "finished data normalization in " << duration.count() << " us" << std::endl;
 }
+
+void TrainData::convolute(std::vector<std::vector<double>> kernel, int stride, int padding);    //perform first convolution
+{
+	//TODO: finish the convolution
+	std::vector<double> kernelRes;
+	for (int i = 0; i < input.size(); i++) {
+		for (int j = 0; j < input[0].size(); j+stride) {
+			temp = input[i][j] * kernel[0][0] + input[i][j+1] * kernel[0][1] + input[i][j+2] * kernel[0][2] + input[i][j+28] * kernel[1][2]
+		}
+
+	}
+}
+void TrainData::batchNormalize();    //batch normalize the data
+{
+
+}
+
+void TrainData::activationFuntion(char type);    //rectified linear unit activation
+{
+
+}
+
+void TrainData::pool(char type, int size, int stride);    //pooling layer
+{
+
+}
