@@ -267,28 +267,83 @@ void TrainData::normalizeData(const char normalType)
 	std::cout << "finished data normalization in " << duration.count() << " us" << std::endl;
 }
 
-void TrainData::convolute(std::vector<std::vector<double>> kernel, int stride, int padding);    //perform first convolution
+void TrainData::convolute(std::vector<std::vector<double>> kernel, int stride, int padding)    //perform first convolution
 {
+	auto start = high_resolution_clock::now();
+	double temp = 0;
+	int size = 5;
+
+	std::vector<int> testVector{1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25};
+
 	//TODO: finish the convolution
 	std::vector<double> kernelRes;
 	for (int i = 0; i < input.size(); i++) {
-		for (int j = 0; j < input[0].size(); j+stride) {
-			temp = input[i][j] * kernel[0][0] + input[i][j+1] * kernel[0][1] + input[i][j+2] * kernel[0][2] + input[i][j+28] * kernel[1][2]
+		for (int j = 0; j < size; j++) {
 		}
-
 	}
+
+	auto stop = high_resolution_clock::now();
+	auto duration = duration_cast<microseconds>(stop - start);
+	std::cout << "Convolution finished in " << duration.count() << " us" << std::endl;
 }
-void TrainData::batchNormalize();    //batch normalize the data
+void TrainData::batchNormalize()    //batch normalize the data
 {
+	auto start = high_resolution_clock::now();
+	auto stop = high_resolution_clock::now();
+	auto duration = duration_cast<microseconds>(stop - start);
+	std::cout << "Batch Normalization finished in " << duration.count() << " us" << std::endl;
 
 }
 
-void TrainData::activationFuntion(char type);    //rectified linear unit activation
+void TrainData::activationFuntion(char type)    //rectified linear unit activation
 {
+	auto start = high_resolution_clock::now();
+
+	switch(type) {
+		case 's': {
+			std::cout << "Sigmoid activation function selected" << std::endl;
+		}
+		case 't': {
+			std::cout << "TanH activation function selected" << std::endl;
+		}
+		case 'r': {
+			std::cout << "ReLU activation function selected" << std::endl;
+		}
+		default: {
+			std::cout << "No activation function selected, defaulting" << std::endl;
+		}
+	}
+
+	auto stop = high_resolution_clock::now();
+	auto duration = duration_cast<microseconds>(stop - start);
+	std::cout << "Function activation finished in " << duration.count() << " us" << std::endl;
 
 }
 
-void TrainData::pool(char type, int size, int stride);    //pooling layer
+void TrainData::pool(char type, int size, int stride)    //pooling layer
 {
+	auto start = high_resolution_clock::now();
+
+	switch(type) {
+		case 'a': {
+			std::cout << "Average pooling selected" << std::endl;
+		}
+		case 'l': {
+			std::cout << "L2 norm pooling selected" << std::endl;
+		}
+		case 'w': {
+			std::cout << "Weighted average distance from center pixel pooling selected" << std::endl;
+		}
+		case 'm': {
+			std::cout << "Max pooling selected" << std::endl;
+		}
+		default: {
+			std::cout << "Default pooling selected" << std::endl;
+		}
+	}
+
+	auto stop = high_resolution_clock::now();
+	auto duration = duration_cast<microseconds>(stop - start);
+	std::cout << "Pooling finished in " << duration.count() << " us" << std::endl;
 
 }
