@@ -27,6 +27,8 @@ private:
 	char *fileArg;
 	std::ifstream infile;
 	int verbosity;
+	std::vector<double> convoResult;
+	std::vector<double> poolResult;
 
 };
 
