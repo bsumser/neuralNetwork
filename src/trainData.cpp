@@ -5,7 +5,8 @@
 #include <string>
 #include <algorithm>
 #include <math.h>
-#include <chrono>
+#include <chrono>    //tracking time of functions
+#include <numeric>    //std::accumulate
 
 using namespace std::chrono;
 
@@ -274,14 +275,13 @@ void TrainData::convolute(std::vector<std::vector<double>> kernel, int stride, i
 	size_t j = 0;    //declaring loop variables early for use outside loop scope
 	size_t g = 0;    //declaring loop variables early for use outside loop scope
 	size_t size = 5;
-	std::vector<double> actMap;
 
 	std::vector<int> testVector{1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25};
 	size_t vectorLength = testVector.size();
 
 	//TODO: finished convulution (running out of memory)
 	std::vector<double> kernelRes;
-	for (int i = 0; i < 10000/*input.size()*/; i++) {
+	for (int i = 0; i < 50/*input.size()*/; i++) {
 		for (j = 0; j < input[i].size() + 1 - kernelSize; j++) {
 			for (g = 0; g < input[i].size() + 1 - kernelSize; g++) {
 				double temp =
@@ -294,7 +294,7 @@ void TrainData::convolute(std::vector<std::vector<double>> kernel, int stride, i
 					input[0][(j + 2) * size + g] * kernel[2][0] +
 					input[0][(j + 2) * size + g + 1] * kernel[2][1] +
 					input[0][(j + 2) * size + g + 2] * kernel[2][2] ;
-				actMap.push_back(temp);
+				convoResult.push_back(temp);
 				//debug prints for checking correct convolution
 				/*std::cout << input[0][j * size + g] << "*" << kernel[0][0] << "+"
 						  << input[0][j * size + g + 1] << "*" << kernel[0][1] << "+"
@@ -311,16 +311,32 @@ void TrainData::convolute(std::vector<std::vector<double>> kernel, int stride, i
 		}
 	}
 
+	//deallocate input vector because we are done with it
+	input.clear();
+	input.shrink_to_fit();
+
 	auto stop = high_resolution_clock::now();
 	auto duration = duration_cast<microseconds>(stop - start);
 	std::cout << "Convolution finished in " << duration.count() << " us" << std::endl;
 }
 void TrainData::batchNormalize()    //batch normalize the data
 {
+	//function to normalize data output from convolution
 	auto start = high_resolution_clock::now();
+	std::cout << "Batch Normalization of Convolved data start" << std::endl;
+
+	double max = *max_element(convoResult.begin(), convoResult.end());
+	double min = *min_element(convoResult.begin(), convoResult.end());
+	double denom = max - min;
+	double average = accumulate( convoResult.begin(), convoResult.end(), 0.0)/convoResult.size();
+	for (size_t i = 0; i < convoResult.size(); i++) {
+		double temp = (convoResult[i] - average) / (denom);
+		poolResult.push_back(temp);
+	}
+
 	auto stop = high_resolution_clock::now();
 	auto duration = duration_cast<microseconds>(stop - start);
-	std::cout << "Batch Normalization finished in " << duration.count() << " us" << std::endl;
+	std::cout << "Batch Normalization of Convolved Data finished in " << duration.count() << " us" << std::endl;
 
 }
 
@@ -365,6 +381,12 @@ void TrainData::pool(char type, int size, int stride)    //pooling layer
 		}
 		case 'm': {
 			std::cout << "Max pooling selected" << std::endl;
+			for (int i = 0; i < 1000/*input.size()*/; i++) {
+				for (size_t j = 0; j < size; j+=stride) {
+					for (size_t g = 0; g < size; g+=stride) {
+					}
+				}
+			}
 		}
 		default: {
 			std::cout << "Default pooling selected" << std::endl;
