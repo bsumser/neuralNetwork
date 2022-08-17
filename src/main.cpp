@@ -32,12 +32,13 @@ int main(int argc, char *argv[])
 	
 	//TODO: work on the training data class
 	TrainData trainData(argv[1], verbosity);
-	trainData.normalizeData('m');
+	//trainData.normalizeData('m');
 	if (verbosity == 3) { trainData.printInputVals(); }
 	if (verbosity == 3) { trainData.printNormalVals(); }
 	if (verbosity == 3) { trainData.printTargetVals(); }
+	trainData.printInputVals(0);    //print the input values
 
-	std::vector<std::vector<double>> kernel;
+	std::vector<std::vector<double>> kernel{{1,1,1},{1,1,1},{1,1,1}};
 	int stride = 1;
 	int padding = 0;
 	const char act = 'r';
