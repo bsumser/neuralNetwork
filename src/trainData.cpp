@@ -271,14 +271,31 @@ void TrainData::convolute(std::vector<std::vector<double>> kernel, int stride, i
 {
 	auto start = high_resolution_clock::now();
 	double temp = 0;
-	int size = 5;
+	size_t kernelSize = kernel[0].size();
+	size_t j = 0;    //declaring loop variables early for use outside loop scope
+	size_t g = 0;    //declaring loop variables early for use outside loop scope
+	size_t size = 5;
 
 	std::vector<int> testVector{1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25};
+	size_t vectorLength = testVector.size();
 
-	//TODO: finish the convolution
+	//TODO: finished convulution, not print correctly for second and third lines
 	std::vector<double> kernelRes;
-	for (int i = 0; i < input.size(); i++) {
-		for (int j = 0; j < size; j++) {
+	for (int i = 0; i < 1/*input.size()*/; i++) {
+		for (j = 0; j < kernelSize; j++) {
+			for (g = 0; g < kernelSize; g++) {
+				std::cout << testVector[j * size + g] << "*" << kernel[0][0] << "+"
+						  << testVector[j * size + g + 1] << "*" << kernel[0][1] << "+"
+						  << testVector[j * size + g + 2] << "*" << kernel[0][2] << "+" << std::endl;
+				std::cout << testVector[(j + 1) * size + g] << "*" << kernel[1][0] << "+"
+						  << testVector[(j + 1) * size + g + 1] << "*" << kernel[1][1] << "+"
+						  << testVector[(j + 1) * size + g + 2] << "*" << kernel[1][2] << "+" << std::endl;
+				std::cout << testVector[(j + 2) * size + g] << "*" << kernel[2][0] << "+"
+						  << testVector[(j + 2) * size + g + 1] << "*" << kernel[2][1] << "+"
+						  << testVector[(j + 2) * size + g + 2] << "*" << kernel[2][2] << "+" << std::endl;
+			std::cout << std::endl;
+			}
+			std::cout << std::endl;
 		}
 	}
 
