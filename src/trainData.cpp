@@ -331,8 +331,12 @@ void TrainData::batchNormalize()    //batch normalize the data
 	double average = accumulate( convoResult.begin(), convoResult.end(), 0.0)/convoResult.size();
 	for (size_t i = 0; i < convoResult.size(); i++) {
 		double temp = (convoResult[i] - average) / (denom);
-		poolResult.push_back(temp);
+		batchResult.push_back(temp);
 	}
+
+	//deallocate convolutional result because we are done with it
+	convoResult.clear();
+	convoResult.shrink_to_fit();
 
 	auto stop = high_resolution_clock::now();
 	auto duration = duration_cast<microseconds>(stop - start);
@@ -353,11 +357,19 @@ void TrainData::activationFuntion(char type)    //rectified linear unit activati
 		}
 		case 'r': {
 			std::cout << "ReLU activation function selected" << std::endl;
+			for (size_t i = 0; i < batchResult.size(); i++) {
+				if (batchResult[i] > 0) actResult.push_back(batchResult[i]);
+				else actResult.push_back(0);
+			}
 		}
 		default: {
 			std::cout << "No activation function selected, defaulting" << std::endl;
 		}
 	}
+
+	//deallocate batch normalization result because we are done with it
+	batchResult.clear();
+	batchResult.shrink_to_fit();
 
 	auto stop = high_resolution_clock::now();
 	auto duration = duration_cast<microseconds>(stop - start);
@@ -368,6 +380,8 @@ void TrainData::activationFuntion(char type)    //rectified linear unit activati
 void TrainData::pool(char type, int size, int stride)    //pooling layer
 {
 	auto start = high_resolution_clock::now();
+
+	size_t actSize = actResult.size();
 
 	switch(type) {
 		case 'a': {
@@ -381,10 +395,9 @@ void TrainData::pool(char type, int size, int stride)    //pooling layer
 		}
 		case 'm': {
 			std::cout << "Max pooling selected" << std::endl;
-			for (int i = 0; i < 1000/*input.size()*/; i++) {
-				for (size_t j = 0; j < size; j+=stride) {
-					for (size_t g = 0; g < size; g+=stride) {
-					}
+			for (size_t j = 0; j < actSize; j+=stride) {
+				for (size_t g = 0; g < actSize; g+=stride) {
+
 				}
 			}
 		}
