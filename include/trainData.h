@@ -27,10 +27,10 @@ private:
 	char *fileArg;
 	std::ifstream infile;
 	int verbosity;
-	std::vector<double> convoResult;
-	std::vector<double> batchResult;
-	std::vector<double> actResult;
-	std::vector<double> poolResult;
+	std::vector<std::vector<double>> convoResult;
+	std::vector<std::vector<double>> batchResult;
+	std::vector<std::vector<double>> actResult;
+	std::vector<std::vector<double>> poolResult;
 
 };
 
