@@ -28,6 +28,8 @@ private:
 	std::ifstream infile;
 	int verbosity;
 	std::vector<double> convoResult;
+	std::vector<double> batchResult;
+	std::vector<double> actResult;
 	std::vector<double> poolResult;
 
 };
