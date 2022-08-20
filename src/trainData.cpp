@@ -276,6 +276,8 @@ void TrainData::convolute(std::vector<std::vector<double>> kernel, int stride, i
 	size_t g = 0;    //declaring loop variables early for use outside loop scope
 	size_t size = 5;
 
+	std::vector<double> tempVector;
+
 	std::vector<int> testVector{1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25};
 	size_t vectorLength = testVector.size();
 
@@ -294,7 +296,7 @@ void TrainData::convolute(std::vector<std::vector<double>> kernel, int stride, i
 					input[0][(j + 2) * size + g] * kernel[2][0] +
 					input[0][(j + 2) * size + g + 1] * kernel[2][1] +
 					input[0][(j + 2) * size + g + 2] * kernel[2][2] ;
-				convoResult.push_back(temp);
+				tempVector.push_back(temp);
 				//debug prints for checking correct convolution
 				/*std::cout << input[0][j * size + g] << "*" << kernel[0][0] << "+"
 						  << input[0][j * size + g + 1] << "*" << kernel[0][1] << "+"
@@ -309,6 +311,7 @@ void TrainData::convolute(std::vector<std::vector<double>> kernel, int stride, i
 			}
 			//std::cout << std::endl;
 		}
+		convoResult.push_back(tempVector);
 	}
 
 	//deallocate input vector because we are done with it
@@ -325,13 +328,17 @@ void TrainData::batchNormalize()    //batch normalize the data
 	auto start = high_resolution_clock::now();
 	std::cout << "Batch Normalization of Convolved data start" << std::endl;
 
-	double max = *max_element(convoResult.begin(), convoResult.end());
-	double min = *min_element(convoResult.begin(), convoResult.end());
-	double denom = max - min;
-	double average = accumulate( convoResult.begin(), convoResult.end(), 0.0)/convoResult.size();
 	for (size_t i = 0; i < convoResult.size(); i++) {
-		double temp = (convoResult[i] - average) / (denom);
-		batchResult.push_back(temp);
+		std::vector<double> tempVector;    //temp vector for loop
+		double max = *max_element(convoResult[i].begin(), convoResult[i].end());
+		double min = *min_element(convoResult[i].begin(), convoResult[i].end());
+		double denom = max - min;
+		double average = accumulate(convoResult[i].begin(), convoResult[i].end(), 0.0)/convoResult[i].size();
+		for (size_t j = 0; j < convoResult[i].size(); j++) {
+			double temp = (convoResult[i][j] - average) / (denom);
+			tempVector.push_back(temp);
+		}
+		batchResult.push_back(tempVector);
 	}
 
 	//deallocate convolutional result because we are done with it
@@ -358,8 +365,12 @@ void TrainData::activationFuntion(char type)    //rectified linear unit activati
 		case 'r': {
 			std::cout << "ReLU activation function selected" << std::endl;
 			for (size_t i = 0; i < batchResult.size(); i++) {
-				if (batchResult[i] > 0) actResult.push_back(batchResult[i]);
-				else actResult.push_back(0);
+				std::vector<double> tempVector;
+				for (size_t j = 0; j < batchResult[i].size(); j++) {
+					if (batchResult[i][j] > 0) tempVector.push_back(batchResult[i][j]);
+					else tempVector.push_back(0);
+				}
+				actResult.push_back(tempVector);
 			}
 		}
 		default: {
@@ -374,7 +385,6 @@ void TrainData::activationFuntion(char type)    //rectified linear unit activati
 	auto stop = high_resolution_clock::now();
 	auto duration = duration_cast<microseconds>(stop - start);
 	std::cout << "Function activation finished in " << duration.count() << " us" << std::endl;
-
 }
 
 void TrainData::pool(char type, int size, int stride)    //pooling layer
