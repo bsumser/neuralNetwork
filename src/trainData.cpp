@@ -392,6 +392,9 @@ void TrainData::pool(char type, int size, int stride)    //pooling layer
 	auto start = high_resolution_clock::now();
 
 	size_t actSize = actResult.size();
+	int vecDimen = 4;
+
+	std::vector<double> testVector = {1,1,2,4,5,6,7,8,3,2,1,0,1,2,3,4};
 
 	switch(type) {
 		case 'a': {
@@ -405,11 +408,17 @@ void TrainData::pool(char type, int size, int stride)    //pooling layer
 		}
 		case 'm': {
 			std::cout << "Max pooling selected" << std::endl;
-			for (size_t j = 0; j < actSize; j+=stride) {
-				for (size_t g = 0; g < actSize; g+=stride) {
-
+			for (size_t j = 0; j < vecDimen; j+=stride) {
+				for (size_t g = 0; g < vecDimen; g+=stride) {
+					std::cout << testVector[j * vecDimen + g] << "*" << testVector[j * vecDimen + g + 1] << std::endl;
+					std::cout << testVector[(j + 1) * vecDimen + g] << "*" << testVector[(j + 1) * vecDimen + g + 1] << std::endl;
+					double maxPoolVal = std::max(std::max(testVector[j * vecDimen + g], testVector[j * vecDimen + g + 1]),
+								  std::max(testVector[(j + 1) * vecDimen + g], testVector[(j + 1) * vecDimen + g + 1]));
+					std::cout << "max is " << maxPoolVal << std::endl;
+					std::cout << std::endl;
 				}
 			}
+			//convoResult.push_back(tempVector);
 		}
 		default: {
 			std::cout << "Default pooling selected" << std::endl;
