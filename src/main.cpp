@@ -44,11 +44,12 @@ int main(int argc, char *argv[])
 	const char act = 'r';
 	const char type = 'm';
 	int poolSize = 2;
+	int poolStride = 2;
 
-	trainData.convolute(kernel, stride, padding);    //perform first convolution
-	trainData.batchNormalize();    //batch normalize the data
-	trainData.activationFuntion(act);    //rectified linear unit activation
-	trainData.pool(type, poolSize, stride);    //pooling layer
+	//trainData.convolute(kernel, stride, padding);    //perform first convolution
+	//trainData.batchNormalize();    //batch normalize the data
+	//trainData.activationFuntion(act);    //rectified linear unit activation
+	trainData.pool(type, poolSize, poolStride);    //pooling layer
 
 	int userEpoch;	
 	cout << "Please enter amount of epochs, 1 to infinity" << endl;
