@@ -41,14 +41,14 @@ int main(int argc, char *argv[])
 	std::vector<std::vector<double>> kernel{{1,1,1},{1,1,1},{1,1,1}};
 	int stride = 1;
 	int padding = 0;
-	const char act = 'r';
-	const char type = 'm';
+	char act = 'r';
+	char type = 'm';
 	int poolSize = 2;
 	int poolStride = 2;
 
-	//trainData.convolute(kernel, stride, padding);    //perform first convolution
-	//trainData.batchNormalize();    //batch normalize the data
-	//trainData.activationFuntion(act);    //rectified linear unit activation
+	trainData.convolute(kernel, stride, padding);    //perform first convolution
+	trainData.batchNormalize();    //batch normalize the data
+	trainData.activationFuntion(act);    //rectified linear unit activation
 	trainData.pool(type, poolSize, poolStride);    //pooling layer
 
 	int userEpoch;	
