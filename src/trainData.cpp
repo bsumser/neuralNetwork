@@ -271,6 +271,7 @@ void TrainData::normalizeData(const char normalType)
 void TrainData::convolute(std::vector<std::vector<double>> kernel, int stride, int padding)    //perform first convolution
 {
 	auto start = high_resolution_clock::now();
+	std::cout << "Convolution input vector of " << input.size() << "x" << input[0].size() << " vector" << std::endl;
 	size_t kernelSize = kernel[0].size();
 	size_t j = 0;    //declaring loop variables early for use outside loop scope
 	size_t g = 0;    //declaring loop variables early for use outside loop scope
@@ -282,10 +283,10 @@ void TrainData::convolute(std::vector<std::vector<double>> kernel, int stride, i
 
 	//TODO: finished convulution (running out of memory)
 	std::vector<double> kernelRes;
-	for (int i = 0; i < 50/*input.size()*/; i++) {
+	for (int i = 0; i < input.size(); i++) {
 		std::vector<double> tempVector;
-		for (j = 1; j < 28 + 1 - kernelSize; j++) {
-			for (g = 1; g < 28 + 1 - kernelSize; g++) {
+		for (j = 0; j < 28 + 1 - kernelSize; j++) {
+			for (g = 0; g < 28 + 1 - kernelSize; g++) {
 				double temp =
 					input[i][j * size + g] * kernel[0][0] +
 					input[i][j * size + g + 1] * kernel[0][1] +
@@ -315,9 +316,9 @@ void TrainData::convolute(std::vector<std::vector<double>> kernel, int stride, i
 		tempVector.shrink_to_fit();
 	}
 
-	//deallocate input vector because we are done with it
-	input.clear();
-	input.shrink_to_fit();
+	////deallocate input vector because we are done with it
+	//input.clear();
+	//input.shrink_to_fit();
 
 	auto stop = high_resolution_clock::now();
 	auto duration = duration_cast<microseconds>(stop - start);
@@ -369,7 +370,7 @@ void TrainData::activationFuntion(char type)    //rectified linear unit activati
 			std::cout << "ReLU activation function selected" << std::endl;
 			for (size_t i = 0; i < batchResult.size(); i++) {
 				std::vector<double> tempVector;
-				for (size_t j = 0; j < batchResult[i].size(); j++) {
+				for (size_t j = 1; j < batchResult[i].size(); j++) {
 					if (batchResult[i][j] > 0) tempVector.push_back(batchResult[i][j]);
 					else tempVector.push_back(0);
 				}
@@ -396,9 +397,10 @@ void TrainData::pool(char type, int size, int stride)    //pooling layer
 	auto start = high_resolution_clock::now();
 
 	size_t actSize = sqrt(actResult.size());
-	int vecDimen = 4;
 
+	//testing variables
 	std::vector<double> testVector = {1,1,2,4,5,6,7,8,3,2,1,0,1,2,3,4};
+	int vecDimen = 4;
 
 	switch(type) {
 		case 'a': {
@@ -417,16 +419,16 @@ void TrainData::pool(char type, int size, int stride)    //pooling layer
 				for (size_t j = 0; j < actSize; j+=stride) {
 					for (size_t g = 0; g < actSize; g+=stride) {
 						//debug print statements
-						//std::cout << actResult[i][j * vecDimen + g] << "*" << testVector[j * vecDimen + g + 1] << std::endl;
-						//std::cout << actResult[i][(j + 1) * vecDimen + g] << "*" << testVector[(j + 1) * vecDimen + g + 1] << std::endl;
-						double maxPoolVal = std::max(std::max(actResult[i][j * vecDimen + g], testVector[j * vecDimen + g + 1]),
-													 std::max(actResult[i][(j + 1) * vecDimen + g], testVector[(j + 1) * vecDimen + g + 1]));
+						//std::cout << actResult[i][j * actSize + g] << "*" << testVector[j * actSize + g + 1] << std::endl;
+						//std::cout << actResult[i][(j + 1) * actSize + g] << "*" << testVector[(j + 1) * actSize + g + 1] << std::endl;
+						double maxPoolVal = std::max(std::max(actResult[i][j * actSize + g], testVector[j * actSize + g + 1]),
+													 std::max(actResult[i][(j + 1) * actSize + g], testVector[(j + 1) * actSize + g + 1]));
 						//std::cout << "max is " << maxPoolVal << std::endl;
 						//std::cout << std::endl;
 						tempVector.push_back(maxPoolVal);
 					}
-				}
 				poolResult.push_back(tempVector);
+				}
 			}
 		}
 		default: {
