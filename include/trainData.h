@@ -22,6 +22,7 @@ public:
 	std::vector<std::vector<double>> normalVals;
 	std::vector<std::vector<double>> targetVals;
 	int trainMax;
+	std::vector<std::vector<double>> poolResult;
 
 private:
 	char *fileArg;
@@ -30,9 +31,6 @@ private:
 	std::vector<std::vector<double>> convoResult;
 	std::vector<std::vector<double>> batchResult;
 	std::vector<std::vector<double>> actResult;
-	std::vector<std::vector<double>> poolResult;
-
 };
-
 
 #endif
