@@ -7,11 +7,13 @@
 #include <string>
 #include <cstring>
 #include <iomanip>
+#include <chrono>    //tracking time of functions
 #include "../include/Net.h"
 #include "../include/Neuron.h"
 #include "../include/trainData.h"
 
 using namespace std;
+using namespace std::chrono;
 
 //https://towardsdatascience.com/convolutional-neural-networks-explained-9cc5188c4939
 
@@ -51,31 +53,33 @@ int main(int argc, char *argv[])
 	trainData.activationFuntion(act);    //rectified linear unit activation
 	trainData.pool(type, poolSize, poolStride);    //pooling layer
 
-	int userEpoch;	
+	int userEpoch;
 	cout << "Please enter amount of epochs, 1 to infinity" << endl;
 	cin >> userEpoch;
 	
 	//vector to dictate node and layer setup for network
 	vector<unsigned> topology;
 
-	//network topology of 13 input nodes, 6 nodes hidden layer and 10 node output layer
-	topology.push_back(trainData.input[0].size());
-	topology.push_back(6);
+	//network topology of input nodes for all layers
+	topology.push_back(trainData.poolResult[0].size());
+	topology.push_back(20);
 	topology.push_back(10);
 			
 	//class constructor, topology is layers and neurons per layer
 	Net myNet(topology);
-	
+
+	auto start = high_resolution_clock::now();
 	for (int epoch = 0; epoch < userEpoch; ++epoch) {
-		for (int line = 0; line < trainData.trainMax; ++line) {
-			trainData.printInputVals(line);    //print the input values
+		for (int line = 0; line < trainData.poolResult.size() * .8; ++line) {
+			//TODO:fix these print functions to grab data from poolResult
+			//trainData.printInputVals(line);    //print the input values
 
-			trainData.printTargetVals(line);   //print the target values expected
+			//trainData.printTargetVals(line);   //print the target values expected
 
-			trainData.printNormalVals(line);   //print the normalized data values
+			//trainData.printNormalVals(line);   //print the normalized data values
 
 			//function to feed values fowards from one layer to the next
-			myNet.feedForward(trainData.normalVals[line]);
+			myNet.feedForward(trainData.poolResult[line]);
 
 			//function to back propagate learning
 			myNet.backProp(trainData.targetVals[line]);
@@ -86,11 +90,11 @@ int main(int argc, char *argv[])
 			//function that reads outputs and feeds in back in
 			myNet.getResults(resultsVals);
 
-			cout << "Reulting Values are: ";
-			for (size_t i = 0; i < resultsVals.size(); ++i){
-				cout << resultsVals[i] << " ";
-			}
-			cout << endl;
+			//cout << "Reulting Values are: ";
+			//for (size_t i = 0; i < resultsVals.size(); ++i){
+			//	cout << resultsVals[i] << " ";
+			//}
+			//cout << endl;
 
 			//TODO change this from old wine project to new digit recognition
 			//float big = resultsVals[0];
@@ -104,5 +108,34 @@ int main(int argc, char *argv[])
 			//cout << "Wine identified as wine " << bigIndex + 1 << endl;
 		}
 	}
+	auto stop = high_resolution_clock::now();
+	auto duration = duration_cast<microseconds>(stop - start);
+	std::cout << "Main training loop finished in " << duration.count() << " us" << std::endl;
+
+	int userLine;
+
+	do {
+		cout << "Please enter a line number between 8500 and 10000" << endl;
+		cin >> userLine;
+
+		//function to feed values fowards from one layer to the next
+		myNet.feedForward(trainData.poolResult[userLine]);
+
+		//function to back propagate learning
+		myNet.backProp(trainData.targetVals[userLine]);
+
+		//vector to hold result values
+		vector<double> resultsVals;
+
+		//function that reads outputs and feeds in back in
+		myNet.getResults(resultsVals);
+
+		cout << "Reulting Values are: ";
+		for (size_t i = 0; i < resultsVals.size(); ++i){
+			cout << resultsVals[i] << " ";
+		}
+		cout << endl;
+
+	} while (userLine != -1);
 	return 0;
 }
