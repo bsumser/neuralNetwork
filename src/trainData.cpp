@@ -267,6 +267,12 @@ void TrainData::normalizeData(const char normalType)
 	auto duration = duration_cast<microseconds>(stop - start);
 	std::cout << "finished data normalization in " << duration.count() << " us" << std::endl;
 }
+void TrainData::convoluteFunc(std::vector<double> kernel, int stride, int padding)    //perform first convolution
+{
+	//functional version of convolution algorithm
+	auto print_op = [](double value) {std::cout << value << std::endl;};
+
+}
 
 void TrainData::convolute(std::vector<std::vector<double>> kernel, int stride, int padding)    //perform first convolution
 {

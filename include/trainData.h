@@ -14,6 +14,7 @@ public:
 	void printTargetVals();
 	void printTargetVals(int row);
 	void normalizeData(const char normalType);
+	void TrainData::convoluteFunc(std::vector<double> kernel, int stride, int padding);    //perform first convolution
 	void convolute(std::vector<std::vector<double>> kernel, int stride, int padding);    //perform first convolution
 	void batchNormalize();    //batch normalize the data
 	void activationFuntion(char type);    //rectified linear unit activation
