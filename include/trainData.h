@@ -14,23 +14,22 @@ public:
 	void printTargetVals();
 	void printTargetVals(int row);
 	void normalizeData(const char normalType);
-	void convoluteFunc(const std::vector<double> input, const std::vector<std::vector<double>> kernel, const int stride, const int padding);    //perform first convolution
-	void convolute(std::vector<std::vector<double>> kernel, int stride, int padding);    //perform first convolution
+	void convolute(std::vector<std::vector<double> > kernel, int stride, int padding);    //perform first convolution
 	void batchNormalize();    //batch normalize the data
 	void activationFuntion(char type);    //rectified linear unit activation
 	void pool(char type, int size, int stride);    //pooling layer
-	std::vector<std::vector<double>> input;
-	std::vector<std::vector<double>> normalVals;
-	std::vector<std::vector<double>> targetVals;
+	std::vector<std::vector<double> > input;
+	std::vector<std::vector<double> > normalVals;
+	std::vector<std::vector<double> > targetVals;
 	int trainMax;
-	std::vector<std::vector<double>> poolResult;
+	std::vector<std::vector<double> > poolResult;
 
 private:
 	char *fileArg;
 	std::ifstream infile;
 	int verbosity;
-	std::vector<std::vector<double>> convoResult;
-	std::vector<std::vector<double>> batchResult;
-	std::vector<std::vector<double>> actResult;
+	std::vector<std::vector<double> > convoResult;
+	std::vector<std::vector<double> > batchResult;
+	std::vector<std::vector<double> > actResult;
 };
 #endif
