@@ -267,14 +267,6 @@ void TrainData::normalizeData(const char normalType)
 	auto duration = duration_cast<microseconds>(stop - start);
 	std::cout << "finished data normalization in " << duration.count() << " us" << std::endl;
 }
-void TrainData::convoluteFunc(const std::vector<double> input, const std::vector<std::vector<double>> kernel, const int stride, const int padding)    //perform first convolution
-{
-	//functional version of convolution algorithm
-	auto print_op = [](double value) {std::cout << value << std::endl;};
-
-	//TODO: fix the compilation error here
-	std::transform(input.begin(), input.end(), input.begin(), print_op);
-}
 
 void TrainData::convolute(std::vector<std::vector<double>> kernel, int stride, int padding)    //perform first convolution
 {
