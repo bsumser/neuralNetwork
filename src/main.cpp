@@ -49,13 +49,12 @@ int main(int argc, char *argv[])
 	int poolSize = 2;
 	int poolStride = 2;
 
-	trainData.convoluteFunc(testVector, kernel, stride, padding);    //perform first convolution
-	//trainData.convolute(kernel, stride, padding);    //perform first convolution
+	trainData.convolute(kernel, stride, padding);    //perform first convolution
 	trainData.batchNormalize();    //batch normalize the data
 	trainData.activationFuntion(act);    //rectified linear unit activation
 	trainData.pool(type, poolSize, poolStride);    //pooling layer
 
-	int userEpoch;
+	int userEpoch = 0;
 	cout << "Please enter amount of epochs, 1 to infinity" << endl;
 	cin >> userEpoch;
 	
