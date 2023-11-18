@@ -17,6 +17,8 @@ using namespace std::chrono;
 
 //https://towardsdatascience.com/convolutional-neural-networks-explained-9cc5188c4939
 
+int cont();
+
 int main(int argc, char *argv[])
 {
 	int verbosity = 0;
@@ -34,6 +36,8 @@ int main(int argc, char *argv[])
 	
 	//TODO: work on the training data class
 	TrainData trainData(argv[1], verbosity);
+	if (!cont()) { return 0; }
+
 	//trainData.normalizeData('m');
 	if (verbosity == 3) { trainData.printInputVals(); }
 	if (verbosity == 3) { trainData.printNormalVals(); }
@@ -49,7 +53,7 @@ int main(int argc, char *argv[])
 	int poolSize = 2;
 	int poolStride = 2;
 
-	trainData.convolute(kernel, stride, padding);    //perform first convolution
+	//trainData.convolute(kernel, stride, padding);    //perform first convolution
 	trainData.batchNormalize();    //batch normalize the data
 	trainData.activationFuntion(act);    //rectified linear unit activation
 	trainData.pool(type, poolSize, poolStride);    //pooling layer
@@ -139,4 +143,16 @@ int main(int argc, char *argv[])
 
 	} while (userLine != -1);
 	return 0;
+}
+
+int cont()
+{	
+	char choice = 'n';
+	cout << "Do you wish to continue? (y/n)" << endl;
+	cin >> choice;
+
+	if (choice == 'y')
+		return true;
+	else
+		return false;
 }
