@@ -12,6 +12,8 @@ using namespace std::chrono;
 
 TrainData::TrainData(char *inputFileArg, int verbosityFlag)
 {
+	//takes a file path for the training data, and verbosity level
+
 	//set the verbosity for training data
 	verbosity = verbosityFlag;
 	std::cout << "TrainData verbosity set to " << verbosity << std::endl;
@@ -42,13 +44,14 @@ TrainData::TrainData(char *inputFileArg, int verbosityFlag)
 
 		while (std::getline(s,word,',')) {
 			//add all the column data of row to vector
-			if (verbosity == 3) {std::cout << word << std::endl;}
             tempLoop.push_back(std::stod(word));
 		}
+
         input.push_back(tempLoop);        //add temp vector to input member
         tempLoop.clear();        //clear temp vector
         lineCount++;        //increment line count for looping through file
 		int switchCase = (int)tempLoop[0];
+
 		switch(switchCase) {
 			case 0: {
 				std::vector<double> tempTargetVals = {1,0,0,0,0,0,0,0,0,0};
@@ -117,13 +120,19 @@ TrainData::TrainData(char *inputFileArg, int verbosityFlag)
 		}
 	trainMax = floor(lineCount * 8);    //set the percentage of the training data to use
 	}
+
+	std::cout << "First row of input values:" << std::endl;
+	printInputVals(0);
+	
+	std::cout << "TargetVals for this row are:" << std::endl;
+	printTargetVals(0);
 }
 
 void TrainData::printInputVals()
 {
 	std::cout << "printing input values" << std::endl;
 	
-	//size variable for vector lenggths to avoid comparison of int to different datatype
+	//size variable for vector lengths to avoid comparison of int to different datatype
 	size_t vector_i = input.size();
 	size_t vector_j = input[0].size();
 
@@ -183,7 +192,7 @@ void TrainData::printNormalVals(int row)
 void TrainData::printTargetVals()
 {
 	std::cout << "printing target values" << std::endl;
-	//size variable for vector lenggths to avoid comparison of int to different datatype
+	//size variable for vector lengths to avoid comparison of int to different datatype
 	size_t vector_i = targetVals.size();
 
 	for (size_t i = 0; i < vector_i; i++) {
