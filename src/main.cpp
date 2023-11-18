@@ -42,21 +42,13 @@ int main(int argc, char *argv[])
 	if (verbosity == 3) { trainData.printInputVals(); }
 	if (verbosity == 3) { trainData.printNormalVals(); }
 	if (verbosity == 3) { trainData.printTargetVals(); }
-	trainData.printInputVals(0);    //print the input values
-
-	const std::vector<std::vector<double>> kernel{{1,1,1},{1,1,1},{1,1,1}};
-	const std::vector<double> testVector{1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25};
-	const int stride = 1;
-	const int padding = 0;
-	char act = 'r';
-	char type = 'm';
-	int poolSize = 2;
-	int poolStride = 2;
 
 	//trainData.convolute(kernel, stride, padding);    //perform first convolution
 	trainData.batchNormalize();    //batch normalize the data
-	trainData.activationFuntion(act);    //rectified linear unit activation
-	trainData.pool(type, poolSize, poolStride);    //pooling layer
+	trainData.activationFuntion('r');    //rectified linear unit activation
+	
+	//TODO: finish pooling function
+	//trainData.pool(type, poolSize, poolStride);    //pooling layer
 
 	int userEpoch = 0;
 	cout << "Please enter amount of epochs, 1 to infinity" << endl;
