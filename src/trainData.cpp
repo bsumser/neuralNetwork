@@ -334,11 +334,12 @@ void TrainData::convolute(std::vector<std::vector<double>> kernel, int stride, i
 	std::cout << "Convolution finished in " << duration.count() << " us" << std::endl;
 	std::cout << "Convolution result vector of " << convoResult.size() << "x" << convoResult[0].size() << " vector" << std::endl;
 }
+
 void TrainData::batchNormalize()    //batch normalize the data
 {
 	//function to normalize data output from convolution
 	auto start = high_resolution_clock::now();
-	std::cout << "Batch Normalization of Convolved data start" << std::endl;
+	std::cout << "Batch Normalization convolved of data start" << std::endl;
 
 	for (size_t i = 0; i < convoResult.size(); i++) {
 		std::vector<double> tempVector;    //temp vector for loop
@@ -350,6 +351,7 @@ void TrainData::batchNormalize()    //batch normalize the data
 			double temp = (convoResult[i][j] - average) / (denom);
 			tempVector.push_back(temp);
 		}
+		std::cout << "size " << tempVector.size() << std::endl;
 		batchResult.push_back(tempVector);
 	}
 
