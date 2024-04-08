@@ -43,7 +43,9 @@ int main(int argc, char *argv[])
 	if (verbosity == 3) { trainData.printNormalVals(); }
 	if (verbosity == 3) { trainData.printTargetVals(); }
 
-	//trainData.convolute(kernel, stride, padding);    //perform first convolution
+	//TODO:THIS NEEDS TO BE FIXED
+	int kernel = 4, stride = 1, padding = 0;
+	trainData.convolute(kernel, stride, padding);    //perform first convolution
 	trainData.batchNormalize();    //batch normalize the data
 	trainData.activationFuntion('r');    //rectified linear unit activation
 	
