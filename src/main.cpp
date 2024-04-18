@@ -9,6 +9,7 @@
 #include <iomanip>
 #include <algorithm>
 #include <chrono>    //tracking time of functions
+#include <random> 	//random num gen for shuffle training data
 #include "../include/Net.h"
 #include "../include/Neuron.h"
 #include "../include/trainData.h"
@@ -71,7 +72,7 @@ int main(int argc, char *argv[])
 	vector<unsigned> topology;
 
 	topology.push_back(trainData.normalVals[0].size());	//Input layer
-	topology.push_back(64);	// Hidden layer
+	topology.push_back(32);	// Hidden layer
 	topology.push_back(10);	// Output layer
 			
 	//class constructor, topology is layers and neurons per layer
@@ -79,7 +80,18 @@ int main(int argc, char *argv[])
 
 	auto start = high_resolution_clock::now();
 	for (int epoch = 0; epoch < userEpoch; ++epoch) {
-		
+
+		//shuffle data at each epoch
+		// initialize random number generator engine
+    	std::random_device rd;
+    	std::mt19937 g(rd());
+
+		// first argument is an iterator to the beginning of the vector (v[0])
+    	// second argument is an iterator to the end of the vector (v[v.size()-1])
+    	// third argument is the rng engine
+		//https://stackoverflow.com/questions/60999419/how-do-i-shuffle-a-2d-array-in-c
+		std::shuffle(trainData.normalVals.begin(), trainData.normalVals.end(), g);
+
 		//TODO: These are using normalized vals instead of pool result
 		//because pooling is not implemented yet
 		for (int line = 0; line < trainData.normalVals.size() * .8; ++line) {
@@ -122,11 +134,10 @@ bool cont()
 	char choice = 'n';
 	cout << "Do you wish to continue? (y/n)" << endl;
 	cin >> choice;
-
-	if (choice == 'y')
-		return true;
-	else
-		return false;
+	
+	//testing change to ternary
+	bool result = (choice == 'y') ? true : false;
+	return result;
 }
 
 void digitGuess(vector<double> resultVals)
