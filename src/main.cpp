@@ -7,6 +7,7 @@
 #include <string>
 #include <cstring>
 #include <iomanip>
+#include <algorithm>
 #include <chrono>    //tracking time of functions
 #include "../include/Net.h"
 #include "../include/Neuron.h"
@@ -17,7 +18,8 @@ using namespace std::chrono;
 
 //https://towardsdatascience.com/convolutional-neural-networks-explained-9cc5188c4939
 
-int cont();
+bool cont();
+void digitGuess(vector<double> resultVals);
 
 int main(int argc, char *argv[])
 {
@@ -38,7 +40,7 @@ int main(int argc, char *argv[])
 	TrainData trainData(argv[1], verbosity);
 	if (!cont()) { return 0; }
 
-	//trainData.normalizeData('m');
+	trainData.normalizeData('m');
 	if (verbosity == 3) { 
 		trainData.printInputVals(); 
 		trainData.printNormalVals(); 
@@ -57,9 +59,9 @@ int main(int argc, char *argv[])
 	//trainData.activationFuntion('r');    //rectified linear unit activation
 	
 	//TODO: finish pooling function
-	char type = 'd'; 
-	int poolSize = 4, poolStride = 1;
-	trainData.pool(type, poolSize, poolStride);    //pooling layer
+	//char type = 'd'; 
+	//int poolSize = 4, poolStride = 1;
+	//trainData.pool(type, poolSize, poolStride);    //pooling layer
 
 	int userEpoch = 0;
 	cout << "Please enter amount of epochs, 1 to infinity" << endl;
@@ -68,26 +70,22 @@ int main(int argc, char *argv[])
 	//vector to dictate node and layer setup for network
 	vector<unsigned> topology;
 
-	//network topology of input nodes for all layers
-	topology.push_back(trainData.input[0].size());
-	topology.push_back(20);
-	topology.push_back(10);
+	topology.push_back(trainData.normalVals[0].size());	//Input layer
+	topology.push_back(64);	// Hidden layer
+	topology.push_back(10);	// Output layer
 			
 	//class constructor, topology is layers and neurons per layer
 	Net myNet(topology);
 
 	auto start = high_resolution_clock::now();
 	for (int epoch = 0; epoch < userEpoch; ++epoch) {
-		for (int line = 0; line < trainData.poolResult.size() * .8; ++line) {
-			//TODO:fix these print functions to grab data from poolResult
-			//trainData.printInputVals(line);    //print the input values
-
-			//trainData.printTargetVals(line);   //print the target values expected
-
-			//trainData.printNormalVals(line);   //print the normalized data values
+		
+		//TODO: These are using normalized vals instead of pool result
+		//because pooling is not implemented yet
+		for (int line = 0; line < trainData.normalVals.size() * .8; ++line) {
 
 			//function to feed values fowards from one layer to the next
-			myNet.feedForward(trainData.poolResult[line]);
+			myNet.feedForward(trainData.normalVals[line]);
 
 			//function to back propagate learning
 			myNet.backProp(trainData.targetVals[line]);
@@ -98,57 +96,28 @@ int main(int argc, char *argv[])
 			//function that reads outputs and feeds in back in
 			myNet.getResults(resultsVals);
 
-			//cout << "Reulting Values are: ";
-			//for (size_t i = 0; i < resultsVals.size(); ++i){
-			//	cout << resultsVals[i] << " ";
-			//}
-			//cout << endl;
+			cout << "Reulting Values are: ";
+			for (size_t i = 0; i < resultsVals.size(); ++i){
+				cout << resultsVals[i] << " ";
+			}
+			cout << endl;
+			cout << "Target Values are: ";
+			for (size_t i = 0; i < trainData.targetVals[line].size(); ++i){
+				cout << trainData.targetVals[line][i] << " ";
+			}
+			cout << endl;
+			digitGuess(resultsVals);
 
-			//TODO change this from old wine project to new digit recognition
-			//float big = resultsVals[0];
-			//int bigIndex = 0;
-			//for (size_t i = 0; i < resultsVals.size(); ++i){
-			//	if (resultsVals[i] > big) {
-			//		big = resultsVals[i];
-			//		bigIndex = i;
-			//	}
-			//}
-			//cout << "Wine identified as wine " << bigIndex + 1 << endl;
 		}
 	}
 	auto stop = high_resolution_clock::now();
 	auto duration = duration_cast<microseconds>(stop - start);
-	std::cout << "Main training loop finished in " << duration.count() << " us" << std::endl;
+	std::cout << "Main training loop finished in " << duration.count() / 1000000 << " s" << std::endl;
 
-	int userLine;
-
-	do {
-		cout << "Please enter a line number between 8500 and 10000" << endl;
-		cin >> userLine;
-
-		//function to feed values fowards from one layer to the next
-		myNet.feedForward(trainData.poolResult[userLine]);
-
-		//function to back propagate learning
-		myNet.backProp(trainData.targetVals[userLine]);
-
-		//vector to hold result values
-		vector<double> resultsVals;
-
-		//function that reads outputs and feeds in back in
-		myNet.getResults(resultsVals);
-
-		cout << "Reulting Values are: ";
-		for (size_t i = 0; i < resultsVals.size(); ++i){
-			cout << resultsVals[i] << " ";
-		}
-		cout << endl;
-
-	} while (userLine != -1);
 	return 0;
 }
 
-int cont()
+bool cont()
 {	
 	char choice = 'n';
 	cout << "Do you wish to continue? (y/n)" << endl;
@@ -158,4 +127,10 @@ int cont()
 		return true;
 	else
 		return false;
+}
+
+void digitGuess(vector<double> resultVals)
+{
+	double maxElement = std::max_element(resultVals.begin(), resultVals.end()) - resultVals.begin();
+	std::cout << "Max element is " << maxElement << std::endl;
 }
