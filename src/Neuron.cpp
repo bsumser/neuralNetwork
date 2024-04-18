@@ -1,8 +1,8 @@
 #include "../include/Neuron.h"
 #include <cmath>
 
-double Neuron::eta = 0.05; //net learning rate 0-1
-double Neuron::alpha = 0.1; //momentum, multiplier of previous delta weight, 0-n
+double Neuron::eta = 0.1; //net learning rate 0-1
+double Neuron::alpha = 0.01; //momentum, multiplier of previous delta weight, 0-n
 
 void Neuron::updateInputWeights(Layer &prevLayer)
 {
