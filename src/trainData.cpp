@@ -128,91 +128,6 @@ TrainData::TrainData(char *inputFileArg, int verbosityFlag)
 	printTargetVals(0);
 }
 
-void TrainData::printInputVals()
-{
-	std::cout << "printing input values" << std::endl;
-	
-	//size variable for vector lengths to avoid comparison of int to different datatype
-	size_t vector_i = input.size();
-	size_t vector_j = input[0].size();
-
-	for (size_t i = 0; i < vector_i; i++) {
-		for (size_t j = 0; j < vector_j; j++) {
-			std::cout << input[i][j] << " ";
-		}
-		std::cout << std::endl;
-	}
-	std::cout << "finished printing input values" << std::endl;
-}
-
-void TrainData::printInputVals(int row)
-{
-	std::cout << "printing input values for row " << row << std::endl;
-	
-	//size variable for vector lenggths to avoid comparison of int to different datatype
-	int size = input[0].size();
-
-	for (int j = 0; j < size; j++) {
-		std::cout << input[row][j] << " ";
-	}
-	std::cout << std::endl;
-}
-
-void TrainData::printNormalVals()
-{
-	std::cout << "printing normalized values" << std::endl;
-	
-	//size variable for vector lenggths to avoid comparison of int to different datatype
-	size_t vector_i = input.size();
-	size_t vector_j = input[0].size();
-
-	for (size_t i = 0; i < vector_i; i++) {
-		for (size_t j = 0; j < vector_j; j++) {
-			std::cout << normalVals[i][j] << " ";
-		}
-		std::cout << std::endl;
-	}
-	std::cout << "finished printing normalized values" << std::endl;
-}
-
-void TrainData::printNormalVals(int row)
-{
-	std::cout << "printing normal values for row " << row << std::endl;
-	
-	//size variable for vector lenggths to avoid comparison of int to different datatype
-	size_t vector_j = normalVals[0].size();
-
-	for (size_t j = 0; j < vector_j; j++) {
-		std::cout << normalVals[row][j] << " ";
-	}
-	std::cout << std::endl;
-}
-
-
-void TrainData::printTargetVals()
-{
-	std::cout << "printing target values" << std::endl;
-	//size variable for vector lengths to avoid comparison of int to different datatype
-	size_t vector_i = targetVals.size();
-
-	for (size_t i = 0; i < vector_i; i++) {
-		std::cout << "row " << i << " = " << targetVals[i][0] << " " << targetVals[i][1] << " " << targetVals[i][2] << std::endl;
-	}
-	std::cout << "finished printing target values" << std::endl;
-}
-
-void TrainData::printTargetVals(int row)
-{
-	std::cout << "printing target values for row " << row << std::endl;
-	
-	//size variable for vector lenggths to avoid comparison of int to different datatype
-	size_t vector_j = targetVals[0].size();
-
-	for (size_t j = 0; j < vector_j; j++) {
-		std::cout << targetVals[row][j] << " ";
-	}
-	std::cout << std::endl;
-}
 
 // TODO: finish this normalization
 void TrainData::normalizeData(const char normalType)
@@ -244,7 +159,7 @@ void TrainData::normalizeData(const char normalType)
 					double min = *std::min_element(input[i].begin(), input[i].end());
 					double max = *std::max_element(input[i].begin(), input[i].end());
 					tempVal = (((input[i][j] - min) / (max-min)) * ((upperBound - lowerBound) + lowerBound));
- 		           tempLoop.push_back(tempVal);
+ 		           	tempLoop.push_back(tempVal);
 
 					if (verbosity == 3) 
 					{ 
@@ -414,6 +329,9 @@ void TrainData::pool(char type, int size, int stride)    //pooling layer
 	int vecDimen = 4;
 
 	switch(type) {
+		case 'd': {
+			std::cout << "Default pooling selected (no pooling)" << std::endl;
+		}
 		case 'a': {
 			std::cout << "Average pooling selected" << std::endl;
 		}
@@ -443,7 +361,7 @@ void TrainData::pool(char type, int size, int stride)    //pooling layer
 			}
 		}
 		default: {
-			std::cout << "Default pooling selected" << std::endl;
+			std::cout << "couldnt read pooling type" << std::endl;
 		}
 	}
 
@@ -451,4 +369,90 @@ void TrainData::pool(char type, int size, int stride)    //pooling layer
 	auto duration = duration_cast<microseconds>(stop - start);
 	std::cout << "Pooling finished in " << duration.count() << " us" << std::endl;
 	std::cout << "Pool result vector of " << poolResult.size() << "x" << poolResult[0].size() << " vector" << std::endl;
+}
+
+void TrainData::printInputVals()
+{
+	std::cout << "printing input values" << std::endl;
+	
+	//size variable for vector lengths to avoid comparison of int to different datatype
+	size_t vector_i = input.size();
+	size_t vector_j = input[0].size();
+
+	for (size_t i = 0; i < vector_i; i++) {
+		for (size_t j = 0; j < vector_j; j++) {
+			std::cout << input[i][j] << " ";
+		}
+		std::cout << std::endl;
+	}
+	std::cout << "finished printing input values" << std::endl;
+}
+
+void TrainData::printInputVals(int row)
+{
+	std::cout << "printing input values for row " << row << std::endl;
+	
+	//size variable for vector lenggths to avoid comparison of int to different datatype
+	int size = input[0].size();
+
+	for (int j = 0; j < size; j++) {
+		std::cout << input[row][j] << " ";
+	}
+	std::cout << std::endl;
+}
+
+void TrainData::printNormalVals()
+{
+	std::cout << "printing normalized values" << std::endl;
+	
+	//size variable for vector lenggths to avoid comparison of int to different datatype
+	size_t vector_i = input.size();
+	size_t vector_j = input[0].size();
+
+	for (size_t i = 0; i < vector_i; i++) {
+		for (size_t j = 0; j < vector_j; j++) {
+			std::cout << normalVals[i][j] << " ";
+		}
+		std::cout << std::endl;
+	}
+	std::cout << "finished printing normalized values" << std::endl;
+}
+
+void TrainData::printNormalVals(int row)
+{
+	std::cout << "printing normal values for row " << row << std::endl;
+	
+	//size variable for vector lenggths to avoid comparison of int to different datatype
+	size_t vector_j = normalVals[0].size();
+
+	for (size_t j = 0; j < vector_j; j++) {
+		std::cout << normalVals[row][j] << " ";
+	}
+	std::cout << std::endl;
+}
+
+
+void TrainData::printTargetVals()
+{
+	std::cout << "printing target values" << std::endl;
+	//size variable for vector lengths to avoid comparison of int to different datatype
+	size_t vector_i = targetVals.size();
+
+	for (size_t i = 0; i < vector_i; i++) {
+		std::cout << "row " << i << " = " << targetVals[i][0] << " " << targetVals[i][1] << " " << targetVals[i][2] << std::endl;
+	}
+	std::cout << "finished printing target values" << std::endl;
+}
+
+void TrainData::printTargetVals(int row)
+{
+	std::cout << "printing target values for row " << row << std::endl;
+	
+	//size variable for vector lenggths to avoid comparison of int to different datatype
+	size_t vector_j = targetVals[0].size();
+
+	for (size_t j = 0; j < vector_j; j++) {
+		std::cout << targetVals[row][j] << " ";
+	}
+	std::cout << std::endl;
 }
