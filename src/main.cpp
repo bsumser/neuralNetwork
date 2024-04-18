@@ -39,18 +39,27 @@ int main(int argc, char *argv[])
 	if (!cont()) { return 0; }
 
 	//trainData.normalizeData('m');
-	if (verbosity == 3) { trainData.printInputVals(); }
-	if (verbosity == 3) { trainData.printNormalVals(); }
-	if (verbosity == 3) { trainData.printTargetVals(); }
+	if (verbosity == 3) { 
+		trainData.printInputVals(); 
+		trainData.printNormalVals(); 
+		trainData.printTargetVals(); 
+	}
+	else if (verbosity == 1) { 
+		trainData.printInputVals(0); 
+		trainData.printNormalVals(0); 
+		trainData.printTargetVals(0); 
+	}
 
 	//TODO:THIS NEEDS TO BE FIXED
-	int kernel = 4, stride = 1, padding = 0;
-	trainData.convolute(kernel, stride, padding);    //perform first convolution
-	trainData.batchNormalize();    //batch normalize the data
-	trainData.activationFuntion('r');    //rectified linear unit activation
+	//int kernel = 4, stride = 1, padding = 0;
+	//trainData.convolute(kernel, stride, padding);    //perform first convolution
+	//trainData.batchNormalize();    //batch normalize the data
+	//trainData.activationFuntion('r');    //rectified linear unit activation
 	
 	//TODO: finish pooling function
-	//trainData.pool(type, poolSize, poolStride);    //pooling layer
+	char type = 'd'; 
+	int poolSize = 4, poolStride = 1;
+	trainData.pool(type, poolSize, poolStride);    //pooling layer
 
 	int userEpoch = 0;
 	cout << "Please enter amount of epochs, 1 to infinity" << endl;
@@ -60,7 +69,7 @@ int main(int argc, char *argv[])
 	vector<unsigned> topology;
 
 	//network topology of input nodes for all layers
-	topology.push_back(trainData.poolResult[0].size());
+	topology.push_back(trainData.input[0].size());
 	topology.push_back(20);
 	topology.push_back(10);
 			
