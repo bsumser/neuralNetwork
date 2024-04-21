@@ -14,6 +14,7 @@ public:
 	void printTargetVals();
 	void printTargetVals(int row);
 	void normalizeData(const char normalType);
+	void dataShuffle();
 	void convolute(std::vector<std::vector<double> > kernel, int stride, int padding);    //perform first convolution
 	void batchNormalize();    //batch normalize the data
 	void activationFuntion(char type);    //rectified linear unit activation
@@ -21,6 +22,9 @@ public:
 	std::vector<std::vector<double> > input;
 	std::vector<std::vector<double> > normalVals;
 	std::vector<std::vector<double> > targetVals;
+	std::vector<std::vector<double> > trainData;
+	std::vector<std::vector<double> > testData;
+
 	int trainMax;
 	std::vector<std::vector<double> > poolResult;
 
