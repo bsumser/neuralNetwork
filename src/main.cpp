@@ -81,20 +81,13 @@ int main(int argc, char *argv[])
 	auto start = high_resolution_clock::now();
 	for (int epoch = 0; epoch < userEpoch; ++epoch) {
 
-		//shuffle data at each epoch
-		// initialize random number generator engine
-    	std::random_device rd;
-    	std::mt19937 g(rd());
-
-		// first argument is an iterator to the beginning of the vector (v[0])
-    	// second argument is an iterator to the end of the vector (v[v.size()-1])
-    	// third argument is the rng engine
-		//https://stackoverflow.com/questions/60999419/how-do-i-shuffle-a-2d-array-in-c
-		std::shuffle(trainData.normalVals.begin(), trainData.normalVals.end(), g);
+		//randomize the data
+		//TODO: target values needs to be shuffled in the same way
+		trainData.dataShuffle();
 
 		//TODO: These are using normalized vals instead of pool result
 		//because pooling is not implemented yet
-		for (int line = 0; line < trainData.normalVals.size() * .8; ++line) {
+		for (int line = 0; line < trainData.normalVals.size(); ++line) {
 
 			//function to feed values fowards from one layer to the next
 			myNet.feedForward(trainData.normalVals[line]);
