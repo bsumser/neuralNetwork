@@ -6,6 +6,7 @@
 #include <algorithm>
 #include <math.h>
 #include <chrono>    //tracking time of functions
+#include <random> 	//random num gen for shuffle training data
 #include <numeric>    //std::accumulate
 
 using namespace std::chrono;
@@ -38,7 +39,7 @@ TrainData::TrainData(char *inputFileArg, int verbosityFlag)
 	while(std::getline(data,line))  {
 		row.clear();
 
-		if (verbosity == 1) {std::cout << "line " << lineCount << " read was: " << line << std::endl;}
+		if (verbosity == 3) {std::cout << "line " << lineCount << " read was: " << line << std::endl;}
 
 		std::stringstream s(line); //stringstream to break into words
 
@@ -190,6 +191,26 @@ void TrainData::normalizeData(const char normalType)
 	auto stop = high_resolution_clock::now();
 	auto duration = duration_cast<microseconds>(stop - start);
 	std::cout << "finished data normalization in " << duration.count() << " us" << std::endl;
+}
+
+void TrainData::dataShuffle()
+{
+	//shuffle data at each epoch
+	// initialize random number generator engine
+    std::random_device rd;
+    std::mt19937 g(rd());
+
+	// first argument is an iterator to the beginning of the vector (v[0])
+  	// second argument is an iterator to the end of the vector (v[v.size()-1])
+  	// third argument is the rng engine
+	//https://stackoverflow.com/questions/60999419/how-do-i-shuffle-a-2d-array-in-c
+	std::shuffle(normalVals.begin(), normalVals.end(), g);
+	int trainDataSize = normalVals.size() * .8;
+	int testDataSize = normalVals.size() - trainDataSize;
+
+	auto it = std::next(normalVals.begin(), trainDataSize);
+
+	std::move(normalVals.begin(), it, std::back_inserter(trainData));
 }
 
 void TrainData::convolute(std::vector<std::vector<double>> kernel, int stride, int padding)    //perform first convolution
